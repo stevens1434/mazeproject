@@ -13,7 +13,7 @@ var map =  [
 				[1,0,0,0,0,0,0,0,1,1,1,0,1,1,0,1,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,1,0,0,0,0,1,0,0,1,0,1,0,1,1,0,0,0,0,1],
 				[1,1,1,1,1,1,1,0,1,1,1,0,1,1,0,0,0,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,1,0,1,0,1,0,1,0,0,1,1,1,1],
 				[1,0,0,0,0,1,1,0,1,1,0,0,0,1,0,1,1,0,1,0,1,0,1,0,0,0,1,0,1,0,1,0,1,1,0,0,1,0,0,1,0,1,0,1,1,0,0,0,1,1],
-				[1,0,1,1,0,1,1,0,0,0,0,2,0,0,0,0,1,0,1,0,1,0,0,1,0,1,0,0,0,0,0,0,1,1,1,0,1,1,0,1,0,1,0,1,1,0,1,0,1,1],
+				[1,0,1,1,0,1,1,0,0,0,7,5,6,0,0,0,1,0,1,0,1,0,0,1,0,1,0,0,0,0,0,0,1,1,1,0,1,1,0,1,0,1,0,1,1,0,1,0,1,1],
 				[1,0,1,1,0,1,1,0,1,1,0,0,0,1,1,0,1,0,1,0,1,1,0,1,0,1,1,1,0,1,1,0,0,0,1,0,0,1,0,1,0,1,0,0,1,1,1,0,1,1],
 				[1,0,1,1,0,0,1,0,1,0,1,0,1,0,0,0,1,0,1,0,1,1,0,1,0,0,1,1,0,0,1,1,1,0,0,0,1,1,0,0,0,1,1,0,1,0,0,0,1,1],
 				[1,0,0,1,0,1,1,1,1,0,1,0,1,0,1,0,1,1,1,0,1,0,0,0,1,0,0,0,1,0,0,0,1,1,1,0,0,0,0,1,1,1,1,0,1,0,1,1,1,1],
@@ -30,13 +30,20 @@ var map =  [
 // 	// var end = [2][47] 
 var player;
 var y = 13; //array's, from top to bottom
-var x = 11; // numbers within teh sub-arrays
+var x = 12; // numbers within teh sub-arrays
+var y2 = 13;
+var x2 = 10;
 var playerStart = map[y][x];
+var playerStart2 = map[y2][x2];
 var score = 0;
+var score2 = 0;
 var leftPress = false; //this and next three: optional, might jsut do if-else statments for moves.
 var rightPress = false;
-var upPress = false;
-var downPress = false;
+// var upPress = false;
+// var downPress = false;
+var modalbox = $("#myModal"); //get the modal
+var closeModal = $("#button"); //span that closes the modal
+
 
 // console.log(playerStart);
 // console.log(map[13])
@@ -63,7 +70,7 @@ var drawMap = function () {
 	        span.style.color = "gold";
 	        span.style.margin = "0px 0px 0px 0px";
 	      }
-	      if (path === 2) {
+	      if (path === 5) {
 	      	span.textContent = "S";
 	      	span.style.backgroundColor = "red";
 	      	span.style.color = "gold";
@@ -75,6 +82,18 @@ var drawMap = function () {
 	      	span.style.color = "green";
 	      	span.style.marginTop = "0px 0px 0px 0px";
 	      }
+	      if (path === 6) {
+	      	span.textContent = "P1";
+	      	span.style.backgroundColor = "blue";
+	      	span.style.color = "white";
+	      	span.style.marginTop = "0px 0px 0px 0px";
+	      }
+	      if (path === 7) {
+	      	span.textContent = "P2";
+	      	span.style.backgroundColor = "yellow";
+	      	span.style.color = "black";
+	      	span.style.marginTop = "0px 0px 0px 0px";
+	      }
 	      document.getElementById("map").appendChild(span);
 	    });
 	    document.getElementById("map").appendChild(document.createElement("br"))
@@ -84,14 +103,13 @@ drawMap();
 
 // DIV WITH ABSOLUTE PIXEL VALUES, MAX WIDTH AND MAX HEIGHT ALSO USE MAX AND MIN WIDTH FOR SCALING ISSUES
 
-
 var pressKey = function (e) {
 	if (e.keyCode === 39 || e.keyCode === "39") { //MOVE RIGHT
 		//check to see if you can move there use map
 		//splice
 		if (map[y][x + 1] === 0) {
 			map[y][x] = 0;
-			map[y][x + 1] = 2;
+			map[y][x + 1] = 6;
 			$("span").remove();
 			$("br").remove();
 			drawMap();
@@ -107,7 +125,7 @@ var pressKey = function (e) {
 			x += 1;
 			score += 1;
 			$("#score").html("your score: " + score)
-			//MODAL ACTIVATION HERE
+			modalRun();
 		} else {
 			console.log("you cannot move there");
 		}
@@ -117,7 +135,7 @@ var pressKey = function (e) {
 		//splice
 		if (map[y][x - 1] === 0) {
 			map[y][x] = 0;
-			map[y][x - 1] = 2;
+			map[y][x - 1] = 6;
 			$("span").remove();
 			$("br").remove();
 			drawMap();
@@ -132,7 +150,7 @@ var pressKey = function (e) {
 			drawMap();
 			x -= 1;
 			score += 1;
-			//MODAL ACTIVATION HERE
+			modalRun();
 		} else {
 			console.log("you cannot move there");
 		}
@@ -142,7 +160,7 @@ var pressKey = function (e) {
 		//splice
 		if (map[y - 1][x] === 0) {
 			map[y][x] = 0;
-			map[y - 1][x] = 2;
+			map[y - 1][x] = 6;
 			$("span").remove();
 			$("br").remove();
 			drawMap();
@@ -158,7 +176,7 @@ var pressKey = function (e) {
 			y -= 1;
 			score += 1;
 			$("#score").html("your score: " + score)
-			//MODAL ACTIVATION HERE
+			modalRun();
 		} else {
 			console.log("you cannot move there");
 		}
@@ -168,7 +186,7 @@ var pressKey = function (e) {
 		//splice
 		if (map[y + 1][x] === 0) {
 			map[y][x] = 0;
-			map[y + 1][x] = 2;
+			map[y + 1][x] = 6;
 			$("span").remove();
 			$("br").remove();
 			drawMap();
@@ -184,15 +202,120 @@ var pressKey = function (e) {
 			y += 1;
 			score += 1;
 			$("#score").html("your score: " + score)
-			//MODAL ACTIVATION HERE
+			modalRun();
 		} else {
 			console.log("you cannot move there");
 		}
 	}
 }
 
+var pressKey2 = function (e) {
+	if (e.keyCode === 68 || e.keyCode === "68") { //MOVE RIGHT
+		//check to see if you can move there use map
+		//splice
+		if (map[y2][x2 + 1] === 0) {
+			map[y2][x2] = 0;
+			map[y2][x2 + 1] = 7;
+			$("span").remove();
+			$("br").remove();
+			drawMap();
+			x2 += 1;
+			score2 += 1;
+			$("#score").html("your score: " + score2)
+		} else if (map[y2][x2 + 1] === 3) {
+			map[y2][x2] = 0;
+			map[y2][x2 + 1] = 4;
+			$("span").remove();
+			$("br").remove();
+			drawMap();
+			x2 += 1;
+			score2 += 1;
+			$("#score").html("your score: " + score2)
+			modalRun();
+		} else {
+			console.log("you cannot move there");
+		}
+	}
+	if (e.keyCode === 65 || e.keyCode === "65") { //MOVE LEFT
+		//check to see if you can move there use map
+		//splice
+		if (map[y2][x2 - 1] === 0) {
+			map[y2][x2] = 0;
+			map[y2][x2 - 1] = 7;
+			$("span").remove();
+			$("br").remove();
+			drawMap();
+			x2 -= 1;
+			score2 += 1;
+			$("#score").html("your score: " + score2)
+		} else if (map[y2][x2 - 1] === 3) {
+			map[y2][x2] = 0;
+			map[y2][x2 - 1] = 4;
+			$("span").remove();
+			$("br").remove();
+			drawMap();
+			x2 -= 1;
+			score2 += 1;
+			modalRun();
+		} else {
+			console.log("you cannot move there");
+		}
+	}
+	if (e.keyCode === 87 || e.keyCode === "87") { //MOVE UP
+		//check to see if you can move there use map
+		//splice
+		if (map[y2 - 1][x2] === 0) {
+			map[y2][x2] = 0;
+			map[y2 - 1][x2] = 7;
+			$("span").remove();
+			$("br").remove();
+			drawMap();
+			y2 -= 1;
+			score2 += 1;
+			$("#score").html("your score: " + score2)
+		} else if (map[y2 - 1][x2] === 3) {
+			map[y2][x2] = 0;
+			map[y2 - 1][x2] = 4;
+			$("span").remove();
+			$("br").remove();
+			drawMap();
+			y2 -= 1;
+			score2 += 1;
+			$("#score").html("your score: " + score2)
+			modalRun();
+		} else {
+			console.log("you cannot move there");
+		}
+	}
+	if (e.keyCode === 83 || e.keyCode === "83") {//MOVE DOWN
+		//check to see if you can move there use map
+		//splice
+		if (map[y2 + 1][x2] === 0) {
+			map[y2][x2] = 0;
+			map[y2 + 1][x2] = 7;
+			$("span").remove();
+			$("br").remove();
+			drawMap();
+			y2 += 1;
+			score2 += 1;
+			$("#score").html("your score: " + score2);
+		} else if (map[y2 + 1][x2] === 3) {
+			map[y2][x2] = 0;
+			map[y2 + 1][x2] = 4;
+			$("span").remove();
+			$("br").remove();
+			drawMap();
+			y2 += 1;
+			score2 += 1;
+			$("#score").html("your score: " + score2)
+			modalRun();
+		} else {
+			console.log("you cannot move there");
+		}
+	}
+}
 
-var checkWinner = function () { //MAKE THIS A MODAL
+var checkWinner = function () {
 		if (map[y][x] === 3) {
 			console.log("you win!");
 			x += 1;
@@ -203,5 +326,18 @@ var checkWinner = function () { //MAKE THIS A MODAL
 		}
 	}
 
+var modalRun = function () {
+	$("#myModal").css("display", "block");
+	$("#modalheader").html("Congrats, You  Finished The Maze!");
+	$("#yourscore").html("your score: " + score);
+}
+
+var closeModal = function () {
+	$("#myModal").css("display", "none");
+	console.log("close button clicked");
+}
+
 window.addEventListener("keydown", pressKey, true);
+window.addEventListener("keydown", pressKey2, true);
+document.getElementById("button").addEventListener("click", closeModal);
 })

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>title</title>
-    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-  	<link rel="stylesheet" href="stylesheet.css" type="../text/css">
+    <!-- <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script> -->
+  	<link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
   	<h1>Is This Working!?</h1>
@@ -12,11 +12,25 @@
 	 	<div id="score">Score: 0</div>
 	 	<div id="map"></div>
 	 	<span id="init"></span>
-		<!-- <canvas id="canvas" width="1" height="1">
-		This text is displayed if your browser does not support HTML5 Canvas.
-		</canvas> -->
 		<div id="highscore">High Score: 0</div>
-	</div>
+<!-- MODAL BELOW -->
+		<div id="myModal" class="modal fade" role="dialog" display="hidden">
+			<div id="modal-content">
+				<header id="modalheader">
+					<span id="headertext"></span>
+				</header>
+				<div id="modaltext">
+					<p id="yourscore"></p>
+				<div class="modal-footer">
+		        	<button type="button" id="button" data-dismiss="modal">Close</button>
+		        </div>
+				</div>
+
+			</div>
+		</div>
+
+	 </div>
+	 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	  <script type="text/javascript" src="JS/script.js"></script>
   </body>
 </html>

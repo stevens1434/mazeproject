@@ -1,0 +1,207 @@
+document.addEventListener('DOMContentLoaded', function() {
+var map =  [
+				[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+				[1,0,1,1,1,1,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,1,0,0,0,1],
+				[1,0,0,0,0,0,0,1,0,1,1,0,1,0,1,1,1,1,1,1,1,1,1,0,0,0,0,1,0,1,1,1,1,1,1,1,1,1,1,1,0,1,1,0,1,1,0,3,0,1],
+				[1,1,1,1,1,1,0,1,0,1,0,0,1,0,1,0,0,0,1,0,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,1,1,0,0,0,1],
+				[1,0,0,0,0,1,0,1,0,1,1,1,1,0,1,0,1,0,1,0,1,0,1,1,0,0,1,1,0,1,0,1,1,1,1,1,1,1,0,1,0,1,0,1,1,1,1,0,1,1],
+				[1,1,1,1,0,1,0,1,0,0,0,0,0,0,1,0,1,0,1,0,1,1,1,1,1,0,0,1,0,1,0,1,1,1,1,1,0,1,0,1,0,1,0,0,1,1,1,0,1,1],
+				[1,0,0,1,0,1,0,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,1,0,1,0,0,1,0,0,0,0,0,0,0,1,0,1,0,1,1,0,1,1,1,0,0,1],
+				[1,1,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,1,0,0,1,0,1,1,1,1,1,1,1,1,1,0,1,0,1,0,0,0,0,0,1,0,1],
+				[1,0,0,1,0,1,1,1,1,0,1,0,1,1,1,1,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,1,1,0,1,0,1],
+				[1,0,1,1,0,1,1,0,1,1,1,0,1,0,0,0,1,0,1,1,0,1,1,0,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,0,0,1,1,1,1,0,1],
+				[1,0,0,0,0,0,0,0,1,1,1,0,1,1,0,1,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,1,0,0,0,0,1,0,0,1,0,1,0,1,1,0,0,0,0,1],
+				[1,1,1,1,1,1,1,0,1,1,1,0,1,1,0,0,0,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,1,0,1,0,1,0,1,0,0,1,1,1,1],
+				[1,0,0,0,0,1,1,0,1,1,0,0,0,1,0,1,1,0,1,0,1,0,1,0,0,0,1,0,1,0,1,0,1,1,0,0,1,0,0,1,0,1,0,1,1,0,0,0,1,1],
+				[1,0,1,1,0,1,1,0,0,0,0,2,0,0,0,0,1,0,1,0,1,0,0,1,0,1,0,0,0,0,0,0,1,1,1,0,1,1,0,1,0,1,0,1,1,0,1,0,1,1],
+				[1,0,1,1,0,1,1,0,1,1,0,0,0,1,1,0,1,0,1,0,1,1,0,1,0,1,1,1,0,1,1,0,0,0,1,0,0,1,0,1,0,1,0,0,1,1,1,0,1,1],
+				[1,0,1,1,0,0,1,0,1,0,1,0,1,0,0,0,1,0,1,0,1,1,0,1,0,0,1,1,0,0,1,1,1,0,0,0,1,1,0,0,0,1,1,0,1,0,0,0,1,1],
+				[1,0,0,1,0,1,1,1,1,0,1,0,1,0,1,0,1,1,1,0,1,0,0,0,1,0,0,0,1,0,0,0,1,1,1,0,0,0,0,1,1,1,1,0,1,0,1,1,1,1],
+				[1,1,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,1,0,1,0,1,1,1,0,1,0,0,1,1,1,1,1,1,1,0,0,1,0,0,0,0,1],
+				[1,0,0,1,1,1,1,0,1,0,1,1,0,1,1,1,0,1,1,0,1,0,1,0,1,0,1,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,0,1,1,1,0,1,0,1],
+				[1,0,1,1,0,0,0,0,1,1,1,1,0,1,0,1,0,1,0,0,1,0,1,0,1,0,1,1,0,1,0,1,1,0,0,0,0,1,1,1,0,1,0,0,0,1,0,1,0,1],
+				[1,0,0,1,1,1,1,0,0,0,0,0,0,0,0,1,0,1,1,0,1,0,1,0,1,0,0,0,0,0,0,0,1,1,1,1,1,1,0,1,0,1,0,1,0,0,0,1,1,1],
+				[1,1,0,0,1,0,0,0,1,1,1,1,1,0,1,1,0,1,1,0,1,0,0,0,1,1,0,1,0,1,1,0,0,0,0,0,0,0,0,1,0,1,1,1,1,1,1,1,1,1],
+				[1,0,1,0,1,1,1,0,1,0,0,0,1,0,1,1,1,1,1,0,1,1,1,0,1,0,1,0,1,0,1,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,1],
+				[1,0,0,0,1,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,1,0,1,0,1],
+				[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+				];
+// 	// var start = [13][11]
+// 	// var end = [2][47] 
+var player;
+var y = 13; //array's, from top to bottom
+var x = 11; // numbers within teh sub-arrays
+var playerStart = map[y][x];
+var score = 0;
+var leftPress = false; //this and next three: optional, might jsut do if-else statments for moves.
+var rightPress = false;
+var upPress = false;
+var downPress = false;
+
+// console.log(playerStart);
+// console.log(map[13])
+var drawMap = function () {
+	// $("span").remove();
+	map.forEach(function(arr, index) {
+	    arr.forEach(function(path, i) {
+	      var span = document.createElement("span");
+	      if (path === 1) {
+	        span.textContent = ".   .";
+	        span.style.color = "green";
+	        span.style.backgroundColor = "green";
+	        span.style.marginTop = "-5px";
+	      }
+	      if (path === 0) {
+	        span.textContent = ".   .";
+	        span.style.color = "white";
+	        span.style.backgroundColor = "white";
+	        span.style.margin = "0px 0px 0px 0px";
+	      }
+	      if (path === 3) {
+	        span.textContent = "E";
+	        span.style.backgroundColor = "green";
+	        span.style.color = "gold";
+	        span.style.margin = "0px 0px 0px 0px";
+	      }
+	      if (path === 2) {
+	      	span.textContent = "S";
+	      	span.style.backgroundColor = "red";
+	      	span.style.color = "gold";
+	      	span.style.marginTop = "0px 0px 0px 0px";
+	      }
+	      if (path === 4) {
+	      	span.textContent = "W";
+	      	span.style.backgroundColor = "gold";
+	      	span.style.color = "green";
+	      	span.style.marginTop = "0px 0px 0px 0px";
+	      }
+	      document.getElementById("map").appendChild(span);
+	    });
+	    document.getElementById("map").appendChild(document.createElement("br"))
+	  })
+}
+drawMap();
+
+// DIV WITH ABSOLUTE PIXEL VALUES, MAX WIDTH AND MAX HEIGHT ALSO USE MAX AND MIN WIDTH FOR SCALING ISSUES
+
+
+var pressKey = function (e) {
+	if (e.keyCode === 39 || e.keyCode === "39") { //MOVE RIGHT
+		//check to see if you can move there use map
+		//splice
+		if (map[y][x + 1] === 0) {
+			map[y][x] = 0;
+			map[y][x + 1] = 2;
+			$("span").remove();
+			$("br").remove();
+			drawMap();
+			x += 1;
+			score += 1;
+			$("#score").html("your score: " + score)
+		} else if (map[y][x + 1] === 3) {
+			map[y][x] = 0;
+			map[y][x + 1] = 4;
+			$("span").remove();
+			$("br").remove();
+			drawMap();
+			x += 1;
+			score += 1;
+			$("#score").html("your score: " + score)
+			//MODAL ACTIVATION HERE
+		} else {
+			console.log("you cannot move there");
+		}
+	}
+	if (e.keyCode === 37 || e.keyCode === "37") { //MOVE LEFT
+		//check to see if you can move there use map
+		//splice
+		if (map[y][x - 1] === 0) {
+			map[y][x] = 0;
+			map[y][x - 1] = 2;
+			$("span").remove();
+			$("br").remove();
+			drawMap();
+			x -= 1;
+			score += 1;
+			$("#score").html("your score: " + score)
+		} else if (map[y][x - 1] === 3) {
+			map[y][x] = 0;
+			map[y][x - 1] = 4;
+			$("span").remove();
+			$("br").remove();
+			drawMap();
+			x -= 1;
+			score += 1;
+			//MODAL ACTIVATION HERE
+		} else {
+			console.log("you cannot move there");
+		}
+	}
+	if (e.keyCode === 38 || e.keyCode === "38") { //MOVE UP
+		//check to see if you can move there use map
+		//splice
+		if (map[y - 1][x] === 0) {
+			map[y][x] = 0;
+			map[y - 1][x] = 2;
+			$("span").remove();
+			$("br").remove();
+			drawMap();
+			y -= 1;
+			score += 1;
+			$("#score").html("your score: " + score)
+		} else if (map[y - 1][x] === 3) {
+			map[y][x] = 0;
+			map[y - 1][x] = 4;
+			$("span").remove();
+			$("br").remove();
+			drawMap();
+			y -= 1;
+			score += 1;
+			$("#score").html("your score: " + score)
+			//MODAL ACTIVATION HERE
+		} else {
+			console.log("you cannot move there");
+		}
+	}
+	if (e.keyCode === 40 || e.keyCode === "40") {//MOVE DOWN
+		//check to see if you can move there use map
+		//splice
+		if (map[y + 1][x] === 0) {
+			map[y][x] = 0;
+			map[y + 1][x] = 2;
+			$("span").remove();
+			$("br").remove();
+			drawMap();
+			y += 1;
+			score += 1;
+			$("#score").html("your score: " + score);
+		} else if (map[y + 1][x] === 3) {
+			map[y][x] = 0;
+			map[y + 1][x] = 4;
+			$("span").remove();
+			$("br").remove();
+			drawMap();
+			y += 1;
+			score += 1;
+			$("#score").html("your score: " + score)
+			//MODAL ACTIVATION HERE
+		} else {
+			console.log("you cannot move there");
+		}
+	}
+}
+
+
+var checkWinner = function () { //MAKE THIS A MODAL
+		if (map[y][x] === 3) {
+			console.log("you win!");
+			x += 1;
+			score += 1;
+			$("#score").html("your score: " + score)
+		} else {
+			console.log("no winner yet");
+		}
+	}
+
+window.addEventListener("keydown", pressKey, true);
+})

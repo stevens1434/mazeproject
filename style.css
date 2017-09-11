@@ -11,6 +11,10 @@ h1 {
 	font-size: 30px;
 }
 
+.span {
+    height: 10px;
+    width: 10px;
+}
 /*#map {*/
 /*	min-width: 650px;
 	min-height: 500px;

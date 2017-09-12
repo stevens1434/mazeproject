@@ -47,12 +47,14 @@ h1 {
 
 body {
     text-align: center;
+    max-height: 1000px;
 }
 
 #map {
 	vertical-align: top;
     position: relative;
     top: -200px;
+    max-height: 924.1px;
 }
 
 /*.span {

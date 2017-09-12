@@ -3,6 +3,10 @@
     src: url("font/arcadeClassic.ttf"); 
 } 
 
+body {
+    
+}
+
 map {
 	vertical-align: top;
 }
@@ -11,10 +15,10 @@ h1 {
 	font-size: 30px;
 }
 
-.span {
+/*.span {
     height: 10px;
     width: 10px;
-}
+}*/
 /*#map {*/
 /*	min-width: 650px;
 	min-height: 500px;
@@ -42,32 +46,63 @@ h1 {
 
 /* Modal Content/Box */
 #modal-content {
-    background-color: #fefefe;
+    background-color: green;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
-    border: 1px solid #888;
+    border: 10px groove grey;
+    border-radius: 30px;
     width: 80%; /* Could be more or less, depending on screen size */
 }
 #modalheader { /*Congrats, You Finished!*/
     text-align: center;
-    font-size: 40px;
+    color: white;
+    background-color: green;
+    font-size: 65px;
     font-family: arcadeClassic;
     text-decoration: underline;
 }
 
 #yourscore {
     text-align: center;
+    color: white;
+    background-color: green;
     font-family: arcadeClassic;
-    font-size: 25px;
+    font-size: 40px;
     font-weight: normal;
 }
 
 #button {
-
+    background-color: white;
+    border: 3px solid grey;
+    color: green;
+    font-family: arcadeClassic;
+    height: 75px;
+    width: 250px;
+    text-align: center;
+    font-size: 60px;
+    border-radius: 15px;
 }
-.button:hover,
-.button:focus {
-    color: black;
-    text-decoration: none;
+#button:hover {
+    color: white;
+    background-color: green;
+    border: 3px solid white;
+    font-family: arcadeClassic;
+    height: 75px;
+    width: 250px;
+    text-align: center;
+    font-size: 60px;
     cursor: pointer;
+    border-radius: 15px;
+}
+#button:focus {
+    color: white;
+    background-color: green;
+    border: 3px solid white;
+    font-family: arcadeClassic;
+    height: 75px;
+    width: 250px;
+    text-align: center;
+    font-size: 60px;
+    cursor: pointer;
+    border-radius: 15px;
 }

@@ -12,25 +12,49 @@ var map =  [
 				[1,0,1,1,0,1,1,0,1,1,1,0,1,0,0,0,1,0,1,1,0,1,1,0,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,0,0,1,1,1,1,0,1],
 				[1,0,0,0,0,0,0,0,1,1,1,0,1,1,0,1,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,1,0,0,0,0,1,0,0,1,0,1,0,1,1,0,0,0,0,1],
 				[1,1,1,1,1,1,1,0,1,1,1,0,1,1,0,0,0,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,1,0,1,0,1,0,1,0,0,1,1,1,1],
-				[1,0,0,0,0,1,1,0,1,1,0,0,0,1,0,1,1,0,1,0,1,0,1,0,0,0,1,0,1,0,1,0,1,1,0,0,1,0,0,1,0,1,0,1,1,0,0,0,1,1],
+				[1,0,0,0,0,1,1,0,1,1,0,0,0,1,0,1,1,0,1,0,1,0,1,0,0,0,1,0,1,0,1,0,1,0,1,0,1,0,0,1,0,1,0,1,1,0,0,0,1,1],
 				[1,0,1,1,0,1,1,0,0,0,7,5,6,0,0,0,1,0,1,0,1,0,0,1,0,1,0,0,0,0,0,0,1,1,1,0,1,1,0,1,0,1,0,1,1,0,1,0,1,1],
-				[1,0,1,1,0,1,1,0,1,1,0,0,0,1,1,0,1,0,1,0,1,1,0,1,0,1,1,1,0,1,1,0,0,0,1,0,0,1,0,1,0,1,0,0,1,1,1,0,1,1],
+				[1,0,1,1,0,1,1,0,1,1,0,0,0,1,1,0,1,0,1,0,1,1,0,1,0,1,1,1,0,1,1,0,0,0,1,0,1,1,0,1,0,1,0,0,1,1,1,0,1,1],
 				[1,0,1,1,0,0,1,0,1,0,1,0,1,0,0,0,1,0,1,0,1,1,0,1,0,0,1,1,0,0,1,1,1,0,0,0,1,1,0,0,0,1,1,0,1,0,0,0,1,1],
-				[1,0,0,1,0,1,1,1,1,0,1,0,1,0,1,0,1,1,1,0,1,0,0,0,1,0,0,0,1,0,0,0,1,1,1,0,0,0,0,1,1,1,1,0,1,0,1,1,1,1],
-				[1,1,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,1,0,1,0,1,1,1,0,1,0,0,1,1,1,1,1,1,1,0,0,1,0,0,0,0,1],
-				[1,0,0,1,1,1,1,0,1,0,1,1,0,1,1,1,0,1,1,0,1,0,1,0,1,0,1,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,0,1,1,1,0,1,0,1],
+				[1,0,0,1,0,1,1,1,1,0,1,0,1,0,1,0,1,1,1,0,1,0,0,0,1,0,0,0,1,0,0,0,1,1,1,0,1,0,0,1,0,0,1,0,1,0,1,1,1,1],
+				[1,1,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,1,0,1,0,1,1,1,0,1,0,0,1,1,1,1,1,1,1,1,0,1,0,0,0,0,1],
+				[1,0,0,1,1,1,1,0,1,0,1,1,0,1,1,1,0,1,1,0,1,0,1,0,1,0,1,0,0,0,1,0,0,0,1,1,1,0,0,0,0,0,0,1,1,1,0,1,0,1],
 				[1,0,1,1,0,0,0,0,1,1,1,1,0,1,0,1,0,1,0,0,1,0,1,0,1,0,1,1,0,1,0,1,1,0,0,0,0,1,1,1,0,1,0,0,0,1,0,1,0,1],
-				[1,0,0,1,1,1,1,0,0,0,0,0,0,0,0,1,0,1,1,0,1,0,1,0,1,0,0,0,0,0,0,0,1,1,1,1,1,1,0,1,0,1,0,1,0,0,0,1,1,1],
-				[1,1,0,0,1,0,0,0,1,1,1,1,1,0,1,1,0,1,1,0,1,0,0,0,1,1,0,1,0,1,1,0,0,0,0,0,0,0,0,1,0,1,1,1,1,1,1,1,1,1],
-				[1,0,1,0,1,1,1,0,1,0,0,0,1,0,1,1,1,1,1,0,1,1,1,0,1,0,1,0,1,0,1,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,1],
-				[1,0,0,0,1,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,1,0,1,0,1],
+				[1,0,0,1,1,1,1,0,0,0,0,0,0,0,0,1,0,1,1,0,1,0,1,0,1,0,0,0,0,0,0,1,1,1,1,1,1,1,0,1,0,1,0,1,0,0,0,1,1,1],
+				[1,1,0,0,1,0,0,0,1,1,1,1,1,0,1,1,0,0,1,0,1,0,0,0,1,1,0,1,0,1,1,0,0,0,0,0,0,0,0,1,0,1,1,1,1,1,1,1,1,1],
+				[1,0,1,0,1,1,1,0,1,0,0,0,1,1,1,1,1,0,1,0,1,1,1,0,1,0,1,0,1,0,1,0,1,0,1,1,1,1,1,1,0,1,0,0,0,0,0,0,0,1],
+				[1,0,1,0,1,0,0,0,0,0,1,0,1,0,0,0,1,0,1,0,1,0,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,1,0,1,0,1,0,1,0,1],
+				[1,0,0,0,1,1,0,1,1,1,1,1,1,1,1,0,0,0,0,0,1,0,1,1,1,1,0,1,0,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,0,1],
+				[1,1,1,1,1,1,0,1,0,0,0,0,0,0,1,1,1,1,1,1,1,0,1,0,0,0,0,1,0,0,0,1,1,0,0,0,0,1,0,1,0,0,0,1,1,1,1,1,0,1],
+				[1,0,0,0,0,0,0,1,0,1,1,1,1,1,1,0,0,0,0,0,0,0,1,0,1,1,0,1,1,1,0,0,0,0,1,1,0,1,0,1,0,1,1,0,0,0,0,0,0,1],
+				[1,0,1,1,1,1,1,1,0,0,0,0,0,0,1,0,1,0,1,1,1,1,1,0,1,0,0,1,1,1,1,1,1,1,1,1,0,1,0,1,0,1,1,0,1,1,0,1,1,1],
+				[1,0,1,0,0,0,0,0,0,1,1,1,1,1,1,0,1,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,1,1,0,1,0,1],
+				[1,0,1,0,1,1,1,1,0,0,0,0,1,0,0,0,1,1,1,1,1,1,0,1,1,0,1,1,1,1,1,0,1,1,1,1,0,1,0,0,0,1,0,1,1,1,0,1,0,1],
+				[1,0,1,0,1,1,0,1,1,1,1,0,0,0,1,0,0,0,0,0,0,1,0,0,1,0,0,1,1,0,1,0,1,0,0,0,0,1,1,1,0,1,1,1,1,1,0,1,0,1],
+				[1,0,0,0,0,0,0,1,0,0,0,0,1,1,1,0,1,1,1,1,1,1,1,0,1,1,0,0,0,0,1,0,1,0,1,1,0,1,1,1,0,0,0,0,0,0,0,1,0,1],
+				[1,1,1,1,1,1,0,1,0,1,1,1,1,0,1,0,1,0,0,0,0,0,1,0,0,0,0,1,1,1,1,0,1,0,1,1,0,0,0,0,0,1,1,1,1,1,1,1,0,1],
+				[1,0,0,1,1,1,0,1,0,1,1,0,0,0,1,0,1,1,0,1,1,1,1,1,1,1,1,1,0,0,0,0,1,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,1],
+				[1,1,0,0,0,1,0,1,0,0,0,0,1,0,1,0,1,0,0,1,0,0,0,0,0,0,0,1,0,1,0,1,1,0,1,1,0,0,0,0,0,0,1,1,1,1,1,1,0,1],
+				[1,0,0,1,0,1,0,1,1,1,1,0,1,1,1,0,1,0,1,1,1,0,1,1,1,0,1,0,0,1,1,0,1,1,1,1,0,1,1,1,1,1,1,0,1,1,1,1,0,1],
+				[1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,1,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1],
+				[1,0,1,1,1,1,1,0,1,1,1,0,1,1,1,1,1,1,1,0,0,0,0,0,1,0,1,1,1,1,1,0,1,1,1,1,0,1,1,1,1,0,1,1,1,0,1,1,1,1],
+				[1,0,0,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,1,1,1,1,1,0,1,0,0,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,1,0,1,1,0,1],
+				[1,0,1,1,1,1,1,0,1,0,1,1,1,0,0,0,1,0,1,0,1,0,1,0,0,0,1,1,1,1,1,1,1,0,1,1,1,1,1,0,1,0,1,1,1,0,1,1,0,1],
+				[1,0,1,0,0,0,0,0,1,0,0,1,1,1,1,1,1,0,1,0,0,0,1,0,1,1,1,0,0,0,0,1,1,0,1,0,0,0,0,0,1,0,0,0,1,0,1,0,0,1],
+				[1,0,1,1,1,1,1,0,1,1,0,1,0,0,0,0,1,1,1,0,1,1,1,0,1,0,0,0,1,1,1,1,0,0,1,0,1,1,1,1,1,1,1,0,1,0,1,0,1,1],
+				[1,0,0,0,0,0,0,0,0,1,0,1,0,1,1,0,0,0,0,0,0,1,0,0,0,0,1,1,0,1,1,1,1,1,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,1],
+				[1,1,1,1,1,1,1,1,0,1,1,1,0,1,1,1,0,1,1,1,1,1,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,1,0,0,0,0,1],
+				[1,1,0,1,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,1,0,1,0,1,1,0,1,1,0,1,1,1,1,1,1,1,0,0,0,1,0,1,1,1,1,0,1],
+				[1,0,0,1,0,1,0,1,1,1,1,1,1,1,0,1,1,1,0,1,1,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,1,1,0,1,0,0,0,1,1,0,1],
+				[1,0,1,0,1,1,0,1,0,0,0,0,1,1,1,1,0,1,0,0,0,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,0,1,0,1,0,1,1,1,0,1,1,0,1],
+				[1,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1],
 				[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
 				];
 // 	// var start = [13][11]
 // 	// var end = [2][47] 
 var player;
-var y = 13; //array's, from top to bottom
-var x = 12; // numbers within teh sub-arrays
+var y = 2; //array's, from top to bottom
+var x = 46; // numbers within teh sub-arrays
 var y2 = 13;
 var x2 = 10;
 var playerStart = map[y][x];
@@ -53,7 +77,7 @@ var drawMap = function () {
 	    arr.forEach(function(path, i) {
 	      var span = document.createElement("span");
 	      if (path === 1) {
-	        span.textContent = ".   .";
+	        span.textContent = "..B..";
 	        span.style.color = "green";
 	        span.style.backgroundColor = "green";
 	        span.setAttribute("class", "span");
@@ -62,43 +86,37 @@ var drawMap = function () {
 	        // $(document).ready(function() {
 	        // 	$(".span").style.height = "10px";
 	        // });
-	      }
-	      if (path === 0) {
-	        span.textContent = ".   .";
+	      } else if (path === 0) {
+	        span.textContent = "..B..";
 	        span.style.color = "white";
 	        span.style.backgroundColor = "white";
 	        span.setAttribute("class", "span");
-	      }
-	      if (path === 3) {
-	        span.textContent = "E";
-	        span.style.backgroundColor = "green";
+	      } else if (path === 3) {
+	        span.textContent = "..E..";
+	        span.style.background = "green";
 	        span.style.color = "gold";
 	        span.setAttribute("class", "span");
-	      }
-	      if (path === 5) {
-	      	span.textContent = "S";
+	      } else if (path === 5) {
+	      	span.textContent = "..S..";
 	      	span.style.backgroundColor = "red";
 	      	span.style.color = "gold";
 	      	span.setAttribute("class", "span");
-	      }
-	      if (path === 4) {
-	      	span.textContent = "W";
+	      } else if (path === 4) {
+	      	span.textContent = "..W..";
 	      	span.style.backgroundColor = "gold";
 	      	span.style.color = "green";
 	      	span.setAttribute("class", "span");
-	      }
-	      if (path === 6) {
-	      	span.textContent = "P1";
+	      } else if (path === 6) {
+	      	span.textContent = "..B..";
 	      	span.style.backgroundColor = "blue";
 	      	span.style.color = "white";
 	      	span.setAttribute("class", "span");
-	      }
-	      if (path === 7) {
-	      	span.textContent = "P2";
+	      } else if (path === 7) {
+	      	span.textContent = "..R..";
 	      	span.style.backgroundColor = "yellow";
 	      	span.style.color = "black";
 	      	span.setAttribute("class", "span");
-	      }
+	      } 
 	      document.getElementById("map").appendChild(span);
 	    });
 	    document.getElementById("map").appendChild(document.createElement("br"))
@@ -120,7 +138,7 @@ var pressKey = function (e) {
 			drawMap();
 			x += 1;
 			score += 1;
-			$("#score").html("your score: " + score)
+			$("#score").html("Player One Score: " + score);
 		} else if (map[y][x + 1] === 3) {
 			map[y][x] = 0;
 			map[y][x + 1] = 4;
@@ -129,8 +147,9 @@ var pressKey = function (e) {
 			drawMap();
 			x += 1;
 			score += 1;
-			$("#score").html("your score: " + score)
+			$("#score").html("Player One Score: " + score);
 			modalRun();
+			// checkWinner();
 		} else if (map[y][x + 1] === 7) {
 			map[y][x] = 0;
 			map[y][x + 2] = 6;
@@ -139,7 +158,7 @@ var pressKey = function (e) {
 			drawMap();
 			x += 2;
 			score += 1;
-			$("#score").html("your score: " + score)
+			$("#score").html("Player One Score: " + score);
 		} else {
 			console.log("you cannot move there");
 		}
@@ -155,7 +174,7 @@ var pressKey = function (e) {
 			drawMap();
 			x -= 1;
 			score += 1;
-			$("#score").html("your score: " + score)
+			$("#score").html("Player One Score: " + score);
 		} else if (map[y][x - 1] === 3) {
 			map[y][x] = 0;
 			map[y][x - 1] = 4;
@@ -165,6 +184,8 @@ var pressKey = function (e) {
 			x -= 1;
 			score += 1;
 			modalRun();
+			// checkWinner();
+			$("#score").html("Player One Score: " + score);
 		} else if (map[y][x - 1] === 7) {
 			map[y][x] = 0;
 			map[y][x - 2] = 6;
@@ -173,6 +194,7 @@ var pressKey = function (e) {
 			drawMap();
 			x -= 2;
 			score += 1;
+			$("#score").html("Player One Score: " + score);
 		} else {
 			console.log("you cannot move there");
 		}
@@ -188,7 +210,7 @@ var pressKey = function (e) {
 			drawMap();
 			y -= 1;
 			score += 1;
-			$("#score").html("your score: " + score)
+			$("#score").html("Player One Score: " + score);
 		} else if (map[y - 1][x] === 3) {
 			map[y][x] = 0;
 			map[y - 1][x] = 4;
@@ -197,8 +219,9 @@ var pressKey = function (e) {
 			drawMap();
 			y -= 1;
 			score += 1;
-			$("#score").html("your score: " + score)
+			$("#score").html("Player One Score: " + score);
 			modalRun();
+			// checkWinner();
 		} else if (map[y - 1][x] === 7) {
 			map[y][x] = 0;
 			map[y - 2][x] = 6;
@@ -207,7 +230,7 @@ var pressKey = function (e) {
 			drawMap();
 			y -= 2;
 			score += 1;
-			$("#score").html("your score: " + score)
+			$("#score").html("Player One Score: " + score);
 		} else {
 			console.log("you cannot move there");
 		}
@@ -223,7 +246,7 @@ var pressKey = function (e) {
 			drawMap();
 			y += 1;
 			score += 1;
-			$("#score").html("your score: " + score);
+			$("#score").html("Player One Score: " + score);
 		} else if (map[y + 1][x] === 3) {
 			map[y][x] = 0;
 			map[y + 1][x] = 4;
@@ -232,8 +255,9 @@ var pressKey = function (e) {
 			drawMap();
 			y += 1;
 			score += 1;
-			$("#score").html("your score: " + score)
+			$("#score").html("Player One Score: " + score);
 			modalRun();
+			// checkWinner();
 		} else if (map[y + 1][x] === 7) {
 			map[y][x] = 0;
 			map[y + 2][x] = 6;
@@ -242,7 +266,7 @@ var pressKey = function (e) {
 			drawMap();
 			y += 2;
 			score += 1;
-			$("#score").html("your score: " + score)
+			$("#score").html("Player One Score: " + score);
 		} else {
 			console.log("you cannot move there");
 		}
@@ -271,7 +295,8 @@ var pressKey2 = function (e) {
 			x2 += 1;
 			score2 += 1;
 			$("#score2").html("Player 2 score: " + score2);
-			modalRun();
+			modalRun2();
+			// checkWinner();
 		} else if (map[y2][x2 + 1] === 6) {
 			map[y2][x2] = 0;
 			map[y2][x2 + 2] = 7;
@@ -305,7 +330,8 @@ var pressKey2 = function (e) {
 			drawMap();
 			x2 -= 1;
 			score2 += 1;
-			modalRun();
+			modalRun2();
+			// checkWinner();
 			$("#score2").html("Player 2 score: " + score2);
 		} else if (map[y2][x2 - 1] === 6) {
 			map[y2][x2] = 0;
@@ -341,7 +367,8 @@ var pressKey2 = function (e) {
 			y2 -= 1;
 			score2 += 1;
 			$("#score2").html("Player 2 score: " + score2);
-			modalRun();
+			modalRun2();
+			// checkWinner();
 		} else if (map[y2 - 1][x2] === 6) {
 			map[y2][x2] = 0;
 			map[y2 - 2][x2] = 7;
@@ -376,7 +403,8 @@ var pressKey2 = function (e) {
 			y2 += 1;
 			score2 += 1;
 			$("#score2").html("Player 2 score: " + score2);
-			modalRun();
+			modalRun2();
+			// checkWinner();
 		} else if (map[y2 + 1][x2] === 6) {
 			map[y2][x2] = 0;
 			map[y2 + 2][x2] = 7;
@@ -392,27 +420,44 @@ var pressKey2 = function (e) {
 	}
 }
 
-var checkWinner = function () {
-		if (map[y][x] === 3) {
-			console.log("you win!");
-			x += 1;
-			score += 1;
-			$("#score").html("your score: " + score);
-			$("#score2").html("Player 2 score: " + score2);
-		} else {
-			console.log("no winner yet");
-		}
-	}
+// WHEN COMPLETE IT RUNS CHECKWINNER() AFTER CHANGING THE "E" TO A "6" OR "7" SO IT DOESN'T RECOGNIZE A WINNER
+// var checkWinner = function () {
+// 		if (map[y][x + 1] === 3 || map[y][x - 1] === 3 || map[y - 1][x] === 3 || map[y + 1][x] === 3) {
+// 			console.log("Player 1 wins!");
+// 			modalRun();
+// 		} else if (map[y2 + 1][x2] === 3 || map[y2 - 1][x2] === 3 || map[y2][x2 - 1] === 3 || map[y2][x2 + 1] === 3) {
+// 			console.log("Player 2 wins!");
+// 			modalRun2();
+// 		} else {
+// 			console.log("no winner yet");
+// 		}
+// 	}
 
 var modalRun = function () {
 	$("#myModal").css("display", "block");
-	$("#modalheader").html("Congrats, You  Finished The Maze!");
-	$("#yourscore").html("You won with a score of: " + score);
+	$("#modalheader").html("Congrats  Player  1,  You  Win!");
+	$("#yourscore").html("You  won  with  a  score  of:    " + score);
+}
+
+var modalRun2 = function () {
+	$("#myModal").css("display", "block");
+	$("#modalheader").html("Congrats  Player  2,  You  Win!");
+	$("#yourscore").html("You  won  with  a  score  of:    " + score2);
 }
 
 var closeModal = function () {
 	$("#myModal").css("display", "none");
-	console.log("close button clicked");
+	y = 2;
+	x = 46;
+	y2 = 13;
+	x2 = 10;
+	playerStart = map[y][x];
+	playerStart2 = map[y2][x2];
+	score = 0;
+	score2 = 0;
+	$("span").remove();
+	$("br").remove();
+	drawMap();
 }
 
 window.addEventListener("keydown", pressKey, true);

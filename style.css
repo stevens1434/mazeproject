@@ -3,16 +3,56 @@
     src: url("font/arcadeClassic.ttf"); 
 } 
 
-body {
-    
-}
-
-map {
-	vertical-align: top;
-}
-
 h1 {
-	font-size: 30px;
+    font-size: 150px;
+    color: green;
+    font-family: arcadeClassic;
+    text-align: center;
+    position: relative;
+    top: -100px;
+}
+
+#scores {
+    width: 100%;
+}
+
+#score {
+    display: inline-block;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 50px;
+    font-family: arcadeClassic;
+    color: blue;
+    position: relative;
+    top: -200px;
+    display: inline-block;
+}
+
+#separate {
+    letter-spacing: 25px;
+    display: inline-block;
+}
+
+#score2 {
+    display: inline-block;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 50px;
+    font-family: arcadeClassic;
+    color: #CCCC00;
+    position: relative;
+    top: -200px;
+    display: inline-block;
+}
+
+body {
+    text-align: center;
+}
+
+#map {
+	vertical-align: top;
+    position: relative;
+    top: -200px;
 }
 
 /*.span {

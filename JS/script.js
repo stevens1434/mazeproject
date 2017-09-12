@@ -25,7 +25,7 @@ var map =  [
 				[1,0,1,0,1,1,1,0,1,0,0,0,1,1,1,1,1,0,1,0,1,1,1,0,1,0,1,0,1,0,1,0,1,0,1,1,1,1,1,1,0,1,0,0,0,0,0,0,0,1],
 				[1,0,1,0,1,0,0,0,0,0,1,0,1,0,0,0,1,0,1,0,1,0,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,1,0,1,0,1,0,1,0,1],
 				[1,0,0,0,1,1,0,1,1,1,1,1,1,1,1,0,0,0,0,0,1,0,1,1,1,1,0,1,0,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,0,1],
-				[1,1,1,1,1,1,0,1,0,0,0,0,0,0,1,1,1,1,1,1,1,0,1,0,0,0,0,1,0,0,0,1,1,0,0,0,0,1,0,1,0,0,0,1,1,1,1,1,0,1],
+				[1,1,1,1,1,1,0,1,0,0,0,0,0,0,1,1,1,1,1,1,1,0,1,0,0,0,0,1,0,1,0,1,1,0,0,0,0,1,0,1,0,0,0,1,1,1,1,1,0,1],
 				[1,0,0,0,0,0,0,1,0,1,1,1,1,1,1,0,0,0,0,0,0,0,1,0,1,1,0,1,1,1,0,0,0,0,1,1,0,1,0,1,0,1,1,0,0,0,0,0,0,1],
 				[1,0,1,1,1,1,1,1,0,0,0,0,0,0,1,0,1,0,1,1,1,1,1,0,1,0,0,1,1,1,1,1,1,1,1,1,0,1,0,1,0,1,1,0,1,1,0,1,1,1],
 				[1,0,1,0,0,0,0,0,0,1,1,1,1,1,1,0,1,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,1,1,0,1,0,1],
@@ -61,8 +61,8 @@ var playerStart = map[y][x];
 var playerStart2 = map[y2][x2];
 var score = 0;
 var score2 = 0;
-var leftPress = false; //this and next three: optional, might jsut do if-else statments for moves.
-var rightPress = false;
+// var leftPress = false; //this and next three: optional, might jsut do if-else statments for moves.
+// var rightPress = false;
 // var upPress = false;
 // var downPress = false;
 var modalbox = $("#myModal"); //get the modal
@@ -92,29 +92,29 @@ var drawMap = function () {
 	        span.style.backgroundColor = "white";
 	        span.setAttribute("class", "span");
 	      } else if (path === 3) {
-	        span.textContent = "..E..";
-	        span.style.background = "green";
+	        span.textContent = "..B..";
+	        span.style.background = "gold";
 	        span.style.color = "gold";
 	        span.setAttribute("class", "span");
 	      } else if (path === 5) {
-	      	span.textContent = "..S..";
+	      	span.textContent = "..B..";
 	      	span.style.backgroundColor = "red";
-	      	span.style.color = "gold";
+	      	span.style.color = "red";
 	      	span.setAttribute("class", "span");
 	      } else if (path === 4) {
-	      	span.textContent = "..W..";
+	      	span.textContent = "..B..";
 	      	span.style.backgroundColor = "gold";
-	      	span.style.color = "green";
+	      	span.style.color = "gold";
 	      	span.setAttribute("class", "span");
 	      } else if (path === 6) {
 	      	span.textContent = "..B..";
 	      	span.style.backgroundColor = "blue";
-	      	span.style.color = "white";
+	      	span.style.color = "blue";
 	      	span.setAttribute("class", "span");
 	      } else if (path === 7) {
-	      	span.textContent = "..R..";
+	      	span.textContent = "..B..";
 	      	span.style.backgroundColor = "yellow";
-	      	span.style.color = "black";
+	      	span.style.color = "yellow";
 	      	span.setAttribute("class", "span");
 	      } 
 	      document.getElementById("map").appendChild(span);
@@ -130,7 +130,7 @@ var pressKey = function (e) {
 	if (e.keyCode === 39 || e.keyCode === "39") { //MOVE RIGHT
 		//check to see if you can move there use map
 		//splice
-		if (map[y][x + 1] === 0) {
+		if (map[y][x + 1] === 0) { //normal move
 			map[y][x] = 0;
 			map[y][x + 1] = 6;
 			$("span").remove();
@@ -139,7 +139,7 @@ var pressKey = function (e) {
 			x += 1;
 			score += 1;
 			$("#score").html("Player One Score: " + score);
-		} else if (map[y][x + 1] === 3) {
+		} else if (map[y][x + 1] === 3) { //winning square
 			map[y][x] = 0;
 			map[y][x + 1] = 4;
 			$("span").remove();
@@ -150,7 +150,7 @@ var pressKey = function (e) {
 			$("#score").html("Player One Score: " + score);
 			modalRun();
 			// checkWinner();
-		} else if (map[y][x + 1] === 7) {
+		} else if (map[y][x + 1] === 7 && map[y][x + 2] === 0) { //jump player
 			map[y][x] = 0;
 			map[y][x + 2] = 6;
 			$("span").remove();
@@ -160,7 +160,6 @@ var pressKey = function (e) {
 			score += 1;
 			$("#score").html("Player One Score: " + score);
 		} else {
-			console.log("you cannot move there");
 		}
 	}
 	if (e.keyCode === 37 || e.keyCode === "37") { //MOVE LEFT
@@ -186,7 +185,7 @@ var pressKey = function (e) {
 			modalRun();
 			// checkWinner();
 			$("#score").html("Player One Score: " + score);
-		} else if (map[y][x - 1] === 7) {
+		} else if (map[y][x - 1] === 7 && map[y][x - 2] === 0) {
 			map[y][x] = 0;
 			map[y][x - 2] = 6;
 			$("span").remove();
@@ -196,7 +195,6 @@ var pressKey = function (e) {
 			score += 1;
 			$("#score").html("Player One Score: " + score);
 		} else {
-			console.log("you cannot move there");
 		}
 	}
 	if (e.keyCode === 38 || e.keyCode === "38") { //MOVE UP
@@ -222,7 +220,7 @@ var pressKey = function (e) {
 			$("#score").html("Player One Score: " + score);
 			modalRun();
 			// checkWinner();
-		} else if (map[y - 1][x] === 7) {
+		} else if (map[y - 1][x] === 7 && map[y - 2][x] === 0) {
 			map[y][x] = 0;
 			map[y - 2][x] = 6;
 			$("span").remove();
@@ -232,7 +230,6 @@ var pressKey = function (e) {
 			score += 1;
 			$("#score").html("Player One Score: " + score);
 		} else {
-			console.log("you cannot move there");
 		}
 	}
 	if (e.keyCode === 40 || e.keyCode === "40") {//MOVE DOWN
@@ -258,7 +255,7 @@ var pressKey = function (e) {
 			$("#score").html("Player One Score: " + score);
 			modalRun();
 			// checkWinner();
-		} else if (map[y + 1][x] === 7) {
+		} else if (map[y + 1][x] === 7 && map[y + 2][x] === 0) {
 			map[y][x] = 0;
 			map[y + 2][x] = 6;
 			$("span").remove();
@@ -268,7 +265,6 @@ var pressKey = function (e) {
 			score += 1;
 			$("#score").html("Player One Score: " + score);
 		} else {
-			console.log("you cannot move there");
 		}
 	}
 }
@@ -297,7 +293,7 @@ var pressKey2 = function (e) {
 			$("#score2").html("Player 2 score: " + score2);
 			modalRun2();
 			// checkWinner();
-		} else if (map[y2][x2 + 1] === 6) {
+		} else if (map[y2][x2 + 1] === 6 && map[y2][x2 + 2] === 0) {
 			map[y2][x2] = 0;
 			map[y2][x2 + 2] = 7;
 			$("span").remove();
@@ -307,7 +303,6 @@ var pressKey2 = function (e) {
 			score2 += 1;
 			$("#score2").html("Player 2 score: " + score2);
 		} else {
-			console.log("you cannot move there");
 		}
 	}
 	if (e.keyCode === 65 || e.keyCode === "65") { //MOVE LEFT
@@ -333,7 +328,7 @@ var pressKey2 = function (e) {
 			modalRun2();
 			// checkWinner();
 			$("#score2").html("Player 2 score: " + score2);
-		} else if (map[y2][x2 - 1] === 6) {
+		} else if (map[y2][x2 - 1] === 6 && map[y2][x2 - 2] === 0) {
 			map[y2][x2] = 0;
 			map[y2][x2 - 2] = 7;
 			$("span").remove();
@@ -343,7 +338,6 @@ var pressKey2 = function (e) {
 			score2 += 1;
 			$("#score2").html("Player 2 score: " + score2);
 		} else {
-			console.log("you cannot move there");
 		}
 	}
 	if (e.keyCode === 87 || e.keyCode === "87") { //MOVE UP
@@ -369,7 +363,7 @@ var pressKey2 = function (e) {
 			$("#score2").html("Player 2 score: " + score2);
 			modalRun2();
 			// checkWinner();
-		} else if (map[y2 - 1][x2] === 6) {
+		} else if (map[y2 - 1][x2] === 6 && map[y2 - 2][x2] === 0) {
 			map[y2][x2] = 0;
 			map[y2 - 2][x2] = 7;
 			$("span").remove();
@@ -379,7 +373,6 @@ var pressKey2 = function (e) {
 			score2 += 1;
 			$("#score2").html("Player 2 score: " + score2);
 		} else {
-			console.log("you cannot move there");
 		}
 	}
 	if (e.keyCode === 83 || e.keyCode === "83") {//MOVE DOWN
@@ -405,7 +398,7 @@ var pressKey2 = function (e) {
 			$("#score2").html("Player 2 score: " + score2);
 			modalRun2();
 			// checkWinner();
-		} else if (map[y2 + 1][x2] === 6) {
+		} else if (map[y2 + 1][x2] === 6 && map[y2 + 2][x2] === 0) {
 			map[y2][x2] = 0;
 			map[y2 + 2][x2] = 7;
 			$("span").remove();
@@ -415,7 +408,6 @@ var pressKey2 = function (e) {
 			score2 += 1;
 			$("#score2").html("Player 2 score: " + score2);
 		} else {
-			console.log("you cannot move there");
 		}
 	}
 }

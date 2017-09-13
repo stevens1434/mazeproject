@@ -1,12 +1,3 @@
-//GUN
-// var gun = false
-	// for player one (if they pick up the gun at X number on the board)
-		// if gun === true, then they can shoot if they hold the SHIFT key
-// var gun2 = false
-
-// TOO SLOW?
-
-
 document.addEventListener('DOMContentLoaded', function() {
 var map =  [
 					[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
@@ -110,12 +101,11 @@ var map2 =  [
 					[1,0,1,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1],
 					[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
 				];
-// 	// var start = [13][11]
-// 	// var end = [2][47] 
+// 	// var start = [13][11] var end = [2][47] 
 var player;
 var playerWin = false;
-var y = 13; //2 //array's, from top to bottom
-var x = 12; //46 // numbers within teh sub-arrays
+var y = 2; //2 //array's, from top to bottom
+var x = 46; //46 // numbers within teh sub-arrays
 var y2 = 13;
 var x2 = 10;
 var playerStart = map[y][x];
@@ -274,6 +264,45 @@ var p1m1Moves = function () {
 	$("#score").html("Player One Score: " + score); //display score
 }
 
+var p1m2Moves = function () {
+	// if (map[y][x] === map[][]) {
+	// 	var p1gun = true;
+	// } else {
+	// 	console.log("p1 has gun" + p1gun);
+	// }
+	map2[y][x] = 0; // changes old location to pathway
+	score += 1;
+	$("span").remove(); //remove map
+	$("br").remove(); //remove map
+	$("#score").html("Player One Score: " + score); //display score
+}
+
+var p2m1Moves = function () {
+	// if (map[y][x] === map[][]) {
+	// 	var p1gun = true;
+	// } else {
+	// 	console.log("p1 has gun" + p1gun);
+	// }
+	map[y2][x2] = 0; // changes old location to pathway
+	score2 += 1;
+	$("span").remove(); //remove map
+	$("br").remove(); //remove map
+	$("#score").html("Player Two Score: " + score2); //display score
+}
+
+var p2m2Moves = function () {
+	// if (map[y][x] === map[][]) {
+	// 	var p1gun = true;
+	// } else {
+	// 	console.log("p1 has gun" + p1gun);
+	// }
+	map2[y2][x2] = 0; // changes old location to pathway
+	score2 += 1;
+	$("span").remove(); //remove map
+	$("br").remove(); //remove map
+	$("#score").html("Player Two Score: " + score2); //display score
+}
+
 
 var pressKey = function (e) {
 	if (playerWin === false || playerWin === "false") {
@@ -293,7 +322,6 @@ var pressKey = function (e) {
 				x += 1;
 				drawMap();
 				modalRun();
-				// console.log("p1, m1, right, win");
 			} else if ((map[y][x + 1] === 7 || map[y][x + 1] === 5) && map[y][x + 2] === 0) { //jump player
 				p1m1Moves();
 				map[y][x + 2] = 6;
@@ -301,7 +329,6 @@ var pressKey = function (e) {
 				playerloc.x += 2;
 				x += 2;
 				drawMap();
-				// console.log("p1, m1, right, jump");
 			} else {
 			}
 		}
@@ -314,7 +341,6 @@ var pressKey = function (e) {
 				playerloc.x -= 1;
 				x -= 1;
 				drawMap();
-				// console.log("p1, m1, left, normal");
 			} else if (map[y][x - 1] === 3) {
 				p1m1Moves();
 				map[y][x] = 0;
@@ -324,7 +350,6 @@ var pressKey = function (e) {
 				x -= 1;
 				drawMap();
 				modalRun();
-				// console.log("p1, m1, left, win");
 			} else if ((map[y][x - 1] === 7 || map[y][x - 1] === 5) && map[y][x - 2] === 0) {
 				p1m1Moves();
 				map[y][x] = 0;
@@ -333,7 +358,6 @@ var pressKey = function (e) {
 				playerloc.x -= 2;
 				x -= 2;
 				drawMap();
-				// console.log("p1, m1, left, jump");
 			} else {
 			}
 		}
@@ -346,7 +370,6 @@ var pressKey = function (e) {
 				playerloc.x += 0;
 				y -= 1;
 				drawMap();
-				// console.log("p1, m1, up, normal");
 			} else if (map[y - 1][x] === 3) {
 				p1m1Moves();
 				map[y][x] = 0;
@@ -357,7 +380,6 @@ var pressKey = function (e) {
 				$("#score").html("Player One Score: " + score);
 				drawMap();
 				modalRun();
-				// console.log("p1, m1, up, win");
 			} else if ((map[y - 1][x] === 7 || map[y - 1][x] === 5) && map[y - 2][x] === 0) {
 				p1m1Moves();
 				map[y][x] = 0;
@@ -366,7 +388,6 @@ var pressKey = function (e) {
 				playerloc.x += 0;
 				y -= 2;
 				drawMap();
-				// console.log("p1, m1, up, jump");
 			} else {
 			}
 		}
@@ -379,7 +400,6 @@ var pressKey = function (e) {
 				playerloc.x += 0;
 				y += 1;
 				drawMap();
-				// console.log("p1, m1, down, normal");
 			} else if (map[y + 1][x] === 3) {
 				p1m1Moves();
 				map[y][x] = 0;
@@ -389,7 +409,6 @@ var pressKey = function (e) {
 				y += 1;
 				drawMap();
 				modalRun();
-				// console.log("p1, m1, down, win");
 			} else if ((map[y + 1][x] === 7 || map[y + 1][x] === 5) && map[y + 2][x] === 0) {
 				p1m1Moves();
 				map[y][x] = 0;
@@ -398,7 +417,6 @@ var pressKey = function (e) {
 				playerloc.x += 0;
 				y += 2;
 				drawMap();
-				// console.log("p1, m1, down, jump");
 			} else {
 			}
 		}
@@ -406,452 +424,213 @@ var pressKey = function (e) {
 	// MAP NUMBER 2
 	if (e.keyCode === 39 || e.keyCode === "39") { //MOVE RIGHT
 		if (map2[y][x + 1] === 0) { //normal move
-			// if (map[y][x] === map[][]) {
-				// 	var p1gun = true;
-				// } else {
-				// 	console.log("p1 has gun" + p1gun);
-				// }
-				map2[y][x] = 0;
+				p1m2Moves();
 				map2[y][x + 1] = 6;
-				$("span").remove();
-				$("br").remove();
 				playerloc.y += 0;
 				playerloc.x += 1;
 				x += 1;
-				score += 1;
-				$("#score").html("Player One Score: " + score);
 				drawMap2();
-				console.log("p1, m2, right, normal");
 			} else if (map2[y][x + 1] === 3) { //winning square
-				// if (map[y][x] === map[][]) {
-				// 	var p1gun = true;
-				// } else {
-				// 	console.log("p1 has gun" + p1gun);
-				// }
-				map2[y][x] = 0;
+				p1m2Moves();
 				map2[y][x + 1] = 3;
-				$("span").remove();
-				$("br").remove();
 				playerloc.y += 0;
 				playerloc.x += 1;
 				x += 1;
-				score += 1;
-				$("#score").html("Player One Score: " + score);
 				drawMap2();
 				modalRun();
-				console.log("p1, m2, right, win");
 			} else if ((map2[y][x + 1] === 7 || map2[y][x + 1] === 5) && map2[y][x + 2] === 0) { //jump player
-				// if (map[y][x] === map[][]) {
-				// 	var p1gun = true;
-				// } else {
-				// 	console.log("p1 has gun" + p1gun);
-				// }
-				map2[y][x] = 0;
+				p1m2Moves();
 				map2[y][x + 2] = 6;
-				$("span").remove();
-				$("br").remove();
 				playerloc.y += 0;
 				playerloc.x += 2;
 				x += 2;
-				score += 1;
-				$("#score").html("Player One Score: " + score);
 				drawMap2();
-				console.log("p1, m2, right, jump");
 			} else {
 			}
 		}
 		if (e.keyCode === 37 || e.keyCode === "37") { //MOVE LEFT
 			if (map2[y][x - 1] === 0) {
-				// if (map[y][x] === map[][]) {
-				// 	var p1gun = true;
-				// } else {
-				// 	console.log("p1 has gun" + p1gun);
-				// }
-				map2[y][x] = 0;
+				p1m2Moves();
 				map2[y][x - 1] = 6;
-				$("span").remove();
-				$("br").remove();
 				playerloc.y += 0;
 				playerloc.x -= 1;
 				x -= 1;
-				score += 1;
-				$("#score").html("Player One Score: " + score);
 				drawMap2();
-				console.log("p1, m2, left, normal");
 			} else if (map2[y][x - 1] === 3) {
-				// if (map[y][x] === map[][]) {
-				// 	var p1gun = true;
-				// } else {
-				// 	console.log("p1 has gun" + p1gun);
-				// }
-				map2[y][x] = 0;
+				p1m2Moves();
 				map2[y][x - 1] = 3;
-				$("span").remove();
-				$("br").remove();
 				playerloc.y += 0;
 				playerloc.x -= 1;
 				x -= 1;
-				score += 1;
-				$("#score").html("Player One Score: " + score);
 				drawMap2();
 				modalRun();
-				console.log("p1, m2, left, win");
 			} else if ((map2[y][x - 1] === 7 || map2[y][x - 1] === 5) && map2[y][x - 2] === 0) {
-				// if (map[y][x] === map[][]) {
-				// 	var p1gun = true;
-				// } else {
-				// 	console.log("p1 has gun" + p1gun);
-				// }
-				map2[y][x] = 0;
+				p1m2Moves();
 				map2[y][x - 2] = 6;
-				$("span").remove();
-				$("br").remove();
 				playerloc.y += 0;
 				playerloc.x -= 2;
 				x -= 2;
-				score += 1;
-				$("#score").html("Player One Score: " + score);
 				drawMap2();
-				console.log("p1, m2, left, jump");
 			} else {
 			}
 		}
 		if (e.keyCode === 38 || e.keyCode === "38") { //MOVE UP
 			if (map2[y - 1][x] === 0) {
-				// if (map[y][x] === map[][]) {
-				// 	var p1gun = true;
-				// } else {
-				// 	console.log("p1 has gun" + p1gun);
-				// }
-				map2[y][x] = 0;
+				p1m2Moves();
 				map2[y - 1][x] = 6;
-				$("span").remove();
-				$("br").remove();
 				playerloc.y -= 1;
 				playerloc.x += 0;
 				y -= 1;
-				score += 1;
-				$("#score").html("Player One Score: " + score);
 				drawMap2();
-				console.log("p1, m2, up, normal");
 			} else if (map2[y - 1][x] === 3) {
-				// if (map[y][x] === map[][]) {
-				// 	var p1gun = true;
-				// } else {
-				// 	console.log("p1 has gun" + p1gun);
-				// }
-				map2[y][x] = 0;
+				p1m2Moves();
 				map2[y - 1][x] = 3;
-				$("span").remove();
-				$("br").remove();
 				playerloc.y -= 1;
 				playerloc.x += 0;
 				y -= 1;
-				score += 1;
-				$("#score").html("Player One Score: " + score);
 				drawMap2();
 				modalRun();
-				console.log("p1, m2, up, win");
 			} else if ((map2[y - 1][x] === 7 || map2[y - 1][x] === 5) && map2[y - 2][x] === 0) {
-				// if (map[y][x] === map[][]) {
-				// 	var p1gun = true;
-				// } else {
-				// 	console.log("p1 has gun" + p1gun);
-				// }
-				map2[y][x] = 0;
+				p1m2Moves();
 				map2[y - 2][x] = 6;
-				$("span").remove();
-				$("br").remove();
 				playerloc.y -= 2;
 				playerloc.x += 0;
 				y -= 2;
-				score += 1;
-				$("#score").html("Player One Score: " + score);
 				drawMap2();
-				console.log("p1, m2, up, jump");
 			} else {
 			}
 		}
 		if (e.keyCode === 40 || e.keyCode === "40") {//MOVE DOWN
 			if (map2[y + 1][x] === 0) {
-				// if (map[y][x] === map[][]) {
-				// 	var p1gun = true;
-				// } else {
-				// 	console.log("p1 has gun" + p1gun);
-				// }
-				map2[y][x] = 0;
+				p1m2Moves();
 				map2[y + 1][x] = 6;
-				$("span").remove();
-				$("br").remove();
 				playerloc.y += 1;
 				playerloc.x += 0;
 				y += 1;
-				score += 1;
-				$("#score").html("Player One Score: " + score);
 				drawMap2();
-				console.log("p1, m2, down, normal");
 			} else if (map2[y + 1][x] === 3) {
-				// if (map[y][x] === map[][]) {
-				// 	var p1gun = true;
-				// } else {
-				// 	console.log("p1 has gun" + p1gun);
-				// }
-				map2[y][x] = 0;
+				p1m2Moves();
 				map2[y + 1][x] = 3;
-				$("span").remove();
-				$("br").remove();
 				playerloc.y += 1;
 				playerloc.x += 0;
 				y += 1;
-				score += 1;
-				$("#score").html("Player One Score: " + score);
 				drawMap2();
 				modalRun();
-				console.log("p1, m2, down, win");
 			} else if ((map2[y + 1][x] === 7 || map2[y + 1][x] === 5) && map2[y + 2][x] === 0) {
-				// if (map[y][x] === map[][]) {
-				// 	var p1gun = true;
-				// } else {
-				// 	console.log("p1 has gun" + p1gun);
-				// }
-				map2[y][x] = 0;
+				p1m2Moves();
 				map2[y + 2][x] = 6;
-				$("span").remove();
-				$("br").remove();
 				playerloc.y += 2;
 				playerloc.x += 0;
 				y += 2;
-				score += 1;
-				$("#score").html("Player One Score: " + score);
 				drawMap2();
-				console.log("p1, m2, down, jump");
 			} else {
 			}
 		}
 	}
-	console.log(playerWin);
 }
-
-
-
-
-
-
-
-
-
-
 
 var pressKey2 = function (e) {  //PLAYER TWO
 	if (playerWin === false || playerWin === "false") {	
 		if (e.keyCode === 68 || e.keyCode === "68") { //MOVE RIGHT
 			if (map[y2][x2 + 1] === 0) {
-				// if (map[y][x] === map[2][2]) {
-				// 	var p2gun = true;
-				// } else {
-				// 	console.log("p1 has gun" + p1gun);
-				// }
-				map[y2][x2] = 0;
+				p2m1Moves();
 				map[y2][x2 + 1] = 7;
-				$("span").remove();
-				$("br").remove();
 				playerloc2.y += 0;
 				playerloc2.x += 1;
 				x2 += 1;
-				score2 += 1;
-				$("#score2").html("Player 2 score: " + score2);
 				drawMap();
 			} else if (map[y2][x2 + 1] === 3) {
-				// if (map[y][x] === map[2][2]) {
-				// 	var p2gun = true;
-				// } else {
-				// 	console.log("p1 has gun" + p1gun);
-				// }
-				map[y2][x2] = 0;
+				p2m1Moves();
 				map[y2][x2 + 1] = 3;
-				$("span").remove();
-				$("br").remove();
 				playerloc2.y += 0;
 				playerloc2.x += 1;
 				x2 += 1;
-				score2 += 1;
-				$("#score2").html("Player 2 score: " + score2);
 				drawMap();
 				modalRun2();
 			} else if ((map[y2][x2 + 1] === 6 || map[y2][x2 + 1] === 5) && map[y2][x2 + 2] === 0) {
-				// if (map[y][x] === map[2][2]) {
-				// 	var p2gun = true;
-				// } else {
-				// 	console.log("p1 has gun" + p1gun);
-				// }
-				map[y2][x2] = 0;
+				p2m1Moves();
 				map[y2][x2 + 2] = 7;
-				$("span").remove();
-				$("br").remove();
 				playerloc2.y += 0;
 				playerloc2.x += 2;
 				x2 += 2;
-				score2 += 1;
-				$("#score2").html("Player 2 score: " + score2);
 				drawMap();
 			} else {
 			}
 		}
 		if (e.keyCode === 65 || e.keyCode === "65") { //MOVE LEFT
 			if (map[y2][x2 - 1] === 0) {
-				// if (map[y][x] === map[2][2]) {
-				// 	var p2gun = true;
-				// } else {
-				// 	console.log("p1 has gun" + p1gun);
-				// }
-				map[y2][x2] = 0;
+				p2m1Moves();
 				map[y2][x2 - 1] = 7;
-				$("span").remove();
-				$("br").remove();
 				playerloc2.y += 0;
 				playerloc2.x -= 1;
 				x2 -= 1;
-				score2 += 1;
-				$("#score2").html("your score: " + score2);
 				drawMap();
 			} else if (map[y2][x2 - 1] === 3) {
-				// if (map[y][x] === map[2][2]) {
-				// 	var p2gun = true;
-				// } else {
-				// 	console.log("p1 has gun" + p1gun);
-				// }
-				map[y2][x2] = 0;
+				p2m1Moves();
 				map[y2][x2 - 1] = 3;
-				$("span").remove();
-				$("br").remove();
 				playerloc2.y += 0;
 				playerloc2.x -= 1;
 				x2 -= 1;
-				score2 += 1;
-				$("#score2").html("Player 2 score: " + score2);
 				drawMap();
 				modalRun2();
 			} else if ((map[y2][x2 - 1] === 6 || map[y2][x2 - 1] === 5) && map[y2][x2 - 2] === 0) {
-				// if (map[y][x] === map[2][2]) {
-				// 	var p2gun = true;
-				// } else {
-				// 	console.log("p1 has gun" + p1gun);
-				// }
-				map[y2][x2] = 0;
+				p2m1Moves();
 				map[y2][x2 - 2] = 7;
-				$("span").remove();
-				$("br").remove();
 				playerloc2.y += 0;
 				playerloc2.x -= 2;
 				x2 -= 2;
-				score2 += 1;
-				$("#score2").html("Player 2 score: " + score2);
 				drawMap();
 			} else {
 			}
 		}
 		if (e.keyCode === 87 || e.keyCode === "87") { //MOVE UP
 			if (map[y2 - 1][x2] === 0) {
-				// if (map[y][x] === map[2][2]) {
-				// 	var p2gun = true;
-				// } else {
-				// 	console.log("p1 has gun" + p1gun);
-				// }
-				map[y2][x2] = 0;
+				p2m1Moves();
 				map[y2 - 1][x2] = 7;
-				$("span").remove();
-				$("br").remove();
 				playerloc2.y -= 1;
 				playerloc2.x += 0;
 				y2 -= 1;
-				score2 += 1;
-				$("#score2").html("Player 2 score: " + score2);
 				drawMap();
 			} else if (map[y2 - 1][x2] === 3) {
-				// if (map[y][x] === map[2][2]) {
-				// 	var p2gun = true;
-				// } else {
-				// 	console.log("p1 has gun" + p1gun);
-				// }
-				map[y2][x2] = 0;
+				p2m1Moves();
 				map[y2 - 1][x2] = 3;
-				$("span").remove();
-				$("br").remove();
 				playerloc2.y -= 1;
 				playerloc2.x += 0;
 				y2 -= 1;
-				score2 += 1;
-				$("#score2").html("Player 2 score: " + score2);
 				drawMap();
 				modalRun2();
 			} else if ((map[y2 - 1][x2] === 6 || map[y2 - 1][x2] === 5) && map[y2 - 2][x2] === 0) {
-				// if (map[y][x] === map[2][2]) {
-				// 	var p2gun = true;
-				// } else {
-				// 	console.log("p1 has gun" + p1gun);
-				// }
-				map[y2][x2] = 0;
+				p2m1Moves();
 				map[y2 - 2][x2] = 7;
-				$("span").remove();
-				$("br").remove();
 				playerloc2.y -= 2;
 				playerloc2.x += 0;
 				y2 -= 2;
-				score2 += 1;
-				$("#score2").html("Player 2 score: " + score2);
 				drawMap();
 			} else {
 			}
 		}
 		if (e.keyCode === 83 || e.keyCode === "83") {//MOVE DOWN
 			if (map[y2 + 1][x2] === 0) {
-				// if (map[y][x] === map[2][2]) {
-				// 	var p2gun = true;
-				// } else {
-				// 	console.log("p1 has gun" + p1gun);
-				// }
-				map[y2][x2] = 0;
+				p2m1Moves();
 				map[y2 + 1][x2] = 7;
-				$("span").remove();
-				$("br").remove();
 				playerloc2.y += 1;
 				playerloc2.x += 0;
 				y2 += 1;
-				score2 += 1;
-				$("#score2").html("Player 2 score: " + score2);
 				drawMap();
 			} else if (map[y2 + 1][x2] === 3) {
-				// if (map[y][x] === map[2][2]) {
-				// 	var p2gun = true;
-				// } else {
-				// 	console.log("p1 has gun" + p1gun);
-				// }
-				map[y2][x2] = 0;
+				p2m1Moves();
 				map[y2 + 1][x2] = 3;
-				$("span").remove();
-				$("br").remove();
 				playerloc2.y += 1;
 				playerloc2.x += 0;
 				y2 += 1;
-				score2 += 1;
-				$("#score2").html("Player 2 score: " + score2);
 				drawMap();
 				modalRun2();
 			} else if ((map[y2 + 1][x2] === 6 || map[y2 + 1][x2] === 5) && map[y2 + 2][x2] === 0) {
-				// if (map[y][x] === map[2][2]) {
-				// 	var p2gun = true;
-				// } else {
-				// 	console.log("p1 has gun" + p1gun);
-				// }
-				map[y2][x2] = 0;
+				p2m1Moves();
 				map[y2 + 2][x2] = 7;
-				$("span").remove();
-				$("br").remove();
 				playerloc2.y += 2;
 				playerloc2.x += 0;
 				y2 += 2;
-				score2 += 1;
-				$("#score2").html("Player 2 score: " + score2);
 				drawMap();	
 			} else {
 		}
@@ -860,225 +639,105 @@ var pressKey2 = function (e) {  //PLAYER TWO
 	// MAP NUMBER 2
 	if (e.keyCode === 68 || e.keyCode === "68") { //MOVE RIGHT
 		if (map2[y2][x2 + 1] === 0) { //normal move
-				// if (map[y][x] === map[][]) {
-				// 	var p2gun = true;
-				// } else {
-				// 	console.log("p1 has gun" + p1gun);
-				// }
-				map2[y2][x2] = 0;
+				p2m2Moves();
 				map2[y2][x2 + 1] = 7;
-				$("span").remove();
-				$("br").remove();
 				playerloc2.y += 0;
 				playerloc2.x += 1;
 				x2 += 1;
-				score2 += 1;
-				$("#score2").html("Player 2 Score: " + score2);
 				drawMap2();
-				console.log("p2, m2, right, normal");
 			} else if (map2[y2][x2 + 1] === 3) { //winning square
-				// if (map[y][x] === map[][]) {
-				// 	var p2gun = true;
-				// } else {
-				// 	console.log("p1 has gun" + p1gun);
-				// }
-				map2[y2][x2] = 0;
+				p2m2Moves();
 				map2[y2][x2 + 1] = 3;
-				$("span").remove();
-				$("br").remove();
 				playerloc2.y += 0;
 				playerloc2.x += 1;
 				x2 += 1;
-				score2 += 1;
-				$("#score2").html("Player 2 Score: " + score2);
 				drawMap2();
 				modalRun();
-				console.log("p2, m2, right, win");
 			} else if ((map2[y2][x2 + 1] === 6 || map2[y2][x2 + 1] === 5) && map2[y2][x2 + 2] === 0) { //jump player
-				// if (map[y][x] === map[][]) {
-				// 	var p2gun = true;
-				// } else {
-				// 	console.log("p1 has gun" + p1gun);
-				// }
-				map2[y2][x2] = 0;
+				p2m2Moves();
 				map2[y2][x2 + 2] = 7;
-				$("span").remove();
-				$("br").remove();
 				playerloc2.y += 0;
 				playerloc2.x += 2;
 				x2 += 2;
-				score2 += 1;
-				$("#score2").html("Player 2 Score: " + score2);
 				drawMap2();
-				console.log("p2, m2, right, jump");
 			} else {
 			}
 		}
 		if (e.keyCode === 65 || e.keyCode === "65") { //MOVE LEFT
 			if (map2[y2][x2 - 1] === 0) {
-				// if (map[y][x] === map[][]) {
-				// 	var p2gun = true;
-				// } else {
-				// 	console.log("p1 has gun" + p1gun);
-				// }
-				map2[y2][x2] = 0;
+				p2m2Moves();
 				map2[y2][x2 - 1] = 7;
-				$("span").remove();
-				$("br").remove();
 				playerloc2.y += 0;
 				playerloc2.x -= 1;
 				x2 -= 1;
-				score2 += 1;
-				$("#score2").html("Player 2 Score: " + score2);
 				drawMap2();
-				console.log("p2, m2, left, normal");
 			} else if (map2[y2][x2 - 1] === 3) {
-				// if (map[y][x] === map[][]) {
-				// 	var p2gun = true;
-				// } else {
-				// 	console.log("p1 has gun" + p1gun);
-				// }
-				map2[y2][x2] = 0;
+				p2m2Moves();
 				map2[y2][x2 - 1] = 3;
-				$("span").remove();
-				$("br").remove();
 				playerloc2.y += 0;
 				playerloc2.x -= 1;
 				x2 -= 1;
-				score2 += 1;
-				$("#score").html("Player 2 Score: " + score2);
 				drawMap2();
 				modalRun();
-				console.log("p2, m2, left, win");
 			} else if ((map2[y2][x2 - 1] === 6 || map2[y2][x2 - 1] === 5) && map2[y2][x2 - 2] === 0) {
-				// if (map[y][x] === map[][]) {
-				// 	var p2gun = true;
-				// } else {
-				// 	console.log("p1 has gun" + p1gun);
-				// }
-				map2[y2][x2] = 0;
+				p2m2Moves();
 				map2[y2][x2 - 2] = 7;
-				$("span").remove();
-				$("br").remove();
 				playerloc2.y += 0;
 				playerloc2.x -= 2;
 				x2 -= 2;
-				score2 += 1;
-				$("#score2").html("Player 2 Score: " + score2);
 				drawMap2();
-				console.log("p2, m2, left, jump");
 			} else {
 			}
 		}
 		if (e.keyCode === 87 || e.keyCode === "87") { //MOVE UP
 			if (map2[y2 - 1][x2] === 0) {
-				// if (map[y][x] === map[][]) {
-				// 	var p2gun = true;
-				// } else {
-				// 	console.log("p1 has gun" + p1gun);
-				// }
-				map2[y2][x2] = 0;
+				p2m2Moves();
 				map2[y2 - 1][x2] = 7;
-				$("span").remove();
-				$("br").remove();
 				playerloc2.y -= 1;
 				playerloc2.x += 0;
 				y2 -= 1;
-				score2 += 1;
-				$("#score2").html("Player 2 Score: " + score2);
 				drawMap2();
-				console.log("p2, m2, up, normal");
 			} else if (map2[y2 - 1][x2] === 3) {
-				// if (map[y][x] === map[][]) {
-				// 	var p2gun = true;
-				// } else {
-				// 	console.log("p1 has gun" + p1gun);
-				// }
-				map2[y2][x2] = 0;
+				p2m2Moves();
 				map2[y2 - 1][x2] = 3;
-				$("span").remove();
-				$("br").remove();
 				playerloc2.y -= 1;
 				playerloc2.x += 0;
 				y2 -= 1;
-				score2 += 1;
-				$("#score2").html("Player 2 Score: " + score2);
 				drawMap2();
 				modalRun();
-				console.log("p2, m2, up, win");
 			} else if ((map2[y2 - 1][x2] === 6 || map2[y2 - 1][x2] === 5) && map2[y2 - 2][x2] === 0) {
-				// if (map[y][x] === map[][]) {
-				// 	var p2gun = true;
-				// } else {
-				// 	console.log("p1 has gun" + p1gun);
-				// }
-				map2[y2][x2] = 0;
+				p2m2Moves();
 				map2[y2 - 2][x2] = 7;
-				$("span").remove();
-				$("br").remove();
 				playerloc2.y -= 2;
 				playerloc2.x += 0;
 				y2 -= 2;
-				score2 += 1;
-				$("#score2").html("Player 2 Score: " + score2);
 				drawMap2();
-				console.log("p2, m2, up, jump");
 			} else {
 			}
 		}
 		if (e.keyCode === 83 || e.keyCode === "83") {//MOVE DOWN
 			if (map2[y2 + 1][x2] === 0) {
-				// if (map[y][x] === map[][]) {
-				// 	var p2gun = true;
-				// } else {
-				// 	console.log("p1 has gun" + p1gun);
-				// }
-				map2[y2][x2] = 0;
+				p2m2Moves();
 				map2[y2 + 1][x2] = 7;
-				$("span").remove();
-				$("br").remove();
 				playerloc2.y += 1;
 				playerloc2.x += 0;
 				y2 += 1;
-				score2 += 1;
-				$("#score2").html("Player 2 Score: " + score2);
 				drawMap2();
-				console.log("p2, m2, down, normal");
 			} else if (map2[y2 + 1][x2] === 3) {
-				// if (map[y][x] === map[][]) {
-				// 	var p2gun = true;
-				// } else {
-				// 	console.log("p1 has gun" + p1gun);
-				// }
-				map2[y2][x2] = 0;
+				p2m2Moves();
 				map2[y2 + 1][x2] = 3;
-				$("span").remove();
-				$("br").remove();
 				playerloc2.y += 1;
 				playerloc2.x += 0;
 				y2 += 1;
-				score2 += 1;
-				$("#score2").html("Player 2 Score: " + score2);
 				drawMap2();
 				modalRun();
-				console.log("p2, m2, down, win");
 			} else if ((map2[y2 + 1][x2] === 6 || map2[y2 + 1][x2] === 5) && map2[y2 + 2][x2] === 0) {
-				// if (map[y][x] === map[][]) {
-				// 	var p2gun = true;
-				// } else {
-				// 	console.log("p1 has gun" + p1gun);
-				// }
-				map2[y2][x2] = 0;
+				p2m2Moves();
 				map2[y2 + 2][x2] = 7;
-				$("span").remove();
-				$("br").remove();
 				playerloc2.y += 2;
 				playerloc2.x += 0;
 				y2 += 2;
-				score2 += 1;
-				$("#score2").html("Player 2 Score: " + score2);
 				drawMap2();
-				console.log("p2, m2, down, jump");
 			} else {
 			}
 		}

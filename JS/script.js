@@ -15,18 +15,18 @@ document.addEventListener('DOMContentLoaded', function() {
 						[1,0,0,0,0,1,1,0,1,1,0,7,0,1,0,1,1,0,1,0,1,0,1,0,0,0,0,1,1,1,0,1,1,0,1,0,1,0,0,0,0,1,0,1,0,0,0,0,0,1],
 						[1,1,0,1,0,1,0,0,0,0,0,5,0,0,0,0,1,0,1,0,1,0,0,1,0,1,0,0,1,0,0,0,1,0,1,0,0,0,1,0,1,1,0,1,1,1,1,0,1,1],
 						[1,0,0,1,0,1,1,0,1,1,0,6,0,1,1,0,1,0,1,0,1,1,0,1,0,1,1,0,1,1,1,0,1,0,1,1,0,1,1,0,1,1,0,0,1,1,1,0,1,1],
-						[1,0,1,1,0,0,1,0,1,0,1,0,1,0,0,0,1,0,1,0,1,1,0,1,0,0,1,1,0,0,1,1,1,0,0,1,0,0,1,1,1,1,1,0,1,0,0,0,1,1],
+						[1,0,1,1,0,0,1,0,1,0,1,0,1,0,0,0,1,0,1,0,1,1,0,1,0,0,1,0,0,0,1,1,1,0,0,1,0,0,1,1,1,1,1,0,1,0,0,0,1,1],
 						[1,0,0,1,0,1,1,1,1,0,1,0,1,0,1,0,1,1,1,0,1,0,0,0,1,0,0,0,1,0,0,0,1,1,1,1,1,0,1,1,1,1,1,0,1,0,1,1,1,1],
 						[1,1,0,1,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,1,1,0,1,0,1,0,1,1,1,0,1,0,0,1,1,0,1,1,1,0,1,0,1,0,0,0,0,1],
 						[1,0,0,1,0,1,1,0,1,0,1,1,0,1,1,1,0,1,1,0,1,0,1,0,1,0,1,0,0,0,1,0,0,0,1,1,1,0,0,0,0,0,1,1,1,1,0,1,0,1],
 						[1,0,1,1,0,1,0,0,1,1,1,1,0,1,0,1,0,1,0,0,1,0,1,0,1,0,1,1,0,1,0,1,1,0,0,0,0,1,1,1,0,1,0,0,0,1,0,1,0,1],
 						[1,0,0,1,1,1,1,0,0,0,0,0,0,0,0,1,0,1,1,0,1,0,1,0,1,0,0,0,0,0,0,1,1,1,1,1,1,1,0,1,0,1,0,1,0,0,0,1,1,1],
-						[1,1,0,0,1,0,0,0,1,1,1,1,1,0,1,1,0,0,1,0,1,0,0,0,1,1,0,1,0,1,1,0,0,0,0,0,0,0,0,1,0,1,1,1,1,1,1,1,1,1],
-						[1,0,1,0,1,1,1,0,1,0,0,0,1,1,1,1,1,0,1,0,1,1,1,0,1,0,1,0,1,0,1,0,1,0,1,1,1,1,1,1,0,1,0,0,0,0,0,0,0,1],
-						[1,0,1,0,1,0,0,0,0,0,1,0,1,0,0,0,1,0,1,0,1,0,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,1,0,1,0,1,0,1,0,1],
-						[1,0,0,0,1,1,0,1,1,1,1,1,1,1,1,0,0,0,0,0,1,0,1,1,1,1,0,1,0,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,0,1],
-						[1,1,0,1,1,1,0,1,0,0,0,0,0,0,1,1,1,1,1,1,1,0,1,0,0,0,0,1,0,1,0,1,1,0,0,0,0,1,0,1,0,0,0,1,1,1,1,1,0,1],
-						[1,0,0,1,0,0,0,1,0,1,1,1,1,1,1,0,0,0,0,0,0,0,1,0,1,1,0,1,1,1,0,0,0,0,1,1,0,1,0,1,0,1,1,0,0,0,0,0,0,1],
+						[1,1,0,0,1,0,0,0,1,1,1,1,1,0,1,1,0,0,1,0,1,0,0,0,1,1,0,0,0,1,1,0,0,0,0,0,0,0,0,1,0,1,1,1,1,1,1,1,1,1],
+						[1,0,1,0,1,1,1,0,1,0,0,0,1,1,1,1,1,0,1,0,1,1,1,0,1,0,0,9,1,0,1,0,1,0,1,1,1,1,1,1,0,1,0,0,0,0,0,0,0,1],
+						[1,0,1,0,1,0,0,0,0,0,1,0,1,0,0,0,1,0,1,0,1,0,0,0,1,0,1,0,0,0,0,0,1,0,0,1,0,0,0,0,0,1,0,1,0,1,0,1,0,1],
+						[1,0,0,0,1,1,0,1,1,1,1,1,1,1,1,0,0,0,0,0,1,0,1,1,1,0,0,0,0,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,0,1],
+						[1,1,0,1,1,1,0,1,0,0,0,0,0,0,1,1,0,1,1,1,1,0,1,0,0,0,0,0,0,1,0,1,1,0,0,0,0,1,0,1,0,0,0,1,1,1,1,1,0,1],
+						[1,0,0,1,0,0,0,1,0,1,1,1,1,1,1,1,0,0,0,0,0,0,1,0,1,1,0,1,1,1,0,0,0,0,1,1,0,1,0,1,0,1,1,0,0,0,0,0,0,1],
 						[1,0,1,1,0,1,1,1,0,0,0,0,0,0,1,0,1,0,1,1,1,1,1,0,1,0,0,1,1,1,1,1,1,1,1,1,0,1,0,1,0,1,1,0,1,1,0,1,1,1],
 						[1,0,1,0,0,0,0,0,0,1,1,1,1,1,1,0,1,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,1,1,0,1,0,1],
 						[1,0,1,0,1,1,1,1,0,0,0,0,1,0,0,0,1,1,1,1,1,1,0,1,1,0,1,1,1,1,1,0,1,1,1,1,0,1,0,0,0,1,0,1,1,1,0,1,0,1],
@@ -103,14 +103,25 @@ document.addEventListener('DOMContentLoaded', function() {
 					];
 
 	var playerWin = false;					// var start = [12][12] var end = [2][47] 
-	var playerLoc = {y: 1, x: 46};			//2  //14//array's, from top to bottom
-	var playerLoc2 = {y: 12, x: 11};		//46 //11// numbers within teh sub-arrays
+	var playerLoc = {y: 22, x: 26};			//14 //11 //p1 start     //12 //11 //p2 start    //22 //26 //bomb
+	var playerLoc2 = {y: 12, x: 11};		//2 //46  //near end
 	var playerStart = map[playerLoc.y][playerLoc.x]; //used to reset board after modal
 	var playerStart2 = map[playerLoc2.y][playerLoc2.x]; //used to reset board after modal
 	var score = 0;
 	var score2 = 0;
 	var modalbox = $("#myModal"); //get the modal
 	var closeModal = $("#button"); //span that closes the modal
+	var playerPause = false;
+	var playerPause2 = false; 
+
+	var stopPlayer = function () {
+		setTimeout( function() {
+			playerPause = false }, 1000);
+		}
+	var stopPlayer2 = function () {
+		setTimeout( function() {
+			playerPause2 = false }, 1000);
+		}
 	// var p1gun = false; // var p1gun = false;
 
 	var drawMap = function () {
@@ -151,6 +162,11 @@ document.addEventListener('DOMContentLoaded', function() {
 		      	span.textContent = "..B..";
 		      	span.style.backgroundColor = "gold";
 		      	span.style.color = "gold";
+		      	span.setAttribute("class", "span");
+		      } else if (path === 9) {
+		      	span.textContent = "..B..";
+		      	span.style.backgroundColor = "grey";
+		      	span.style.color = "grey";
 		      	span.setAttribute("class", "span");
 		      } 
 		      document.getElementById("map").appendChild(span);
@@ -200,6 +216,107 @@ document.addEventListener('DOMContentLoaded', function() {
 		  })
 	}
 
+	var bomb = function() {
+		for (i = 0; i < 10; i++) {
+			for (j = 0; j < 10; j++) {
+				map[playerLoc.y][playerLoc.x + i] = 0;
+				map[playerLoc.y + i][playerLoc.x] = 0;
+				map[playerLoc.y][playerLoc.x - i] = 0;
+				map[playerLoc.y - i][playerLoc.x] = 0;
+				map[playerLoc.y + i][playerLoc.x + i] = 0;
+				map[playerLoc.y - i][playerLoc.x - i] = 0;
+				map[playerLoc.y + i][playerLoc.x - i] = 0;
+				map[playerLoc.y - i][playerLoc.x + i] = 0;
+				map[playerLoc.y + j][playerLoc.x] = 0;
+				map[playerLoc.y][playerLoc.x + j] = 0;
+				map[playerLoc.y - j][playerLoc.x] = 0;
+				map[playerLoc.y][playerLoc.x - j] = 0;
+				map[playerLoc.y + j][playerLoc.x + j] = 0;
+				map[playerLoc.y - j][playerLoc.x - j] = 0;
+				map[playerLoc.y - j][playerLoc.x + j] = 0;
+				map[playerLoc.y + j][playerLoc.x - j] = 0;
+			}
+			map[playerLoc.y + j][playerLoc.x] = 0;
+			map[playerLoc.y][playerLoc.x + j] = 0;
+			map[playerLoc.y - j][playerLoc.x] = 0;
+			map[playerLoc.y][playerLoc.x - j] = 0;
+			map[playerLoc.y + j][playerLoc.x + j] = 0;
+			map[playerLoc.y - j][playerLoc.x - j] = 0;
+			map[playerLoc.y - j][playerLoc.x + j] = 0;
+			map[playerLoc.y + j][playerLoc.x - j] = 0;
+			}
+		map[playerLoc.y][playerLoc.x] = 6;
+		console.log("bomb");
+	}
+
+	// var bomb = function() {
+	// 			map[playerLoc.y][playerLoc.x + 1] = 0;
+	// 			map[playerLoc.y][playerLoc.x - 1] = 0;
+	// 			map[playerLoc.y + 1][playerLoc.x] = 0;
+	// 			map[playerLoc.y - 1][playerLoc.x] = 0;
+	// 			map[playerLoc.y][playerLoc.x + 2] = 0;
+	// 			map[playerLoc.y][playerLoc.x - 2] = 0;
+	// 			map[playerLoc.y + 2][playerLoc.x] = 0;
+	// 			map[playerLoc.y - 2][playerLoc.x] = 0;
+	// 			map[playerLoc.y][playerLoc.x + 3] = 0;
+	// 			map[playerLoc.y][playerLoc.x - 3] = 0;
+	// 			map[playerLoc.y + 3][playerLoc.x] = 0;
+	// 			map[playerLoc.y - 3][playerLoc.x] = 0;
+	// 			map[playerLoc.y][playerLoc.x + 4] = 0;
+	// 			map[playerLoc.y][playerLoc.x - 4] = 0;
+	// 			map[playerLoc.y + 4][playerLoc.x] = 0;
+	// 			map[playerLoc.y - 4][playerLoc.x] = 0;
+	// 			map[playerLoc.y - 1][playerLoc.x + 1] = 0;
+	// 	map[playerLoc.y + 1][playerLoc.x - 1] = 0;
+	// 	map[playerLoc.y - 1][playerLoc.x -	1] = 0;
+	// 	map[playerLoc.y + 1][playerLoc.x + 1] = 0;
+	// 	map[playerLoc.y][playerLoc.x + 2] = 0;
+	// 	map[playerLoc.y][playerLoc.x - 2] = 0;
+	// 	map[playerLoc.y + 2][playerLoc.x] = 0;
+	// 	map[playerLoc.y - 2][playerLoc.x] = 0;
+	// 	map[playerLoc.y][playerLoc.x + 3] = 0;
+	// 	map[playerLoc.y][playerLoc.x - 3] = 0;
+	// 	map[playerLoc.y + 3][playerLoc.x] = 0;
+	// 	map[playerLoc.y - 3][playerLoc.x] = 0;
+	// 	map[playerLoc.y][playerLoc.x + 4] = 0;
+	// 	map[playerLoc.y][playerLoc.x - 4] = 0;
+	// 	map[playerLoc.y + 4][playerLoc.x] = 0;
+	// 	map[playerLoc.y - 4][playerLoc.x] = 0;
+	// 	map[playerLoc.y][playerLoc.x] = 0;
+	// 	map[playerLoc.y][playerLoc.x] = 0;
+	// 	map[playerLoc.y][playerLoc.x] = 0;
+	// 	map[playerLoc.y][playerLoc.x] = 0;
+	// 	map[playerLoc.y][playerLoc.x] = 0;
+	// 	map[playerLoc.y][playerLoc.x] = 0;
+	// 	map[playerLoc.y][playerLoc.x] = 0;
+	// 	map[playerLoc.y][playerLoc.x] = 0;
+	// 	map[playerLoc.y][playerLoc.x] = 0;
+	// 	map[playerLoc.y][playerLoc.x] = 0;
+	// 	map[playerLoc.y][playerLoc.x] = 0;
+	// 	map[playerLoc.y][playerLoc.x] = 0;
+	// 	map[playerLoc.y][playerLoc.x] = 0;
+	// 	map[playerLoc.y][playerLoc.x] = 0;
+	// 	map[playerLoc.y][playerLoc.x] = 0;
+	// 	map[playerLoc.y][playerLoc.x] = 0;
+	// 	map[playerLoc.y][playerLoc.x] = 0;
+	// 	map[playerLoc.y][playerLoc.x] = 0;
+	// 	map[playerLoc.y][playerLoc.x] = 0;
+	// 	map[playerLoc.y][playerLoc.x] = 0;
+	// 	map[playerLoc.y][playerLoc.x] = 0;
+	// 	map[playerLoc.y][playerLoc.x] = 0;
+	// 	map[playerLoc.y][playerLoc.x] = 0;
+	// 	map[playerLoc.y][playerLoc.x] = 0;
+	// 	map[playerLoc.y][playerLoc.x] = 0;
+	// 	map[playerLoc.y][playerLoc.x] = 0;
+	// 	map[playerLoc.y][playerLoc.x] = 0;
+	// 	map[playerLoc.y][playerLoc.x] = 0;
+	// 	map[playerLoc.y][playerLoc.x] = 0;
+	// 	map[playerLoc.y][playerLoc.x] = 0;
+	// 	map[playerLoc.y][playerLoc.x] = 0;
+	// 	map[playerLoc.y][playerLoc.x] = 0;
+	// 	console.log("bomb");
+	// }
+
 	var p1m1Moves = function () {
 		map[playerLoc.y][playerLoc.x] = 0; // changes old location color
 		score += 1;
@@ -243,12 +360,19 @@ document.addEventListener('DOMContentLoaded', function() {
 					playerLoc.x += 1;
 					modalRun();
 				} else if ((map[playerLoc.y][playerLoc.x + 1] === 7 || map[playerLoc.y][playerLoc.x + 1] === 5) && map[playerLoc.y][playerLoc.x + 2] === 0) { //jump player
+					playerPause2 = true;
 					p1m1Moves();
 					map[playerLoc.y][playerLoc.x + 2] = 6; // changes new location color
 					playerLoc.x += 2;
 					drawMap();
+				} else if (map[playerLoc.y][playerLoc.x + 1] === 9) { //bomb
+					p1m1Moves();
+					map[playerLoc.y][playerLoc.x + 1] = 6; // changes new location color
+					playerLoc.x += 1;
+					bomb();
+					drawMap();
 				}
-			} else {  //map2 //map
+			} else {  //map2
 				if (map2[playerLoc.y][playerLoc.x + 1] === 0) { //normal move
 					p1m2Moves();
 					map2[playerLoc.y][playerLoc.x + 1] = 6; // changes new location color
@@ -260,6 +384,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					playerLoc.x += 1;
 					modalRun();
 				} else if ((map2[playerLoc.y][playerLoc.x + 1] === 7 || map2[playerLoc.y][playerLoc.x + 1] === 5) && map2[playerLoc.y][playerLoc.x + 2] === 0) { //jump player
+					playerPause2 = true;
 					p1m2Moves();
 					map2[playerLoc.y][playerLoc.x + 2] = 6; // changes new location color
 					playerLoc.x += 2;
@@ -279,6 +404,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					playerLoc.x -= 1;
 					modalRun();
 				} else if ((map[playerLoc.y][playerLoc.x - 1] === 7 || map[playerLoc.y][playerLoc.x - 1] === 5) && map[playerLoc.y][playerLoc.x - 2] === 0) { //jump player
+					playerPause2 = true;
 					p1m1Moves();
 					map[playerLoc.y][playerLoc.x - 2] = 6; // changes new location color
 					playerLoc.x -= 2;
@@ -296,6 +422,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					playerLoc.x -= 1;
 					modalRun();
 				} else if ((map2[playerLoc.y][playerLoc.x - 1] === 7 || map2[playerLoc.y][playerLoc.x - 1] === 5) && map2[playerLoc.y][playerLoc.x - 2] === 0) { //jump player
+					playerPause2 = true;
 					p1m2Moves();
 					map2[playerLoc.y][playerLoc.x - 2] = 6; // changes new location color
 					playerLoc.x -= 2;
@@ -315,6 +442,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					playerLoc.y -= 1;
 					modalRun();
 				} else if ((map[playerLoc.y - 1][playerLoc.x] === 7 || map[playerLoc.y - 1][playerLoc.x] === 5) && map[playerLoc.y - 2][playerLoc.x] === 0) { //jump player
+					playerPause2 = true;
 					p1m1Moves();
 					map[playerLoc.y - 2][playerLoc.x] = 6; // changes new location color
 					playerLoc.y -= 2;
@@ -332,6 +460,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					playerLoc.y -= 1;
 					modalRun();
 				} else if ((map2[playerLoc.y - 1][playerLoc.x] === 7 || map2[playerLoc.y - 1][playerLoc.x] === 5) && map2[playerLoc.y - 2][playerLoc.x] === 0) { //jump player
+					playerPause2 = true;
 					p1m2Moves();
 					map2[playerLoc.y - 2][playerLoc.x] = 6; // changes new location color
 					playerLoc.y -= 2;
@@ -351,6 +480,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					playerLoc.y += 1;
 					modalRun();
 				} else if ((map[playerLoc.y + 1][playerLoc.x] === 7 || map[playerLoc.y + 1][playerLoc.x] === 5) && map[playerLoc.y + 2][playerLoc.x] === 0) { //jump player
+					playerPause2 = true;
 					p1m1Moves();
 					map[playerLoc.y + 2][playerLoc.x] = 6; // changes new location color
 					playerLoc.y += 2;
@@ -368,6 +498,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					playerLoc.y += 1;
 					modalRun();
 				} else if ((map2[playerLoc.y + 1][playerLoc.x] === 7 || map2[playerLoc.y + 1][playerLoc.x] === 5) && map2[playerLoc.y + 2][playerLoc.x] === 0) { //jump player
+					playerPause2 = true;
 					p1m2Moves();
 					map2[playerLoc.y + 2][playerLoc.x] = 6; // changes new location color
 					playerLoc.y += 2;
@@ -387,6 +518,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					playerLoc2.x += 1;
 					modalRun2();
 				} else if ((map[playerLoc2.y][playerLoc2.x + 1] === 6 || map[playerLoc2.y][playerLoc2.x + 1] === 5) && map[playerLoc2.y][playerLoc2.x + 2] === 0) { //jump player
+					playerPause = true;
 					p2m1Moves();
 					map[playerLoc2.y][playerLoc2.x + 2] = 7; // changes new location color
 					playerLoc2.x += 2;
@@ -404,6 +536,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					playerLoc2.x += 1;
 					modalRun2();
 				} else if ((map2[playerLoc2.y][playerLoc2.x + 1] === 6 || map2[playerLoc2.y][playerLoc2.x + 1] === 5) && map2[playerLoc2.y][playerLoc2.x + 2] === 0) { //jump player
+					playerPause = true;
 					p2m2Moves();
 					map2[playerLoc2.y][playerLoc2.x + 2] = 7; // changes new location color
 					playerLoc2.x += 2;
@@ -423,6 +556,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					playerLoc2.x -= 1;
 					modalRun2();
 				} else if ((map[playerLoc2.y][playerLoc2.x - 1] === 6 || map[playerLoc2.y][playerLoc2.x - 1] === 5) && map[playerLoc2.y][playerLoc2.x - 2] === 0) { //jump player
+					playerPause = true;
 					p2m1Moves();
 					map[playerLoc2.y][playerLoc2.x - 2] = 7; // changes new location color
 					playerLoc2.x -= 2;
@@ -440,6 +574,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					playerLoc2.x -= 1;
 					modalRun2();
 				} else if ((map2[playerLoc2.y][playerLoc2.x - 1] === 6 || map2[playerLoc2.y][playerLoc2.x - 1] === 5) && map2[playerLoc2.y][playerLoc2.x - 2] === 0) { //jump player
+					playerPause = true;
 					p2m2Moves();
 					map2[playerLoc2.y][playerLoc2.x - 2] = 7; // changes new location color
 					playerLoc2.x -= 2;
@@ -459,6 +594,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					playerLoc2.y -= 1;
 					modalRun2();
 				} else if ((map[playerLoc2.y - 1][playerLoc2.x] === 6 || map[playerLoc2.y - 1][playerLoc2.x] === 5) && map[playerLoc2.y - 2][playerLoc2.x] === 0) { //jump player
+					playerPause = true;
 					p2m1Moves();
 					map[playerLoc2.y - 2][playerLoc2.x] = 7; // changes new location color
 					playerLoc2.y -= 2;
@@ -476,6 +612,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					playerLoc2.y -= 1;
 					modalRun2();
 				} else if ((map2[playerLoc2.y - 1][playerLoc2.x] === 6 || map2[playerLoc2.y - 1][playerLoc2.x] === 5) && map2[playerLoc2.y - 2][playerLoc2.x] === 0) { //jump player
+					playerPause = true;
 					p2m2Moves();
 					map2[playerLoc2.y - 2][playerLoc2.x] = 7; // changes new location color
 					playerLoc2.y -= 2;
@@ -495,6 +632,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					playerLoc2.y += 1;
 					modalRun2();
 				} else if ((map[playerLoc2.y + 1][playerLoc2.x] === 6 || map[playerLoc2.y + 1][playerLoc2.x] === 5) && map[playerLoc2.y + 2][playerLoc2.x] === 0) { //jump player
+					playerPause = true;
 					p2m1Moves();
 					map[playerLoc2.y + 2][playerLoc2.x] = 7; // changes new location color
 					playerLoc2.y += 2;
@@ -512,6 +650,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					playerLoc2.y += 1;
 					modalRun2();
 				} else if ((map2[playerLoc2.y + 1][playerLoc2.x] === 6 || map2[playerLoc2.y + 1][playerLoc2.x] === 5) && map2[playerLoc2.y + 2][playerLoc2.x] === 0) { //jump player
+					playerPause = true;
 					p2m2Moves();
 					map2[playerLoc2.y + 2][playerLoc2.x] = 7; // changes new location color
 					playerLoc2.y += 2;
@@ -523,21 +662,53 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	var pressKey = function(e) {
 		if (e.keyCode === 39 || e.keyCode === "39") { //MOVE RIGHT
-			locChange(playerLoc, "right");
+			if (playerPause === false) {
+				locChange(playerLoc, "right");
+			} else {
+					stopPlayer();
+				}
 		} else if (e.keyCode === 37 || e.keyCode === "37") { //MOVE LEFT
-			locChange(playerLoc, "left");
+			if (playerPause === false) {
+				locChange(playerLoc, "left");
+			} else {
+					stopPlayer();
+				}
 		} else if (e.keyCode === 38 || e.keyCode === "38") { //MOVE UP
-			locChange(playerLoc, "up");
+			if (playerPause === false) {
+				locChange(playerLoc, "up");
+			} else {
+					stopPlayer();
+				}
 		} else if (e.keyCode === 40 || e.keyCode === "40") { //MOVE DOWN
-			locChange(playerLoc, "down");
+			if (playerPause === false) {
+				locChange(playerLoc, "down");
+			} else {
+					stopPlayer();
+				}
 		} else if (e.keyCode === 68 || e.keyCode === "68") { //p2 MOVE RIGHT
-			locChange(playerLoc2, "d");
+			if (playerPause2 === false) {
+				locChange(playerLoc2, "d");
+			} else {
+					stopPlayer2();
+				}
 		} else if (e.keyCode === 65 || e.keyCode === "65") { //p2 MOVE LEFT
-			locChange(playerLoc2, "a");
+			if (playerPause2 === false) {
+				locChange(playerLoc2, "a");
+			} else {
+					stopPlayer2();
+				}
 		} else if (e.keyCode === 87 || e.keyCode === "87") { //p2 MOVE UP
-			locChange(playerLoc2, "w");
+			if (playerPause2 === false) {
+				locChange(playerLoc2, "w");
+			} else {
+					stopPlayer2();
+				}
 		} else if (e.keyCode === 83 || e.keyCode === "83") { //p2 MOVE DOWN
-			locChange(playerLoc2, "s");
+			if (playerPause2 === false) {
+				locChange(playerLoc2, "s");
+			} else {
+					stopPlayer2();
+				}
 		}
 	}
 

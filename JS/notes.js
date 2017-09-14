@@ -71,3 +71,9 @@ var p2m2Moves = function () {
 	// } else {
 	// }
 }
+
+
+
+
+DISTANCE FORMULA
+

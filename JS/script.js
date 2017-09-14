@@ -102,23 +102,20 @@ var map2 =  [
 					[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
 				];
 // 	// var start = [12][12] var end = [2][47] 
-var player;
+var player = 6;				//2  //14//array's, from top to bottom
+var player2 = 7;			//46 //11// numbers within teh sub-arrays
 var playerWin = false;
-var y = 14; //2  //14//array's, from top to bottom
-var x = 11; //46 //11// numbers within teh sub-arrays
-var y2 = 12;
-var x2 = 11;
-var playerStart = map[y][x];
-var playerStart2 = map[y2][x2];
+var playerLoc = {y: 2, x: 46}
+var playerLoc2 = {y: 2, x: 48}
+var playerStart = map[playerLoc.y][playerLoc.x]; //used to reset board after modal
+var playerStart2 = map[playerLoc2.y][playerLoc2.x]; //used to reset board after modal
 var finishLine = {y: 2, x: 47}
-var playerloc = {y: 14, x: 11}
-var playerloc2 = {y: 12, x: 11}
 var score = 0;
 var score2 = 0;
 var modalbox = $("#myModal"); //get the modal
 var closeModal = $("#button"); //span that closes the modal
-var p1gun = false;
-var p1gun = false;
+// var p1gun = false;
+// var p1gun = false;
 
 var drawMap = function () {
 	map.forEach(function(arr, index) { 
@@ -164,10 +161,10 @@ var drawMap = function () {
 	    });
 	    document.getElementById("map").appendChild(document.createElement("br"))
 	  })
+
 }
 drawMap();
 var drawMap2 = function () {
-	// $("span").remove();
 	map2.forEach(function(arr, index) { 
 	    arr.forEach(function(path, i) {
 	      var span = document.createElement("span");
@@ -209,7 +206,7 @@ var drawMap2 = function () {
 }
 
 var p1m1Moves = function () {
-	map[y][x] = 0; // changes old location to pathway
+	map[playerLoc.y][playerLoc.x] = 0; // changes old location color
 	score += 1;
 	$("span").remove(); //remove map
 	$("br").remove(); //remove map
@@ -217,7 +214,7 @@ var p1m1Moves = function () {
 }
 
 var p1m2Moves = function () {
-	map2[y][x] = 0; // changes old location to pathway
+	map2[playerLoc.y][playerLoc.x] = 0; // changes old location color
 	score += 1;
 	$("span").remove(); //remove map
 	$("br").remove(); //remove map
@@ -225,460 +222,567 @@ var p1m2Moves = function () {
 }
 
 var p2m1Moves = function () {
-	map[y2][x2] = 0; // changes old location to pathway
+	map[playerLoc2.y][playerLoc2.x] = 0; // changes old location color
 	score2 += 1;
 	$("span").remove(); //remove map
 	$("br").remove(); //remove map
-	$("#score").html("Player Two Score: " + score2); //display score
+	$("#score2").html("Player Two Score: " + score2); //display score
 }
 
 var p2m2Moves = function () {
-	map2[y2][x2] = 0; // changes old location to pathway
+	map2[playerLoc2.y][playerLoc2.x] = 0; // changes old location color
 	score2 += 1;
 	$("span").remove(); //remove map
 	$("br").remove(); //remove map
 	$("#score").html("Player Two Score: " + score2); //display score
 }
 
-var pressKey = function (e) {
-	if (playerWin === false || playerWin === "false") {
-		if (e.keyCode === 39 || e.keyCode === "39") { //MOVE RIGHT
-			if (map[y][x + 1] === 0) { //normal move
+var locChange = function (playerLoc, direction) { // may need to remove "var player" form script.js
+	if (direction === "right") {
+		if (playerWin === false) {
+			if (map[playerLoc.y][playerLoc.x + 1] === 0) { //normal move
 				p1m1Moves();
-				map[y][x + 1] = 6; // changes new location
-				playerloc.y += 0; // loc tracker change
-				playerloc.x += 1; // loc tracker change
-				x += 1; // location change --- necessary??
-				drawMap(); //redraw map
-			} else if (map[y][x + 1] === 3) { //winning square
-				p1m1Moves();
-				map[y][x + 1] = 3;
-				playerloc.y += 0;
-				playerloc.x += 1;
-				x += 1;
+				map[playerLoc.y][playerLoc.x + 1] = 6; // changes new location color
+				playerLoc.x += 1;
 				drawMap();
+			} else if (map[playerLoc.y][playerLoc.x + 1] === 3) { //win move
+				p1m1Moves();
+				map[playerLoc.y][playerLoc.x + 1] = 3; // changes new location color
+				playerLoc.x += 1;
 				modalRun();
-			} else if ((map[y][x + 1] === 7 || map[y][x + 1] === 5) && map[y][x + 2] === 0) { //jump player
-				p1m1Moves();
-				map[y][x + 2] = 6;
-				playerloc.y += 0;
-				playerloc.x += 2;
-				x += 2;
-				drawMap();
-			} else {
+			}
+		} else {
+			if (map2[playerLoc.y][playerLoc.x + 1] === 0) { //normal move
+				p1m2Moves();
+				map2[playerLoc.y][playerLoc.x + 1] = 6; // changes new location color
+				playerLoc.x += 1;
+				drawMap2();
+			} else if (map2[playerLoc.y][playerLoc.x + 1] === 3) { //win move
+				p1m2Moves();
+				map2[playerLoc.y][playerLoc.x + 1] = 3; // changes new location color
+				playerLoc.x += 1;
+				modalRun();
 			}
 		}
-		if (e.keyCode === 37 || e.keyCode === "37") { //MOVE LEFT
-			if (map[y][x - 1] === 0) {
+	} else if (direction === "left") {
+		if (playerWin === false) {
+			if (map[playerLoc.y][playerLoc.x - 1] === 0) {
 				p1m1Moves();
-				map[y][x] = 0;
-				map[y][x - 1] = 6;
-				playerloc.y += 0;
-				playerloc.x -= 1;
-				x -= 1;
+				map[playerLoc.y][playerLoc.x - 1] = 6; // changes new location color
+				playerLoc.x -= 1;
 				drawMap();
-			} else if (map[y][x - 1] === 3) {
+			} else if (map[playerLoc.y][playerLoc.x - 1] === 3) { //win move
 				p1m1Moves();
-				map[y][x] = 0;
-				map[y][x - 1] = 3;
-				playerloc.y += 0;
-				playerloc.x -= 1;
-				x -= 1;
-				drawMap();
+				map[playerLoc.y][playerLoc.x - 1] = 3; // changes new location color
+				playerLoc.x -= 1;
 				modalRun();
-			} else if ((map[y][x - 1] === 7 || map[y][x - 1] === 5) && map[y][x - 2] === 0) {
-				p1m1Moves();
-				map[y][x] = 0;
-				map[y][x - 2] = 6;
-				playerloc.y += 0;
-				playerloc.x -= 2;
-				x -= 2;
-				drawMap();
-			} else {
+			}	
+		} else {
+			if (map2[playerLoc.y][playerLoc.x - 1] === 0) {
+				p1m2Moves();
+				map2[playerLoc.y][playerLoc.x - 1] = 6; // changes new location color
+				playerLoc.x -= 1;
+				drawMap2();
+			} else if (map2[playerLoc.y][playerLoc.x - 1] === 3) { //win move
+				p1m2Moves();
+				map2[playerLoc.y][playerLoc.x - 1] = 3; // changes new location color
+				playerLoc.x -= 1;
+				modalRun();
 			}
 		}
-		if (e.keyCode === 38 || e.keyCode === "38") { //MOVE UP
-			if (map[y - 1][x] === 0) {
+	} else if (direction === "up") {
+		if (playerWin === false) {
+			if (map[playerLoc.y - 1][playerLoc.x] === 0) {
 				p1m1Moves();
-				map[y][x] = 0;
-				map[y - 1][x] = 6;
-				playerloc.y -= 1;
-				playerloc.x += 0;
-				y -= 1;
+				map[playerLoc.y - 1][playerLoc.x] = 6; // changes new location color
+				playerLoc.y -= 1;
 				drawMap();
-			} else if (map[y - 1][x] === 3) {
+			} else if (map[playerLoc.y - 1][playerLoc.x] === 3) { //win move
 				p1m1Moves();
-				map[y][x] = 0;
-				map[y - 1][x] = 3;
-				playerloc.y -= 1;
-				playerloc.x += 0;
-				y -= 1;
-				$("#score").html("Player One Score: " + score);
-				drawMap();
+				map[playerLoc.y - 1][playerLoc.x] = 3; // changes new location color
+				playerLoc.y -= 1;
 				modalRun();
-			} else if ((map[y - 1][x] === 7 || map[y - 1][x] === 5) && map[y - 2][x] === 0) {
-				p1m1Moves();
-				map[y][x] = 0;
-				map[y - 2][x] = 6;
-				playerloc.y -= 2;
-				playerloc.x += 0;
-				y -= 2;
-				drawMap();
-			} else {
+			}
+		} else {
+			if (map2[playerLoc.y - 1][playerLoc.x] === 0) {
+				p1m2Moves();
+				map2[playerLoc.y - 1][playerLoc.x] = 6; // changes new location color
+				playerLoc.y -= 1;
+				drawMap2();
+			} else if (map2[playerLoc.y - 1][playerLoc.x] === 3) { //win move
+				p1m2Moves();
+				map2[playerLoc.y - 1][playerLoc.x] = 3; // changes new location color
+				playerLoc.y -= 1;
+				modalRun();
 			}
 		}
-		if (e.keyCode === 40 || e.keyCode === "40") {//MOVE DOWN
-			if (map[y + 1][x] === 0) {
+	} else if (direction === "down") {
+		if (playerWin === false) {
+			if (map[playerLoc.y + 1][playerLoc.x] === 0) {
 				p1m1Moves();
-				map[y][x] = 0;
-				map[y + 1][x] = 6;
-				playerloc.y += 1;
-				playerloc.x += 0;
-				y += 1;
+				map[playerLoc.y + 1][playerLoc.x] = 6; // changes new location color
+				playerLoc.y += 1;
 				drawMap();
-			} else if (map[y + 1][x] === 3) {
+			} else if (map[playerLoc.y + 1][playerLoc.x] === 3) { //win move
 				p1m1Moves();
-				map[y][x] = 0;
-				map[y + 1][x] = 3;
-				playerloc.y += 1;
-				playerloc.x += 0;
-				y += 1;
+				map[playerLoc.y + 1][playerLoc.x] = 3; // changes new location color
+				playerLoc.y += 1;
+				modalRun();
+			}
+		} else {
+			if (map2[playerLoc.y + 1][playerLoc.x] === 0) {
+				p1m2Moves();
+				map2[playerLoc.y + 1][playerLoc.x] = 6; // changes new location color
+				playerLoc.y += 1;
+				drawMap2();
+			} else if (map2[playerLoc.y + 1][playerLoc.x] === 3) { //win move
+				p1m2Moves();
+				map2[playerLoc.y + 1][playerLoc.x] = 3; // changes new location color
+				playerLoc.y += 1;
+				modalRun();
+			}
+		}
+
+
+	} if (direction === "d") { //RIGHT
+		if (playerWin === false) {
+			if (map[playerLoc2.y][playerLoc2.x + 1] === 0) { //normal move
+				p2m1Moves();
+				map[playerLoc2.y][playerLoc2.x + 1] = 7; // changes new location color
+				playerLoc2.x += 1;
 				drawMap();
-				modalRun();
-			} else if ((map[y + 1][x] === 7 || map[y + 1][x] === 5) && map[y + 2][x] === 0) {
-				p1m1Moves();
-				map[y][x] = 0;
-				map[y + 2][x] = 6;
-				playerloc.y += 2;
-				playerloc.x += 0;
-				y += 2;
+			} else if (map[playerLoc2.y][playerLoc2.x + 1] === 3) { //win move
+				p2m1Moves();
+				map[playerLoc2.y][playerLoc2.x + 1] = 3; // changes new location color
+				playerLoc2.x += 1;
+				modalRun2();
+			}
+		} else {
+			if (map2[playerLoc2.y][playerLoc2.x + 1] === 0) { //normal move
+				p2m2Moves();
+				map2[playerLoc2.y][playerLoc2.x + 1] = 7; // changes new location color
+				playerLoc2.x += 1;
+				drawMap2();
+			} else if (map2[playerLoc2.y][playerLoc2.x + 1] === 3) { //win move
+				p2m2Moves();
+				map2[playerLoc2.y][playerLoc2.x + 1] = 3; // changes new location color
+				playerLoc2.x += 1;
+				modalRun2();
+			}
+		}
+	} else if (direction === "a") { //LEFT
+		if (playerWin === false) {
+			if (map[playerLoc2.y][playerLoc2.x - 1] === 0) {
+				p2m1Moves();
+				map[playerLoc2.y][playerLoc2.x - 1] = 7; // changes new location color
+				playerLoc2.x -= 1;
 				drawMap();
-			} else {
+			} else if (map[playerLoc2.y][playerLoc2.x - 1] === 3) { //win move
+				p2m1Moves();
+				map[playerLoc2.y][playerLoc2.x - 1] = 3; // changes new location color
+				playerLoc2.x -= 1;
+				modalRun2();
+			}
+		} else {
+			if (map2[playerLoc2.y][playerLoc2.x - 1] === 0) {
+				p2m2Moves();
+				map2[playerLoc2.y][playerLoc2.x - 1] = 7; // changes new location color
+				playerLoc2.x -= 1;
+				drawMap2();
+			} else if (map2[playerLoc2.y][playerLoc2.x - 1] === 3) { //win move
+				p2m2Moves();
+				map2[playerLoc2.y][playerLoc2.x - 1] = 3; // changes new location color
+				playerLoc2.x -= 1;
+				modalRun2();
 			}
 		}
-	} else {
-	// MAP NUMBER 2
-	if (e.keyCode === 39 || e.keyCode === "39") { //MOVE RIGHT
-		if (map2[y][x + 1] === 0) { //normal move
-				p1m2Moves();
-				map2[y][x + 1] = 6;
-				playerloc.y += 0;
-				playerloc.x += 1;
-				x += 1;
+	} else if (direction === "w") { //UP
+		if (playerWin === false) {
+			if (map[playerLoc2.y - 1][playerLoc2.x] === 0) {
+				p2m1Moves();
+				map[playerLoc2.y - 1][playerLoc2.x] = 7; // changes new location color
+				playerLoc2.y -= 1;
+				drawMap();
+			} else if (map[playerLoc2.y - 1][playerLoc2.x] === 3) { //win move
+				p2m1Moves();
+				map[playerLoc2.y - 1][playerLoc2.x] = 3; // changes new location color
+				playerLoc2.x -= 1;
+				modalRun2();
+			}
+		} else {
+			if (map2[playerLoc2.y - 1][playerLoc2.x] === 0) {
+				p2m2Moves();
+				map2[playerLoc2.y - 1][playerLoc2.x] = 7; // changes new location color
+				playerLoc2.y -= 1;
 				drawMap2();
-			} else if (map2[y][x + 1] === 3) { //winning square
-				p1m2Moves();
-				map2[y][x + 1] = 3;
-				playerloc.y += 0;
-				playerloc.x += 1;
-				x += 1;
-				drawMap2();
-				modalRun();
-			} else if ((map2[y][x + 1] === 7 || map2[y][x + 1] === 5) && map2[y][x + 2] === 0) { //jump player
-				p1m2Moves();
-				map2[y][x + 2] = 6;
-				playerloc.y += 0;
-				playerloc.x += 2;
-				x += 2;
-				drawMap2();
-			} else {
+			} else if (map2[playerLoc2.y - 1][playerLoc2.x] === 3) { //win move
+				p2m2Moves();
+				map2[playerLoc2.y - 1][playerLoc2.x] = 3; // changes new location color
+				playerLoc2.x -= 1;
+				modalRun2();
 			}
 		}
-		if (e.keyCode === 37 || e.keyCode === "37") { //MOVE LEFT
-			if (map2[y][x - 1] === 0) {
-				p1m2Moves();
-				map2[y][x - 1] = 6;
-				playerloc.y += 0;
-				playerloc.x -= 1;
-				x -= 1;
-				drawMap2();
-			} else if (map2[y][x - 1] === 3) {
-				p1m2Moves();
-				map2[y][x - 1] = 3;
-				playerloc.y += 0;
-				playerloc.x -= 1;
-				x -= 1;
-				drawMap2();
-				modalRun();
-			} else if ((map2[y][x - 1] === 7 || map2[y][x - 1] === 5) && map2[y][x - 2] === 0) {
-				p1m2Moves();
-				map2[y][x - 2] = 6;
-				playerloc.y += 0;
-				playerloc.x -= 2;
-				x -= 2;
-				drawMap2();
-			} else {
+	} else if (direction === "s") { //DOWN
+		if (playerWin === false) {
+			if (map[playerLoc2.y + 1][playerLoc2.x] === 0) {
+				p2m1Moves();
+				map[playerLoc2.y + 1][playerLoc2.x] = 7; // changes new location color
+				playerLoc2.y += 1;
+				drawMap();
+			} else if (map[playerLoc2.y + 1][playerLoc2.x] === 3) { //win move
+				p2m1Moves();
+				map[playerLoc2.y + 1][playerLoc2.x] = 3; // changes new location color
+				playerLoc2.x += 1;
+				modalRun2();
 			}
-		}
-		if (e.keyCode === 38 || e.keyCode === "38") { //MOVE UP
-			if (map2[y - 1][x] === 0) {
-				p1m2Moves();
-				map2[y - 1][x] = 6;
-				playerloc.y -= 1;
-				playerloc.x += 0;
-				y -= 1;
+		} else {
+			if (map2[playerLoc2.y + 1][playerLoc2.x] === 0) {
+				p2m2Moves();
+				map2[playerLoc2.y + 1][playerLoc2.x] = 7; // changes new location color
+				playerLoc2.y += 1;
 				drawMap2();
-			} else if (map2[y - 1][x] === 3) {
-				p1m2Moves();
-				map2[y - 1][x] = 3;
-				playerloc.y -= 1;
-				playerloc.x += 0;
-				y -= 1;
-				drawMap2();
-				modalRun();
-			} else if ((map2[y - 1][x] === 7 || map2[y - 1][x] === 5) && map2[y - 2][x] === 0) {
-				p1m2Moves();
-				map2[y - 2][x] = 6;
-				playerloc.y -= 2;
-				playerloc.x += 0;
-				y -= 2;
-				drawMap2();
-			} else {
-			}
-		}
-		if (e.keyCode === 40 || e.keyCode === "40") {//MOVE DOWN
-			if (map2[y + 1][x] === 0) {
-				p1m2Moves();
-				map2[y + 1][x] = 6;
-				playerloc.y += 1;
-				playerloc.x += 0;
-				y += 1;
-				drawMap2();
-			} else if (map2[y + 1][x] === 3) {
-				p1m2Moves();
-				map2[y + 1][x] = 3;
-				playerloc.y += 1;
-				playerloc.x += 0;
-				y += 1;
-				drawMap2();
-				modalRun();
-			} else if ((map2[y + 1][x] === 7 || map2[y + 1][x] === 5) && map2[y + 2][x] === 0) {
-				p1m2Moves();
-				map2[y + 2][x] = 6;
-				playerloc.y += 2;
-				playerloc.x += 0;
-				y += 2;
-				drawMap2();
-			} else {
+			} else if (map2[playerLoc2.y + 1][playerLoc2.x] === 3) { //win move
+				p2m2Moves();
+				map2[playerLoc2.y + 1][playerLoc2.x] = 3; // changes new location color
+				playerLoc2.x += 1;
+				modalRun2();
 			}
 		}
 	}
 }
 
-var pressKey2 = function (e) {  //PLAYER TWO
-	if (playerWin === false || playerWin === "false") {	
-		if (e.keyCode === 68 || e.keyCode === "68") { //MOVE RIGHT
-			if (map[y2][x2 + 1] === 0) {
-				p2m1Moves();
-				map[y2][x2 + 1] = 7;
-				playerloc2.y += 0;
-				playerloc2.x += 1;
-				x2 += 1;
-				drawMap();
-			} else if (map[y2][x2 + 1] === 3) {
-				p2m1Moves();
-				map[y2][x2 + 1] = 3;
-				playerloc2.y += 0;
-				playerloc2.x += 1;
-				x2 += 1;
-				drawMap();
-				modalRun2();
-			} else if ((map[y2][x2 + 1] === 6 || map[y2][x2 + 1] === 5) && map[y2][x2 + 2] === 0) {
-				p2m1Moves();
-				map[y2][x2 + 2] = 7;
-				playerloc2.y += 0;
-				playerloc2.x += 2;
-				x2 += 2;
-				drawMap();
-			} else {
-			}
-		}
-		if (e.keyCode === 65 || e.keyCode === "65") { //MOVE LEFT
-			if (map[y2][x2 - 1] === 0) {
-				p2m1Moves();
-				map[y2][x2 - 1] = 7;
-				playerloc2.y += 0;
-				playerloc2.x -= 1;
-				x2 -= 1;
-				drawMap();
-			} else if (map[y2][x2 - 1] === 3) {
-				p2m1Moves();
-				map[y2][x2 - 1] = 3;
-				playerloc2.y += 0;
-				playerloc2.x -= 1;
-				x2 -= 1;
-				drawMap();
-				modalRun2();
-			} else if ((map[y2][x2 - 1] === 6 || map[y2][x2 - 1] === 5) && map[y2][x2 - 2] === 0) {
-				p2m1Moves();
-				map[y2][x2 - 2] = 7;
-				playerloc2.y += 0;
-				playerloc2.x -= 2;
-				x2 -= 2;
-				drawMap();
-			} else {
-			}
-		}
-		if (e.keyCode === 87 || e.keyCode === "87") { //MOVE UP
-			if (map[y2 - 1][x2] === 0) {
-				p2m1Moves();
-				map[y2 - 1][x2] = 7;
-				playerloc2.y -= 1;
-				playerloc2.x += 0;
-				y2 -= 1;
-				drawMap();
-			} else if (map[y2 - 1][x2] === 3) {
-				p2m1Moves();
-				map[y2 - 1][x2] = 3;
-				playerloc2.y -= 1;
-				playerloc2.x += 0;
-				y2 -= 1;
-				drawMap();
-				modalRun2();
-			} else if ((map[y2 - 1][x2] === 6 || map[y2 - 1][x2] === 5) && map[y2 - 2][x2] === 0) {
-				p2m1Moves();
-				map[y2 - 2][x2] = 7;
-				playerloc2.y -= 2;
-				playerloc2.x += 0;
-				y2 -= 2;
-				drawMap();
-			} else {
-			}
-		}
-		if (e.keyCode === 83 || e.keyCode === "83") {//MOVE DOWN
-			if (map[y2 + 1][x2] === 0) {
-				p2m1Moves();
-				map[y2 + 1][x2] = 7;
-				playerloc2.y += 1;
-				playerloc2.x += 0;
-				y2 += 1;
-				drawMap();
-			} else if (map[y2 + 1][x2] === 3) {
-				p2m1Moves();
-				map[y2 + 1][x2] = 3;
-				playerloc2.y += 1;
-				playerloc2.x += 0;
-				y2 += 1;
-				drawMap();
-				modalRun2();
-			} else if ((map[y2 + 1][x2] === 6 || map[y2 + 1][x2] === 5) && map[y2 + 2][x2] === 0) {
-				p2m1Moves();
-				map[y2 + 2][x2] = 7;
-				playerloc2.y += 2;
-				playerloc2.x += 0;
-				y2 += 2;
-				drawMap();	
-			} else {
-		}
-	}
-	} else {
-	// MAP NUMBER 2
-	if (e.keyCode === 68 || e.keyCode === "68") { //MOVE RIGHT
-		if (map2[y2][x2 + 1] === 0) { //normal move
-				p2m2Moves();
-				map2[y2][x2 + 1] = 7;
-				playerloc2.y += 0;
-				playerloc2.x += 1;
-				x2 += 1;
-				drawMap2();
-			} else if (map2[y2][x2 + 1] === 3) { //winning square
-				p2m2Moves();
-				map2[y2][x2 + 1] = 3;
-				playerloc2.y += 0;
-				playerloc2.x += 1;
-				x2 += 1;
-				drawMap2();
-				modalRun();
-			} else if ((map2[y2][x2 + 1] === 6 || map2[y2][x2 + 1] === 5) && map2[y2][x2 + 2] === 0) { //jump player
-				p2m2Moves();
-				map2[y2][x2 + 2] = 7;
-				playerloc2.y += 0;
-				playerloc2.x += 2;
-				x2 += 2;
-				drawMap2();
-			} else {
-			}
-		}
-		if (e.keyCode === 65 || e.keyCode === "65") { //MOVE LEFT
-			if (map2[y2][x2 - 1] === 0) {
-				p2m2Moves();
-				map2[y2][x2 - 1] = 7;
-				playerloc2.y += 0;
-				playerloc2.x -= 1;
-				x2 -= 1;
-				drawMap2();
-			} else if (map2[y2][x2 - 1] === 3) {
-				p2m2Moves();
-				map2[y2][x2 - 1] = 3;
-				playerloc2.y += 0;
-				playerloc2.x -= 1;
-				x2 -= 1;
-				drawMap2();
-				modalRun();
-			} else if ((map2[y2][x2 - 1] === 6 || map2[y2][x2 - 1] === 5) && map2[y2][x2 - 2] === 0) {
-				p2m2Moves();
-				map2[y2][x2 - 2] = 7;
-				playerloc2.y += 0;
-				playerloc2.x -= 2;
-				x2 -= 2;
-				drawMap2();
-			} else {
-			}
-		}
-		if (e.keyCode === 87 || e.keyCode === "87") { //MOVE UP
-			if (map2[y2 - 1][x2] === 0) {
-				p2m2Moves();
-				map2[y2 - 1][x2] = 7;
-				playerloc2.y -= 1;
-				playerloc2.x += 0;
-				y2 -= 1;
-				drawMap2();
-			} else if (map2[y2 - 1][x2] === 3) {
-				p2m2Moves();
-				map2[y2 - 1][x2] = 3;
-				playerloc2.y -= 1;
-				playerloc2.x += 0;
-				y2 -= 1;
-				drawMap2();
-				modalRun();
-			} else if ((map2[y2 - 1][x2] === 6 || map2[y2 - 1][x2] === 5) && map2[y2 - 2][x2] === 0) {
-				p2m2Moves();
-				map2[y2 - 2][x2] = 7;
-				playerloc2.y -= 2;
-				playerloc2.x += 0;
-				y2 -= 2;
-				drawMap2();
-			} else {
-			}
-		}
-		if (e.keyCode === 83 || e.keyCode === "83") {//MOVE DOWN
-			if (map2[y2 + 1][x2] === 0) {
-				p2m2Moves();
-				map2[y2 + 1][x2] = 7;
-				playerloc2.y += 1;
-				playerloc2.x += 0;
-				y2 += 1;
-				drawMap2();
-			} else if (map2[y2 + 1][x2] === 3) {
-				p2m2Moves();
-				map2[y2 + 1][x2] = 3;
-				playerloc2.y += 1;
-				playerloc2.x += 0;
-				y2 += 1;
-				drawMap2();
-				modalRun();
-			} else if ((map2[y2 + 1][x2] === 6 || map2[y2 + 1][x2] === 5) && map2[y2 + 2][x2] === 0) {
-				p2m2Moves();
-				map2[y2 + 2][x2] = 7;
-				playerloc2.y += 2;
-				playerloc2.x += 0;
-				y2 += 2;
-				drawMap2();
-			} else {
-			}
-		}
+var pressKey = function(e) {
+	if (e.keyCode === 39 || e.keyCode === "39") { //MOVE RIGHT
+		locChange(playerLoc, "right");
+	} else if (e.keyCode === 37 || e.keyCode === "37") { //MOVE LEFT
+		locChange(playerLoc, "left");
+	} else if (e.keyCode === 38 || e.keyCode === "38") { //MOVE UP
+		locChange(playerLoc, "up");
+	} else if (e.keyCode === 40 || e.keyCode === "40") { //MOVE DOWN
+		locChange(playerLoc, "down");
+	} else if (e.keyCode === 68 || e.keyCode === "68") { //p2 MOVE RIGHT
+		locChange(playerLoc2, "d");
+	} else if (e.keyCode === 65 || e.keyCode === "65") { //p2 MOVE LEFT
+		locChange(playerLoc2, "a");
+	} else if (e.keyCode === 87 || e.keyCode === "87") { //p2 MOVE UP
+		locChange(playerLoc2, "w");
+	} else if (e.keyCode === 83 || e.keyCode === "83") { //p2 MOVE DOWN
+		locChange(playerLoc2, "s");
 	}
 }
+
+// var pressKey = function (e) {
+// 	if (playerWin === false || playerWin === "false") {
+// 		if (e.keyCode === 39 || e.keyCode === "39") { //MOVE RIGHT
+// 			if ((map[y][x + 1] === 7 || map[y][x + 1] === 5) && map[y][x + 2] === 0) { //jump player
+// 				p1m1Moves();
+// 				map[y][x + 2] = 6;
+// 				playerloc.y += 0;
+// 				playerloc.x += 2;
+// 				x += 2;
+// 				drawMap();
+// 			} else {
+// 			}
+// 		}
+// 		if (e.keyCode === 37 || e.keyCode === "37") { //MOVE LEFT
+// 			if ((map[y][x - 1] === 7 || map[y][x - 1] === 5) && map[y][x - 2] === 0) {
+// 				p1m1Moves();
+// 				map[y][x] = 0;
+// 				map[y][x - 2] = 6;
+// 				playerloc.y += 0;
+// 				playerloc.x -= 2;
+// 				x -= 2;
+// 				drawMap();
+// 			} else {
+// 			}
+// 		}
+// 		if (e.keyCode === 38 || e.keyCode === "38") { //MOVE UP
+// 			if ((map[y - 1][x] === 7 || map[y - 1][x] === 5) && map[y - 2][x] === 0) {
+// 				p1m1Moves();
+// 				map[y][x] = 0;
+// 				map[y - 2][x] = 6;
+// 				playerloc.y -= 2;
+// 				playerloc.x += 0;
+// 				y -= 2;
+// 				drawMap();
+// 			} else {
+// 			}
+// 		}
+// 		if (e.keyCode === 40 || e.keyCode === "40") {//MOVE DOWN
+// 			if ((map[y + 1][x] === 7 || map[y + 1][x] === 5) && map[y + 2][x] === 0) {
+// 				p1m1Moves();
+// 				map[y][x] = 0;
+// 				map[y + 2][x] = 6;
+// 				playerloc.y += 2;
+// 				playerloc.x += 0;
+// 				y += 2;
+// 				drawMap();
+// 			} else {
+// 			}
+// 		}
+// 	} else {
+// 	// MAP NUMBER 2
+// 	if (e.keyCode === 39 || e.keyCode === "39") { //MOVE RIGHT
+// 		if (map2[y][x + 1] === 0) { //normal move
+// 				p1m2Moves();
+// 				map2[y][x + 1] = 6;
+// 				playerloc.y += 0;
+// 				playerloc.x += 1;
+// 				x += 1;
+// 				drawMap2();
+// 			} else if (map2[y][x + 1] === 3) { //winning square
+// 				p1m2Moves();
+// 				map2[y][x + 1] = 3;
+// 				playerloc.y += 0;
+// 				playerloc.x += 1;
+// 				x += 1;
+// 				drawMap2();
+// 				modalRun();
+// 			} else if ((map2[y][x + 1] === 7 || map2[y][x + 1] === 5) && map2[y][x + 2] === 0) { //jump player
+// 				p1m2Moves();
+// 				map2[y][x + 2] = 6;
+// 				playerloc.y += 0;
+// 				playerloc.x += 2;
+// 				x += 2;
+// 				drawMap2();
+// 			} else {
+// 			}
+// 		}
+// 		if (e.keyCode === 37 || e.keyCode === "37") { //MOVE LEFT
+// 			if (map2[y][x - 1] === 0) {
+// 				p1m2Moves();
+// 				map2[y][x - 1] = 6;
+// 				playerloc.y += 0;
+// 				playerloc.x -= 1;
+// 				x -= 1;
+// 				drawMap2();
+// 			} else if (map2[y][x - 1] === 3) {
+// 				p1m2Moves();
+// 				map2[y][x - 1] = 3;
+// 				playerloc.y += 0;
+// 				playerloc.x -= 1;
+// 				x -= 1;
+// 				drawMap2();
+// 				modalRun();
+// 			} else if ((map2[y][x - 1] === 7 || map2[y][x - 1] === 5) && map2[y][x - 2] === 0) {
+// 				p1m2Moves();
+// 				map2[y][x - 2] = 6;
+// 				playerloc.y += 0;
+// 				playerloc.x -= 2;
+// 				x -= 2;
+// 				drawMap2();
+// 			} else {
+// 			}
+// 		}
+// 		if (e.keyCode === 38 || e.keyCode === "38") { //MOVE UP
+// 			if (map2[y - 1][x] === 0) {
+// 				p1m2Moves();
+// 				map2[y - 1][x] = 6;
+// 				playerloc.y -= 1;
+// 				playerloc.x += 0;
+// 				y -= 1;
+// 				drawMap2();
+// 			} else if (map2[y - 1][x] === 3) {
+// 				p1m2Moves();
+// 				map2[y - 1][x] = 3;
+// 				playerloc.y -= 1;
+// 				playerloc.x += 0;
+// 				y -= 1;
+// 				drawMap2();
+// 				modalRun();
+// 			} else if ((map2[y - 1][x] === 7 || map2[y - 1][x] === 5) && map2[y - 2][x] === 0) {
+// 				p1m2Moves();
+// 				map2[y - 2][x] = 6;
+// 				playerloc.y -= 2;
+// 				playerloc.x += 0;
+// 				y -= 2;
+// 				drawMap2();
+// 			} else {
+// 			}
+// 		}
+// 		if (e.keyCode === 40 || e.keyCode === "40") {//MOVE DOWN
+// 			if (map2[y + 1][x] === 0) {
+// 				p1m2Moves();
+// 				map2[y + 1][x] = 6;
+// 				playerloc.y += 1;
+// 				playerloc.x += 0;
+// 				y += 1;
+// 				drawMap2();
+// 			} else if (map2[y + 1][x] === 3) {
+// 				p1m2Moves();
+// 				map2[y + 1][x] = 3;
+// 				playerloc.y += 1;
+// 				playerloc.x += 0;
+// 				y += 1;
+// 				drawMap2();
+// 				modalRun();
+// 			} else if ((map2[y + 1][x] === 7 || map2[y + 1][x] === 5) && map2[y + 2][x] === 0) {
+// 				p1m2Moves();
+// 				map2[y + 2][x] = 6;
+// 				playerloc.y += 2;
+// 				playerloc.x += 0;
+// 				y += 2;
+// 				drawMap2();
+// 			} else {
+// 			}
+// 		}
+// 	}
+// }
+
+// var pressKey2 = function (e) {  //PLAYER TWO
+// 	if (playerWin === false || playerWin === "false") {	
+// 		if (e.keyCode === 68 || e.keyCode === "68") { //MOVE RIGHT
+// 			if ((map[y2][x2 + 1] === 6 || map[y2][x2 + 1] === 5) && map[y2][x2 + 2] === 0) {
+// 				p2m1Moves();
+// 				map[y2][x2 + 2] = 7;
+// 				playerloc2.y += 0;
+// 				playerloc2.x += 2;
+// 				x2 += 2;
+// 				drawMap();
+// 			} else {
+// 			}
+// 		}
+// 		if (e.keyCode === 65 || e.keyCode === "65") { //MOVE LEFT
+// 			if ((map[y2][x2 - 1] === 6 || map[y2][x2 - 1] === 5) && map[y2][x2 - 2] === 0) {
+// 				p2m1Moves();
+// 				map[y2][x2 - 2] = 7;
+// 				playerloc2.y += 0;
+// 				playerloc2.x -= 2;
+// 				x2 -= 2;
+// 				drawMap();
+// 			} else {
+// 			}
+// 		}
+// 		if (e.keyCode === 87 || e.keyCode === "87") { //MOVE UP
+// 			if ((map[y2 - 1][x2] === 6 || map[y2 - 1][x2] === 5) && map[y2 - 2][x2] === 0) {
+// 				p2m1Moves();
+// 				map[y2 - 2][x2] = 7;
+// 				playerloc2.y -= 2;
+// 				playerloc2.x += 0;
+// 				y2 -= 2;
+// 				drawMap();
+// 			} else {
+// 			}
+// 		}
+// 		if (e.keyCode === 83 || e.keyCode === "83") {//MOVE DOWN
+// 			if ((map[y2 + 1][x2] === 6 || map[y2 + 1][x2] === 5) && map[y2 + 2][x2] === 0) {
+// 				p2m1Moves();
+// 				map[y2 + 2][x2] = 7;
+// 				playerloc2.y += 2;
+// 				playerloc2.x += 0;
+// 				y2 += 2;
+// 				drawMap();	
+// 			} else {
+// 		}
+// 	}
+// 	} else {
+// 	// MAP NUMBER 2
+// 	if (e.keyCode === 68 || e.keyCode === "68") { //MOVE RIGHT
+// 		if (map2[y2][x2 + 1] === 0) { //normal move
+// 				p2m2Moves();
+// 				map2[y2][x2 + 1] = 7;
+// 				playerloc2.y += 0;
+// 				playerloc2.x += 1;
+// 				x2 += 1;
+// 				drawMap2();
+// 			} else if (map2[y2][x2 + 1] === 3) { //winning square
+// 				p2m2Moves();
+// 				map2[y2][x2 + 1] = 3;
+// 				playerloc2.y += 0;
+// 				playerloc2.x += 1;
+// 				x2 += 1;
+// 				drawMap2();
+// 				modalRun();
+// 			} else if ((map2[y2][x2 + 1] === 6 || map2[y2][x2 + 1] === 5) && map2[y2][x2 + 2] === 0) { //jump player
+// 				p2m2Moves();
+// 				map2[y2][x2 + 2] = 7;
+// 				playerloc2.y += 0;
+// 				playerloc2.x += 2;
+// 				x2 += 2;
+// 				drawMap2();
+// 			} else {
+// 			}
+// 		}
+// 		if (e.keyCode === 65 || e.keyCode === "65") { //MOVE LEFT
+// 			if (map2[y2][x2 - 1] === 0) {
+// 				p2m2Moves();
+// 				map2[y2][x2 - 1] = 7;
+// 				playerloc2.y += 0;
+// 				playerloc2.x -= 1;
+// 				x2 -= 1;
+// 				drawMap2();
+// 			} else if (map2[y2][x2 - 1] === 3) {
+// 				p2m2Moves();
+// 				map2[y2][x2 - 1] = 3;
+// 				playerloc2.y += 0;
+// 				playerloc2.x -= 1;
+// 				x2 -= 1;
+// 				drawMap2();
+// 				modalRun();
+// 			} else if ((map2[y2][x2 - 1] === 6 || map2[y2][x2 - 1] === 5) && map2[y2][x2 - 2] === 0) {
+// 				p2m2Moves();
+// 				map2[y2][x2 - 2] = 7;
+// 				playerloc2.y += 0;
+// 				playerloc2.x -= 2;
+// 				x2 -= 2;
+// 				drawMap2();
+// 			} else {
+// 			}
+// 		}
+// 		if (e.keyCode === 87 || e.keyCode === "87") { //MOVE UP
+// 			if (map2[y2 - 1][x2] === 0) {
+// 				p2m2Moves();
+// 				map2[y2 - 1][x2] = 7;
+// 				playerloc2.y -= 1;
+// 				playerloc2.x += 0;
+// 				y2 -= 1;
+// 				drawMap2();
+// 			} else if (map2[y2 - 1][x2] === 3) {
+// 				p2m2Moves();
+// 				map2[y2 - 1][x2] = 3;
+// 				playerloc2.y -= 1;
+// 				playerloc2.x += 0;
+// 				y2 -= 1;
+// 				drawMap2();
+// 				modalRun();
+// 			} else if ((map2[y2 - 1][x2] === 6 || map2[y2 - 1][x2] === 5) && map2[y2 - 2][x2] === 0) {
+// 				p2m2Moves();
+// 				map2[y2 - 2][x2] = 7;
+// 				playerloc2.y -= 2;
+// 				playerloc2.x += 0;
+// 				y2 -= 2;
+// 				drawMap2();
+// 			} else {
+// 			}
+// 		}
+// 		if (e.keyCode === 83 || e.keyCode === "83") {//MOVE DOWN
+// 			if (map2[y2 + 1][x2] === 0) {
+// 				p2m2Moves();
+// 				map2[y2 + 1][x2] = 7;
+// 				playerloc2.y += 1;
+// 				playerloc2.x += 0;
+// 				y2 += 1;
+// 				drawMap2();
+// 			} else if (map2[y2 + 1][x2] === 3) {
+// 				p2m2Moves();
+// 				map2[y2 + 1][x2] = 3;
+// 				playerloc2.y += 1;
+// 				playerloc2.x += 0;
+// 				y2 += 1;
+// 				drawMap2();
+// 				modalRun();
+// 			} else if ((map2[y2 + 1][x2] === 6 || map2[y2 + 1][x2] === 5) && map2[y2 + 2][x2] === 0) {
+// 				p2m2Moves();
+// 				map2[y2 + 2][x2] = 7;
+// 				playerloc2.y += 2;
+// 				playerloc2.x += 0;
+// 				y2 += 2;
+// 				drawMap2();
+// 			} else {
+// 			}
+// 		}
+// 	}
+// }
 
 var modalRun = function () {
 	$("#myModal").css("display", "block");
@@ -694,16 +798,12 @@ var modalRun2 = function () {
 
 var closeModal = function () {
 	$("#myModal").css("display", "none"); //closes the modal
-	y = 14; 
-	x = 11;
-	playerloc.y = 14;
-	playerloc.x = 11;
-	playerStart = map[y][x];
+	playerloc = {y: 14, x: 11}
+	playerStart = map[playerLoc.y][playerLoc.x];
 	y2 = 12;
 	x2 = 11;
-	playerloc.y = 12;
-	playerloc.x = 11;
-	playerStart2 = map[y2][x2];
+	playerloc2 = {y: 12, x: 11}
+	playerStart2 = map[playerLoc2.y][playerLoc2.x];
 	score = 0;
 	score2 = 0;
 	playerWin = true;
@@ -714,7 +814,7 @@ var closeModal = function () {
 }
 
 window.addEventListener("keydown", pressKey, true);
-window.addEventListener("keydown", pressKey2, true);
+// window.addEventListener("keydown", pressKey2, true);
 document.getElementById("button").addEventListener("click", closeModal);
 
 })

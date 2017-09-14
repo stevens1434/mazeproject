@@ -239,7 +239,7 @@ var p2m2Moves = function () {
 
 var locChange = function (playerLoc, direction) { // may need to remove "var player" form script.js
 	if (direction === "right") {
-		if (playerWin === false) {
+		if (playerWin === false) { //map
 			if (map[playerLoc.y][playerLoc.x + 1] === 0) { //normal move
 				p1m1Moves();
 				map[playerLoc.y][playerLoc.x + 1] = 6; // changes new location color
@@ -250,8 +250,13 @@ var locChange = function (playerLoc, direction) { // may need to remove "var pla
 				map[playerLoc.y][playerLoc.x + 1] = 3; // changes new location color
 				playerLoc.x += 1;
 				modalRun();
+			} else if ((map[playerLoc.y][playerLoc.x + 1] === 7 || map[playerLoc.y][playerLoc.x + 1] === 5) && map[playerLoc.y][playerLoc.x + 2] === 0) { //jump player
+				p1m1Moves();
+				map[playerLoc.y][playerLoc.x + 2] = 6; // changes new location color
+				playerLoc.x += 2;
+				drawMap();
 			}
-		} else {
+		} else {  //map2 //map
 			if (map2[playerLoc.y][playerLoc.x + 1] === 0) { //normal move
 				p1m2Moves();
 				map2[playerLoc.y][playerLoc.x + 1] = 6; // changes new location color
@@ -262,10 +267,15 @@ var locChange = function (playerLoc, direction) { // may need to remove "var pla
 				map2[playerLoc.y][playerLoc.x + 1] = 3; // changes new location color
 				playerLoc.x += 1;
 				modalRun();
+			} else if ((map2[playerLoc.y][playerLoc.x + 1] === 7 || map2[playerLoc.y][playerLoc.x + 1] === 5) && map2[playerLoc.y][playerLoc.x + 2] === 0) { //jump player
+				p1m2Moves();
+				map2[playerLoc.y][playerLoc.x + 2] = 6; // changes new location color
+				playerLoc.x += 2;
+				drawMap2();
 			}
 		}
 	} else if (direction === "left") {
-		if (playerWin === false) {
+		if (playerWin === false) { //map
 			if (map[playerLoc.y][playerLoc.x - 1] === 0) {
 				p1m1Moves();
 				map[playerLoc.y][playerLoc.x - 1] = 6; // changes new location color
@@ -276,8 +286,13 @@ var locChange = function (playerLoc, direction) { // may need to remove "var pla
 				map[playerLoc.y][playerLoc.x - 1] = 3; // changes new location color
 				playerLoc.x -= 1;
 				modalRun();
-			}	
-		} else {
+			} else if ((map[playerLoc.y][playerLoc.x - 1] === 7 || map[playerLoc.y][playerLoc.x - 1] === 5) && map[playerLoc.y][playerLoc.x - 2] === 0) { //jump player
+				p1m1Moves();
+				map[playerLoc.y][playerLoc.x - 2] = 6; // changes new location color
+				playerLoc.x -= 2;
+				drawMap();
+			}
+		} else { //map2
 			if (map2[playerLoc.y][playerLoc.x - 1] === 0) {
 				p1m2Moves();
 				map2[playerLoc.y][playerLoc.x - 1] = 6; // changes new location color
@@ -288,10 +303,15 @@ var locChange = function (playerLoc, direction) { // may need to remove "var pla
 				map2[playerLoc.y][playerLoc.x - 1] = 3; // changes new location color
 				playerLoc.x -= 1;
 				modalRun();
+			} else if ((map2[playerLoc.y][playerLoc.x - 1] === 7 || map2[playerLoc.y][playerLoc.x - 1] === 5) && map2[playerLoc.y][playerLoc.x - 2] === 0) { //jump player
+				p1m2Moves();
+				map2[playerLoc.y][playerLoc.x - 2] = 6; // changes new location color
+				playerLoc.x -= 2;
+				drawMap2();
 			}
 		}
 	} else if (direction === "up") {
-		if (playerWin === false) {
+		if (playerWin === false) { //map
 			if (map[playerLoc.y - 1][playerLoc.x] === 0) {
 				p1m1Moves();
 				map[playerLoc.y - 1][playerLoc.x] = 6; // changes new location color
@@ -302,8 +322,13 @@ var locChange = function (playerLoc, direction) { // may need to remove "var pla
 				map[playerLoc.y - 1][playerLoc.x] = 3; // changes new location color
 				playerLoc.y -= 1;
 				modalRun();
+			} else if ((map[playerLoc.y - 1][playerLoc.x] === 7 || map[playerLoc.y - 1][playerLoc.x] === 5) && map[playerLoc.y - 2][playerLoc.x] === 0) { //jump player
+				p1m1Moves();
+				map[playerLoc.y - 2][playerLoc.x] = 6; // changes new location color
+				playerLoc.y -= 2;
+				drawMap();
 			}
-		} else {
+		} else { //map2
 			if (map2[playerLoc.y - 1][playerLoc.x] === 0) {
 				p1m2Moves();
 				map2[playerLoc.y - 1][playerLoc.x] = 6; // changes new location color
@@ -314,10 +339,15 @@ var locChange = function (playerLoc, direction) { // may need to remove "var pla
 				map2[playerLoc.y - 1][playerLoc.x] = 3; // changes new location color
 				playerLoc.y -= 1;
 				modalRun();
+			} else if ((map2[playerLoc.y - 1][playerLoc.x] === 7 || map2[playerLoc.y - 1][playerLoc.x] === 5) && map2[playerLoc.y - 2][playerLoc.x] === 0) { //jump player
+				p1m2Moves();
+				map2[playerLoc.y - 2][playerLoc.x] = 6; // changes new location color
+				playerLoc.y -= 2;
+				drawMap2();
 			}
 		}
 	} else if (direction === "down") {
-		if (playerWin === false) {
+		if (playerWin === false) { //map
 			if (map[playerLoc.y + 1][playerLoc.x] === 0) {
 				p1m1Moves();
 				map[playerLoc.y + 1][playerLoc.x] = 6; // changes new location color
@@ -328,8 +358,13 @@ var locChange = function (playerLoc, direction) { // may need to remove "var pla
 				map[playerLoc.y + 1][playerLoc.x] = 3; // changes new location color
 				playerLoc.y += 1;
 				modalRun();
+			} else if ((map[playerLoc.y + 1][playerLoc.x] === 7 || map[playerLoc.y + 1][playerLoc.x] === 5) && map[playerLoc.y + 2][playerLoc.x] === 0) { //jump player
+				p1m1Moves();
+				map[playerLoc.y + 2][playerLoc.x] = 6; // changes new location color
+				playerLoc.y += 2;
+				drawMap();
 			}
-		} else {
+		} else { //map2
 			if (map2[playerLoc.y + 1][playerLoc.x] === 0) {
 				p1m2Moves();
 				map2[playerLoc.y + 1][playerLoc.x] = 6; // changes new location color
@@ -340,12 +375,15 @@ var locChange = function (playerLoc, direction) { // may need to remove "var pla
 				map2[playerLoc.y + 1][playerLoc.x] = 3; // changes new location color
 				playerLoc.y += 1;
 				modalRun();
+			} else if ((map2[playerLoc.y + 1][playerLoc.x] === 7 || map2[playerLoc.y + 1][playerLoc.x] === 5) && map2[playerLoc.y + 2][playerLoc.x] === 0) { //jump player
+				p1m2Moves();
+				map2[playerLoc.y + 2][playerLoc.x] = 6; // changes new location color
+				playerLoc.y += 2;
+				drawMap2();
 			}
 		}
-
-
 	} if (direction === "d") { //RIGHT
-		if (playerWin === false) {
+		if (playerWin === false) { //map
 			if (map[playerLoc2.y][playerLoc2.x + 1] === 0) { //normal move
 				p2m1Moves();
 				map[playerLoc2.y][playerLoc2.x + 1] = 7; // changes new location color
@@ -356,8 +394,13 @@ var locChange = function (playerLoc, direction) { // may need to remove "var pla
 				map[playerLoc2.y][playerLoc2.x + 1] = 3; // changes new location color
 				playerLoc2.x += 1;
 				modalRun2();
+			} else if ((map[playerLoc2.y][playerLoc2.x + 1] === 6 || map[playerLoc2.y][playerLoc2.x + 1] === 5) && map[playerLoc2.y][playerLoc2.x + 2] === 0) { //jump player
+				p2m1Moves();
+				map[playerLoc2.y][playerLoc2.x + 2] = 7; // changes new location color
+				playerLoc2.x += 2;
+				drawMap();
 			}
-		} else {
+		} else { //map2
 			if (map2[playerLoc2.y][playerLoc2.x + 1] === 0) { //normal move
 				p2m2Moves();
 				map2[playerLoc2.y][playerLoc2.x + 1] = 7; // changes new location color
@@ -368,10 +411,15 @@ var locChange = function (playerLoc, direction) { // may need to remove "var pla
 				map2[playerLoc2.y][playerLoc2.x + 1] = 3; // changes new location color
 				playerLoc2.x += 1;
 				modalRun2();
+			} else if ((map2[playerLoc2.y][playerLoc2.x + 1] === 6 || map2[playerLoc2.y][playerLoc2.x + 1] === 5) && map2[playerLoc2.y][playerLoc2.x + 2] === 0) { //jump player
+				p2m2Moves();
+				map2[playerLoc2.y][playerLoc2.x + 2] = 7; // changes new location color
+				playerLoc2.x += 2;
+				drawMap2();
 			}
 		}
 	} else if (direction === "a") { //LEFT
-		if (playerWin === false) {
+		if (playerWin === false) { //map
 			if (map[playerLoc2.y][playerLoc2.x - 1] === 0) {
 				p2m1Moves();
 				map[playerLoc2.y][playerLoc2.x - 1] = 7; // changes new location color
@@ -382,8 +430,13 @@ var locChange = function (playerLoc, direction) { // may need to remove "var pla
 				map[playerLoc2.y][playerLoc2.x - 1] = 3; // changes new location color
 				playerLoc2.x -= 1;
 				modalRun2();
+			} else if ((map[playerLoc2.y][playerLoc2.x - 1] === 6 || map[playerLoc2.y][playerLoc2.x - 1] === 5) && map[playerLoc2.y][playerLoc2.x - 2] === 0) { //jump player
+				p2m1Moves();
+				map[playerLoc2.y][playerLoc2.x - 2] = 7; // changes new location color
+				playerLoc2.x -= 2;
+				drawMap();
 			}
-		} else {
+		} else { //map2
 			if (map2[playerLoc2.y][playerLoc2.x - 1] === 0) {
 				p2m2Moves();
 				map2[playerLoc2.y][playerLoc2.x - 1] = 7; // changes new location color
@@ -394,10 +447,15 @@ var locChange = function (playerLoc, direction) { // may need to remove "var pla
 				map2[playerLoc2.y][playerLoc2.x - 1] = 3; // changes new location color
 				playerLoc2.x -= 1;
 				modalRun2();
+			} else if ((map2[playerLoc2.y][playerLoc2.x - 1] === 6 || map2[playerLoc2.y][playerLoc2.x - 1] === 5) && map2[playerLoc2.y][playerLoc2.x - 2] === 0) { //jump player
+				p2m2Moves();
+				map2[playerLoc2.y][playerLoc2.x - 2] = 7; // changes new location color
+				playerLoc2.x -= 2;
+				drawMap2();
 			}
 		}
 	} else if (direction === "w") { //UP
-		if (playerWin === false) {
+		if (playerWin === false) { //map
 			if (map[playerLoc2.y - 1][playerLoc2.x] === 0) {
 				p2m1Moves();
 				map[playerLoc2.y - 1][playerLoc2.x] = 7; // changes new location color
@@ -406,10 +464,15 @@ var locChange = function (playerLoc, direction) { // may need to remove "var pla
 			} else if (map[playerLoc2.y - 1][playerLoc2.x] === 3) { //win move
 				p2m1Moves();
 				map[playerLoc2.y - 1][playerLoc2.x] = 3; // changes new location color
-				playerLoc2.x -= 1;
+				playerLoc2.y -= 1;
 				modalRun2();
+			} else if ((map[playerLoc2.y - 1][playerLoc2.x] === 6 || map[playerLoc2.y - 1][playerLoc2.x] === 5) && map[playerLoc2.y - 2][playerLoc2.x] === 0) { //jump player
+				p2m1Moves();
+				map[playerLoc2.y - 2][playerLoc2.x] = 7; // changes new location color
+				playerLoc2.y -= 2;
+				drawMap();
 			}
-		} else {
+		} else { //map2
 			if (map2[playerLoc2.y - 1][playerLoc2.x] === 0) {
 				p2m2Moves();
 				map2[playerLoc2.y - 1][playerLoc2.x] = 7; // changes new location color
@@ -418,12 +481,17 @@ var locChange = function (playerLoc, direction) { // may need to remove "var pla
 			} else if (map2[playerLoc2.y - 1][playerLoc2.x] === 3) { //win move
 				p2m2Moves();
 				map2[playerLoc2.y - 1][playerLoc2.x] = 3; // changes new location color
-				playerLoc2.x -= 1;
+				playerLoc2.y -= 1;
 				modalRun2();
+			} else if ((map2[playerLoc2.y - 1][playerLoc2.x] === 6 || map2[playerLoc2.y - 1][playerLoc2.x] === 5) && map2[playerLoc2.y - 2][playerLoc2.x] === 0) { //jump player
+				p2m2Moves();
+				map2[playerLoc2.y - 2][playerLoc2.x] = 7; // changes new location color
+				playerLoc2.y -= 2;
+				drawMap2();
 			}
 		}
 	} else if (direction === "s") { //DOWN
-		if (playerWin === false) {
+		if (playerWin === false) { //map
 			if (map[playerLoc2.y + 1][playerLoc2.x] === 0) {
 				p2m1Moves();
 				map[playerLoc2.y + 1][playerLoc2.x] = 7; // changes new location color
@@ -432,10 +500,15 @@ var locChange = function (playerLoc, direction) { // may need to remove "var pla
 			} else if (map[playerLoc2.y + 1][playerLoc2.x] === 3) { //win move
 				p2m1Moves();
 				map[playerLoc2.y + 1][playerLoc2.x] = 3; // changes new location color
-				playerLoc2.x += 1;
+				playerLoc2.y += 1;
 				modalRun2();
+			} else if ((map[playerLoc2.y + 1][playerLoc2.x] === 6 || map[playerLoc2.y + 1][playerLoc2.x] === 5) && map[playerLoc2.y + 2][playerLoc2.x] === 0) { //jump player
+				p2m1Moves();
+				map[playerLoc2.y + 2][playerLoc2.x] = 7; // changes new location color
+				playerLoc2.y += 2;
+				drawMap();
 			}
-		} else {
+		} else { //map2
 			if (map2[playerLoc2.y + 1][playerLoc2.x] === 0) {
 				p2m2Moves();
 				map2[playerLoc2.y + 1][playerLoc2.x] = 7; // changes new location color
@@ -444,8 +517,13 @@ var locChange = function (playerLoc, direction) { // may need to remove "var pla
 			} else if (map2[playerLoc2.y + 1][playerLoc2.x] === 3) { //win move
 				p2m2Moves();
 				map2[playerLoc2.y + 1][playerLoc2.x] = 3; // changes new location color
-				playerLoc2.x += 1;
+				playerLoc2.y += 1;
 				modalRun2();
+			} else if ((map2[playerLoc2.y + 1][playerLoc2.x] === 6 || map2[playerLoc2.y + 1][playerLoc2.x] === 5) && map2[playerLoc2.y + 2][playerLoc2.x] === 0) { //jump player
+				p2m2Moves();
+				map2[playerLoc2.y + 2][playerLoc2.x] = 7; // changes new location color
+				playerLoc2.y += 2;
+				drawMap2();
 			}
 		}
 	}
@@ -470,319 +548,6 @@ var pressKey = function(e) {
 		locChange(playerLoc2, "s");
 	}
 }
-
-// var pressKey = function (e) {
-// 	if (playerWin === false || playerWin === "false") {
-// 		if (e.keyCode === 39 || e.keyCode === "39") { //MOVE RIGHT
-// 			if ((map[y][x + 1] === 7 || map[y][x + 1] === 5) && map[y][x + 2] === 0) { //jump player
-// 				p1m1Moves();
-// 				map[y][x + 2] = 6;
-// 				playerloc.y += 0;
-// 				playerloc.x += 2;
-// 				x += 2;
-// 				drawMap();
-// 			} else {
-// 			}
-// 		}
-// 		if (e.keyCode === 37 || e.keyCode === "37") { //MOVE LEFT
-// 			if ((map[y][x - 1] === 7 || map[y][x - 1] === 5) && map[y][x - 2] === 0) {
-// 				p1m1Moves();
-// 				map[y][x] = 0;
-// 				map[y][x - 2] = 6;
-// 				playerloc.y += 0;
-// 				playerloc.x -= 2;
-// 				x -= 2;
-// 				drawMap();
-// 			} else {
-// 			}
-// 		}
-// 		if (e.keyCode === 38 || e.keyCode === "38") { //MOVE UP
-// 			if ((map[y - 1][x] === 7 || map[y - 1][x] === 5) && map[y - 2][x] === 0) {
-// 				p1m1Moves();
-// 				map[y][x] = 0;
-// 				map[y - 2][x] = 6;
-// 				playerloc.y -= 2;
-// 				playerloc.x += 0;
-// 				y -= 2;
-// 				drawMap();
-// 			} else {
-// 			}
-// 		}
-// 		if (e.keyCode === 40 || e.keyCode === "40") {//MOVE DOWN
-// 			if ((map[y + 1][x] === 7 || map[y + 1][x] === 5) && map[y + 2][x] === 0) {
-// 				p1m1Moves();
-// 				map[y][x] = 0;
-// 				map[y + 2][x] = 6;
-// 				playerloc.y += 2;
-// 				playerloc.x += 0;
-// 				y += 2;
-// 				drawMap();
-// 			} else {
-// 			}
-// 		}
-// 	} else {
-// 	// MAP NUMBER 2
-// 	if (e.keyCode === 39 || e.keyCode === "39") { //MOVE RIGHT
-// 		if (map2[y][x + 1] === 0) { //normal move
-// 				p1m2Moves();
-// 				map2[y][x + 1] = 6;
-// 				playerloc.y += 0;
-// 				playerloc.x += 1;
-// 				x += 1;
-// 				drawMap2();
-// 			} else if (map2[y][x + 1] === 3) { //winning square
-// 				p1m2Moves();
-// 				map2[y][x + 1] = 3;
-// 				playerloc.y += 0;
-// 				playerloc.x += 1;
-// 				x += 1;
-// 				drawMap2();
-// 				modalRun();
-// 			} else if ((map2[y][x + 1] === 7 || map2[y][x + 1] === 5) && map2[y][x + 2] === 0) { //jump player
-// 				p1m2Moves();
-// 				map2[y][x + 2] = 6;
-// 				playerloc.y += 0;
-// 				playerloc.x += 2;
-// 				x += 2;
-// 				drawMap2();
-// 			} else {
-// 			}
-// 		}
-// 		if (e.keyCode === 37 || e.keyCode === "37") { //MOVE LEFT
-// 			if (map2[y][x - 1] === 0) {
-// 				p1m2Moves();
-// 				map2[y][x - 1] = 6;
-// 				playerloc.y += 0;
-// 				playerloc.x -= 1;
-// 				x -= 1;
-// 				drawMap2();
-// 			} else if (map2[y][x - 1] === 3) {
-// 				p1m2Moves();
-// 				map2[y][x - 1] = 3;
-// 				playerloc.y += 0;
-// 				playerloc.x -= 1;
-// 				x -= 1;
-// 				drawMap2();
-// 				modalRun();
-// 			} else if ((map2[y][x - 1] === 7 || map2[y][x - 1] === 5) && map2[y][x - 2] === 0) {
-// 				p1m2Moves();
-// 				map2[y][x - 2] = 6;
-// 				playerloc.y += 0;
-// 				playerloc.x -= 2;
-// 				x -= 2;
-// 				drawMap2();
-// 			} else {
-// 			}
-// 		}
-// 		if (e.keyCode === 38 || e.keyCode === "38") { //MOVE UP
-// 			if (map2[y - 1][x] === 0) {
-// 				p1m2Moves();
-// 				map2[y - 1][x] = 6;
-// 				playerloc.y -= 1;
-// 				playerloc.x += 0;
-// 				y -= 1;
-// 				drawMap2();
-// 			} else if (map2[y - 1][x] === 3) {
-// 				p1m2Moves();
-// 				map2[y - 1][x] = 3;
-// 				playerloc.y -= 1;
-// 				playerloc.x += 0;
-// 				y -= 1;
-// 				drawMap2();
-// 				modalRun();
-// 			} else if ((map2[y - 1][x] === 7 || map2[y - 1][x] === 5) && map2[y - 2][x] === 0) {
-// 				p1m2Moves();
-// 				map2[y - 2][x] = 6;
-// 				playerloc.y -= 2;
-// 				playerloc.x += 0;
-// 				y -= 2;
-// 				drawMap2();
-// 			} else {
-// 			}
-// 		}
-// 		if (e.keyCode === 40 || e.keyCode === "40") {//MOVE DOWN
-// 			if (map2[y + 1][x] === 0) {
-// 				p1m2Moves();
-// 				map2[y + 1][x] = 6;
-// 				playerloc.y += 1;
-// 				playerloc.x += 0;
-// 				y += 1;
-// 				drawMap2();
-// 			} else if (map2[y + 1][x] === 3) {
-// 				p1m2Moves();
-// 				map2[y + 1][x] = 3;
-// 				playerloc.y += 1;
-// 				playerloc.x += 0;
-// 				y += 1;
-// 				drawMap2();
-// 				modalRun();
-// 			} else if ((map2[y + 1][x] === 7 || map2[y + 1][x] === 5) && map2[y + 2][x] === 0) {
-// 				p1m2Moves();
-// 				map2[y + 2][x] = 6;
-// 				playerloc.y += 2;
-// 				playerloc.x += 0;
-// 				y += 2;
-// 				drawMap2();
-// 			} else {
-// 			}
-// 		}
-// 	}
-// }
-
-// var pressKey2 = function (e) {  //PLAYER TWO
-// 	if (playerWin === false || playerWin === "false") {	
-// 		if (e.keyCode === 68 || e.keyCode === "68") { //MOVE RIGHT
-// 			if ((map[y2][x2 + 1] === 6 || map[y2][x2 + 1] === 5) && map[y2][x2 + 2] === 0) {
-// 				p2m1Moves();
-// 				map[y2][x2 + 2] = 7;
-// 				playerloc2.y += 0;
-// 				playerloc2.x += 2;
-// 				x2 += 2;
-// 				drawMap();
-// 			} else {
-// 			}
-// 		}
-// 		if (e.keyCode === 65 || e.keyCode === "65") { //MOVE LEFT
-// 			if ((map[y2][x2 - 1] === 6 || map[y2][x2 - 1] === 5) && map[y2][x2 - 2] === 0) {
-// 				p2m1Moves();
-// 				map[y2][x2 - 2] = 7;
-// 				playerloc2.y += 0;
-// 				playerloc2.x -= 2;
-// 				x2 -= 2;
-// 				drawMap();
-// 			} else {
-// 			}
-// 		}
-// 		if (e.keyCode === 87 || e.keyCode === "87") { //MOVE UP
-// 			if ((map[y2 - 1][x2] === 6 || map[y2 - 1][x2] === 5) && map[y2 - 2][x2] === 0) {
-// 				p2m1Moves();
-// 				map[y2 - 2][x2] = 7;
-// 				playerloc2.y -= 2;
-// 				playerloc2.x += 0;
-// 				y2 -= 2;
-// 				drawMap();
-// 			} else {
-// 			}
-// 		}
-// 		if (e.keyCode === 83 || e.keyCode === "83") {//MOVE DOWN
-// 			if ((map[y2 + 1][x2] === 6 || map[y2 + 1][x2] === 5) && map[y2 + 2][x2] === 0) {
-// 				p2m1Moves();
-// 				map[y2 + 2][x2] = 7;
-// 				playerloc2.y += 2;
-// 				playerloc2.x += 0;
-// 				y2 += 2;
-// 				drawMap();	
-// 			} else {
-// 		}
-// 	}
-// 	} else {
-// 	// MAP NUMBER 2
-// 	if (e.keyCode === 68 || e.keyCode === "68") { //MOVE RIGHT
-// 		if (map2[y2][x2 + 1] === 0) { //normal move
-// 				p2m2Moves();
-// 				map2[y2][x2 + 1] = 7;
-// 				playerloc2.y += 0;
-// 				playerloc2.x += 1;
-// 				x2 += 1;
-// 				drawMap2();
-// 			} else if (map2[y2][x2 + 1] === 3) { //winning square
-// 				p2m2Moves();
-// 				map2[y2][x2 + 1] = 3;
-// 				playerloc2.y += 0;
-// 				playerloc2.x += 1;
-// 				x2 += 1;
-// 				drawMap2();
-// 				modalRun();
-// 			} else if ((map2[y2][x2 + 1] === 6 || map2[y2][x2 + 1] === 5) && map2[y2][x2 + 2] === 0) { //jump player
-// 				p2m2Moves();
-// 				map2[y2][x2 + 2] = 7;
-// 				playerloc2.y += 0;
-// 				playerloc2.x += 2;
-// 				x2 += 2;
-// 				drawMap2();
-// 			} else {
-// 			}
-// 		}
-// 		if (e.keyCode === 65 || e.keyCode === "65") { //MOVE LEFT
-// 			if (map2[y2][x2 - 1] === 0) {
-// 				p2m2Moves();
-// 				map2[y2][x2 - 1] = 7;
-// 				playerloc2.y += 0;
-// 				playerloc2.x -= 1;
-// 				x2 -= 1;
-// 				drawMap2();
-// 			} else if (map2[y2][x2 - 1] === 3) {
-// 				p2m2Moves();
-// 				map2[y2][x2 - 1] = 3;
-// 				playerloc2.y += 0;
-// 				playerloc2.x -= 1;
-// 				x2 -= 1;
-// 				drawMap2();
-// 				modalRun();
-// 			} else if ((map2[y2][x2 - 1] === 6 || map2[y2][x2 - 1] === 5) && map2[y2][x2 - 2] === 0) {
-// 				p2m2Moves();
-// 				map2[y2][x2 - 2] = 7;
-// 				playerloc2.y += 0;
-// 				playerloc2.x -= 2;
-// 				x2 -= 2;
-// 				drawMap2();
-// 			} else {
-// 			}
-// 		}
-// 		if (e.keyCode === 87 || e.keyCode === "87") { //MOVE UP
-// 			if (map2[y2 - 1][x2] === 0) {
-// 				p2m2Moves();
-// 				map2[y2 - 1][x2] = 7;
-// 				playerloc2.y -= 1;
-// 				playerloc2.x += 0;
-// 				y2 -= 1;
-// 				drawMap2();
-// 			} else if (map2[y2 - 1][x2] === 3) {
-// 				p2m2Moves();
-// 				map2[y2 - 1][x2] = 3;
-// 				playerloc2.y -= 1;
-// 				playerloc2.x += 0;
-// 				y2 -= 1;
-// 				drawMap2();
-// 				modalRun();
-// 			} else if ((map2[y2 - 1][x2] === 6 || map2[y2 - 1][x2] === 5) && map2[y2 - 2][x2] === 0) {
-// 				p2m2Moves();
-// 				map2[y2 - 2][x2] = 7;
-// 				playerloc2.y -= 2;
-// 				playerloc2.x += 0;
-// 				y2 -= 2;
-// 				drawMap2();
-// 			} else {
-// 			}
-// 		}
-// 		if (e.keyCode === 83 || e.keyCode === "83") {//MOVE DOWN
-// 			if (map2[y2 + 1][x2] === 0) {
-// 				p2m2Moves();
-// 				map2[y2 + 1][x2] = 7;
-// 				playerloc2.y += 1;
-// 				playerloc2.x += 0;
-// 				y2 += 1;
-// 				drawMap2();
-// 			} else if (map2[y2 + 1][x2] === 3) {
-// 				p2m2Moves();
-// 				map2[y2 + 1][x2] = 3;
-// 				playerloc2.y += 1;
-// 				playerloc2.x += 0;
-// 				y2 += 1;
-// 				drawMap2();
-// 				modalRun();
-// 			} else if ((map2[y2 + 1][x2] === 6 || map2[y2 + 1][x2] === 5) && map2[y2 + 2][x2] === 0) {
-// 				p2m2Moves();
-// 				map2[y2 + 2][x2] = 7;
-// 				playerloc2.y += 2;
-// 				playerloc2.x += 0;
-// 				y2 += 2;
-// 				drawMap2();
-// 			} else {
-// 			}
-// 		}
-// 	}
-// }
 
 var modalRun = function () {
 	$("#myModal").css("display", "block");

@@ -788,16 +788,6 @@ document.addEventListener('DOMContentLoaded', function() {
 		drawMap2();
 	}
 
-	// var hideInstructions = function () {
-	// 	var x = $("#bottom");
-	// 	// var z = $("instruct");
-	// 	if (x.css('display') === 'inline-block') {
- //        x.css('display', 'none');
-	//     } else {
-	//         x.css('display', 'inline-block');
-	//     }
-	// }
-
 	$("#hideInstruct").click(function(){
     $("#bottom").toggle();
 	});

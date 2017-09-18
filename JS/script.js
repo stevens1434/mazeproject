@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 	var map =  [
 						[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
-						[1,4,1,1,1,1,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,1,0,0,0,1],
+						[1,0,1,1,1,1,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,1,0,0,0,1],
 						[1,0,0,0,0,0,0,1,0,1,1,0,1,0,1,1,1,1,1,1,1,1,1,0,1,0,0,1,1,1,1,1,0,1,0,0,0,0,1,1,1,1,1,0,1,1,0,3,0,1],
 						[1,1,1,1,1,1,0,1,0,1,0,0,1,0,1,0,0,0,1,0,0,0,0,0,1,0,1,1,0,0,1,0,0,1,0,1,1,0,0,0,1,1,0,0,0,1,0,0,0,1],
 						[1,0,0,0,0,1,0,1,0,1,1,1,1,0,1,0,1,0,1,0,1,0,1,1,0,0,1,0,0,1,1,0,1,1,1,1,1,0,1,0,0,1,0,1,1,1,1,1,0,1],
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
 						[1,0,1,0,1,0,0,1,1,1,0,1,0,1,1,0,1,1,1,0,1,1,0,1,0,1,1,1,1,1,1,0,1,1,1,1,0,1,0,0,0,0,0,0,1,1,1,0,1,1],
 						[1,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,1,1,1,0,1,0,0,0,0,0,1],
 						[1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,0,1],
-						[1,0,1,0,0,1,1,1,0,0,0,0,0,1,0,0,1,1,1,1,1,0,0,0,0,0,0,0,1,0,0,1,1,1,1,0,0,1,1,0,0,1,0,0,0,0,1,1,0,1],
+						[1,0,1,0,0,1,1,1,9,0,0,0,0,1,0,0,1,1,1,1,1,0,0,0,0,0,0,0,1,0,0,1,1,1,1,0,0,1,1,0,0,1,0,0,0,0,1,1,0,1],
 						[1,0,1,0,0,1,1,1,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,1,0,0,0,0,1,0,0,1,1,1,1,0,0,1,1,0,0,1,1,1,1,0,0,1,0,1],
 						[1,0,1,0,0,1,1,1,0,0,1,1,1,1,1,0,1,1,1,1,1,0,1,1,0,0,1,1,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,1,1,0,1,1,0,1],
 						[1,0,1,0,0,1,1,1,0,0,1,1,1,1,1,0,0,1,1,1,0,0,1,1,0,0,1,1,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,1,1,0,1,1,0,1],
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
 						[1,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,0,0,0,1,0,1,1,1,0,1],
 						[1,0,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,0,1,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,1,0,1,0,1],
 						[1,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,1,0,1,1,1,0,1,1,1,1,1,1,1,1,1,1,0,1,0,1,0,1,0,1],
-						[1,0,1,0,1,1,1,1,1,1,0,1,1,1,1,0,1,1,1,1,0,0,0,1,1,1,1,0,1,1,1,1,0,0,0,0,0,0,0,0,0,1,0,1,1,1,0,1,0,1],
+						[1,0,1,1,1,1,1,1,1,1,0,1,1,1,1,0,1,1,1,1,0,0,0,1,1,1,1,0,1,1,1,1,0,0,0,0,0,0,0,0,0,1,0,1,1,1,0,1,0,1],
 						[1,0,1,0,1,0,0,0,1,0,0,0,1,0,1,0,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,1,0,1,1,1,1,1,1,1,0,1,0,1,0,0,0,1,0,1],
 						[1,0,1,0,0,0,1,0,0,0,1,1,1,0,1,0,1,0,1,1,1,1,1,0,1,1,1,1,1,1,0,0,0,1,0,0,0,0,0,0,0,1,0,1,0,1,0,1,0,1],
 						[1,0,1,0,1,1,1,1,1,1,0,0,0,0,1,1,1,0,0,0,0,0,1,1,1,0,0,0,1,1,1,1,1,1,0,1,1,1,1,1,1,1,0,1,0,1,0,1,0,1],
@@ -103,8 +103,8 @@ document.addEventListener('DOMContentLoaded', function() {
 					];
 
 	var playerWin = false;					// var start = [12][12] var end = [2][47] 
-	var playerLoc = {y: 22, x: 26};			//14 //11 //p1 start     //12 //11 //p2 start    //22 //26 //bomb
-	var playerLoc2 = {y: 12, x: 11};		//2 //46  //near end
+	var playerLoc = {y: 2, x: 46};			//14 //11 //p1 start     //12 //11 //p2 start    //22 //26 //bomb
+	var playerLoc2 = {y: 22, x: 28};		//2 //46  //near end
 	var playerStart = map[playerLoc.y][playerLoc.x]; //used to reset board after modal
 	var playerStart2 = map[playerLoc2.y][playerLoc2.x]; //used to reset board after modal
 	var score = 0;
@@ -113,16 +113,16 @@ document.addEventListener('DOMContentLoaded', function() {
 	var closeModal = $("#button"); //span that closes the modal
 	var playerPause = false;
 	var playerPause2 = false; 
+	var bombSound = new Audio("sounds/bomb.mp3");
 
 	var stopPlayer = function () {
 		setTimeout( function() {
-			playerPause = false }, 1000);
+			playerPause = false }, 5000);
 		}
 	var stopPlayer2 = function () {
 		setTimeout( function() {
-			playerPause2 = false }, 1000);
+			playerPause2 = false }, 5000);
 		}
-	// var p1gun = false; // var p1gun = false;
 
 	var drawMap = function () {
 		map.forEach(function(arr, index) { 
@@ -158,11 +158,13 @@ document.addEventListener('DOMContentLoaded', function() {
 		      	span.style.backgroundColor = "blue";
 		      	span.style.color = "blue";
 		      	span.setAttribute("class", "span");
+		      	span.style.borderRadius= "50%"	;
 		      } else if (path === 7) {
 		      	span.textContent = "..B..";
 		      	span.style.backgroundColor = "gold";
 		      	span.style.color = "gold";
 		      	span.setAttribute("class", "span");
+		      	span.style.borderRadius= "50%"	;
 		      } else if (path === 9) {
 		      	span.textContent = "..B..";
 		      	span.style.backgroundColor = "grey";
@@ -204,10 +206,17 @@ document.addEventListener('DOMContentLoaded', function() {
 		      	span.style.backgroundColor = "blue";
 		      	span.style.color = "blue";
 		      	span.setAttribute("class", "span");
+		      	span.style.borderRadius= "50px"	;
 		      } else if (path === 7) {
 		      	span.textContent = "..B..";
 		      	span.style.backgroundColor = "gold";
 		      	span.style.color = "gold";
+		      	span.setAttribute("class", "span");
+		      	span.style.borderRadius= "50px"	;
+		      } else if (path === 9) {
+		      	span.textContent = "..B..";
+		      	span.style.backgroundColor = "grey";
+		      	span.style.color = "grey";
 		      	span.setAttribute("class", "span");
 		      } 
 		      document.getElementById("map").appendChild(span);
@@ -217,105 +226,53 @@ document.addEventListener('DOMContentLoaded', function() {
 	}
 
 	var bomb = function() {
-		for (i = 0; i < 10; i++) {
-			for (j = 0; j < 10; j++) {
-				map[playerLoc.y][playerLoc.x + i] = 0;
-				map[playerLoc.y + i][playerLoc.x] = 0;
-				map[playerLoc.y][playerLoc.x - i] = 0;
-				map[playerLoc.y - i][playerLoc.x] = 0;
-				map[playerLoc.y + i][playerLoc.x + i] = 0;
-				map[playerLoc.y - i][playerLoc.x - i] = 0;
-				map[playerLoc.y + i][playerLoc.x - i] = 0;
-				map[playerLoc.y - i][playerLoc.x + i] = 0;
-				map[playerLoc.y + j][playerLoc.x] = 0;
-				map[playerLoc.y][playerLoc.x + j] = 0;
-				map[playerLoc.y - j][playerLoc.x] = 0;
-				map[playerLoc.y][playerLoc.x - j] = 0;
-				map[playerLoc.y + j][playerLoc.x + j] = 0;
-				map[playerLoc.y - j][playerLoc.x - j] = 0;
-				map[playerLoc.y - j][playerLoc.x + j] = 0;
-				map[playerLoc.y + j][playerLoc.x - j] = 0;
+		for (var i = 0; i < 9; i++) {
+			var a = playerLoc.y + i - 5;
+				for (var j = 0; j < 11; j++) {
+					var b = playerLoc.x + j - 5;
+					map[a][b] = 0;
+				}
 			}
-			map[playerLoc.y + j][playerLoc.x] = 0;
-			map[playerLoc.y][playerLoc.x + j] = 0;
-			map[playerLoc.y - j][playerLoc.x] = 0;
-			map[playerLoc.y][playerLoc.x - j] = 0;
-			map[playerLoc.y + j][playerLoc.x + j] = 0;
-			map[playerLoc.y - j][playerLoc.x - j] = 0;
-			map[playerLoc.y - j][playerLoc.x + j] = 0;
-			map[playerLoc.y + j][playerLoc.x - j] = 0;
+			map[playerLoc.y][playerLoc.x] = 6;
+			map[playerLoc2.y][playerLoc2.x] = 7;
+			bombSound.play();
+		}
+	var bombm2 = function() {
+			for (var i = 0; i < 9; i++) {
+				var a = playerLoc.y + i - 5;
+					for (var j = 0; j < 11; j++) {
+						var b = playerLoc.x + j - 5;
+						map2[a][b] = 0;
+					}
+				}
+				map2[playerLoc.y][playerLoc.x] = 6;
+				map2[playerLoc2.y][playerLoc2.x] = 7;
+				bombSound.play();
 			}
-		map[playerLoc.y][playerLoc.x] = 6;
-		console.log("bomb");
-	}
-
-	// var bomb = function() {
-	// 			map[playerLoc.y][playerLoc.x + 1] = 0;
-	// 			map[playerLoc.y][playerLoc.x - 1] = 0;
-	// 			map[playerLoc.y + 1][playerLoc.x] = 0;
-	// 			map[playerLoc.y - 1][playerLoc.x] = 0;
-	// 			map[playerLoc.y][playerLoc.x + 2] = 0;
-	// 			map[playerLoc.y][playerLoc.x - 2] = 0;
-	// 			map[playerLoc.y + 2][playerLoc.x] = 0;
-	// 			map[playerLoc.y - 2][playerLoc.x] = 0;
-	// 			map[playerLoc.y][playerLoc.x + 3] = 0;
-	// 			map[playerLoc.y][playerLoc.x - 3] = 0;
-	// 			map[playerLoc.y + 3][playerLoc.x] = 0;
-	// 			map[playerLoc.y - 3][playerLoc.x] = 0;
-	// 			map[playerLoc.y][playerLoc.x + 4] = 0;
-	// 			map[playerLoc.y][playerLoc.x - 4] = 0;
-	// 			map[playerLoc.y + 4][playerLoc.x] = 0;
-	// 			map[playerLoc.y - 4][playerLoc.x] = 0;
-	// 			map[playerLoc.y - 1][playerLoc.x + 1] = 0;
-	// 	map[playerLoc.y + 1][playerLoc.x - 1] = 0;
-	// 	map[playerLoc.y - 1][playerLoc.x -	1] = 0;
-	// 	map[playerLoc.y + 1][playerLoc.x + 1] = 0;
-	// 	map[playerLoc.y][playerLoc.x + 2] = 0;
-	// 	map[playerLoc.y][playerLoc.x - 2] = 0;
-	// 	map[playerLoc.y + 2][playerLoc.x] = 0;
-	// 	map[playerLoc.y - 2][playerLoc.x] = 0;
-	// 	map[playerLoc.y][playerLoc.x + 3] = 0;
-	// 	map[playerLoc.y][playerLoc.x - 3] = 0;
-	// 	map[playerLoc.y + 3][playerLoc.x] = 0;
-	// 	map[playerLoc.y - 3][playerLoc.x] = 0;
-	// 	map[playerLoc.y][playerLoc.x + 4] = 0;
-	// 	map[playerLoc.y][playerLoc.x - 4] = 0;
-	// 	map[playerLoc.y + 4][playerLoc.x] = 0;
-	// 	map[playerLoc.y - 4][playerLoc.x] = 0;
-	// 	map[playerLoc.y][playerLoc.x] = 0;
-	// 	map[playerLoc.y][playerLoc.x] = 0;
-	// 	map[playerLoc.y][playerLoc.x] = 0;
-	// 	map[playerLoc.y][playerLoc.x] = 0;
-	// 	map[playerLoc.y][playerLoc.x] = 0;
-	// 	map[playerLoc.y][playerLoc.x] = 0;
-	// 	map[playerLoc.y][playerLoc.x] = 0;
-	// 	map[playerLoc.y][playerLoc.x] = 0;
-	// 	map[playerLoc.y][playerLoc.x] = 0;
-	// 	map[playerLoc.y][playerLoc.x] = 0;
-	// 	map[playerLoc.y][playerLoc.x] = 0;
-	// 	map[playerLoc.y][playerLoc.x] = 0;
-	// 	map[playerLoc.y][playerLoc.x] = 0;
-	// 	map[playerLoc.y][playerLoc.x] = 0;
-	// 	map[playerLoc.y][playerLoc.x] = 0;
-	// 	map[playerLoc.y][playerLoc.x] = 0;
-	// 	map[playerLoc.y][playerLoc.x] = 0;
-	// 	map[playerLoc.y][playerLoc.x] = 0;
-	// 	map[playerLoc.y][playerLoc.x] = 0;
-	// 	map[playerLoc.y][playerLoc.x] = 0;
-	// 	map[playerLoc.y][playerLoc.x] = 0;
-	// 	map[playerLoc.y][playerLoc.x] = 0;
-	// 	map[playerLoc.y][playerLoc.x] = 0;
-	// 	map[playerLoc.y][playerLoc.x] = 0;
-	// 	map[playerLoc.y][playerLoc.x] = 0;
-	// 	map[playerLoc.y][playerLoc.x] = 0;
-	// 	map[playerLoc.y][playerLoc.x] = 0;
-	// 	map[playerLoc.y][playerLoc.x] = 0;
-	// 	map[playerLoc.y][playerLoc.x] = 0;
-	// 	map[playerLoc.y][playerLoc.x] = 0;
-	// 	map[playerLoc.y][playerLoc.x] = 0;
-	// 	map[playerLoc.y][playerLoc.x] = 0;
-	// 	console.log("bomb");
-	// }
+	var bomb2 = function() {
+			for (var i = 0; i < 9; i++) {
+				var a = playerLoc2.y + i - 5;
+					for (var j = 0; j < 11; j++) {
+						var b = playerLoc2.x + j - 5;
+						map[a][b] = 0;
+					}
+				}
+				map[playerLoc.y][playerLoc.x] = 6;
+				map[playerLoc2.y][playerLoc2.x] = 7;
+				bombSound.play();
+			}
+	var bomb2m2 = function() {
+			for (var i = 0; i < 9; i++) {
+				var a = playerLoc2.y + i - 5;
+					for (var j = 0; j < 11; j++) {
+						var b = playerLoc2.x + j - 5;
+						map2[a][b] = 0;
+					}
+				}
+				map2[playerLoc.y][playerLoc.x] = 6;
+				map2[playerLoc2.y][playerLoc2.x] = 7;
+				bombSound.play();
+			}
 
 	var p1m1Moves = function () {
 		map[playerLoc.y][playerLoc.x] = 0; // changes old location color
@@ -389,6 +346,12 @@ document.addEventListener('DOMContentLoaded', function() {
 					map2[playerLoc.y][playerLoc.x + 2] = 6; // changes new location color
 					playerLoc.x += 2;
 					drawMap2();
+				} else if (map2[playerLoc.y][playerLoc.x + 1] === 9) { //bomb
+					p1m2Moves();
+					map2[playerLoc.y][playerLoc.x + 1] = 6; // changes new location color
+					playerLoc.x += 1;
+					bomb2();
+					drawMap2();
 				}
 			}
 		} else if (direction === "left") {
@@ -409,6 +372,12 @@ document.addEventListener('DOMContentLoaded', function() {
 					map[playerLoc.y][playerLoc.x - 2] = 6; // changes new location color
 					playerLoc.x -= 2;
 					drawMap();
+				} else if (map[playerLoc.y][playerLoc.x - 1] === 9) { //bomb
+					p1m1Moves();
+					map[playerLoc.y][playerLoc.x - 1] = 6; // changes new location color
+					playerLoc.x -= 1;
+					bomb();
+					drawMap();
 				}
 			} else { //map2
 				if (map2[playerLoc.y][playerLoc.x - 1] === 0) {
@@ -426,6 +395,12 @@ document.addEventListener('DOMContentLoaded', function() {
 					p1m2Moves();
 					map2[playerLoc.y][playerLoc.x - 2] = 6; // changes new location color
 					playerLoc.x -= 2;
+					drawMap2();
+				} else if (map2[playerLoc.y][playerLoc.x - 1] === 9) { //bomb
+					p1m2Moves();
+					map2[playerLoc.y][playerLoc.x - 1] = 6; // changes new location color
+					playerLoc.x -= 1;
+					bombm2();
 					drawMap2();
 				}
 			}
@@ -447,6 +422,12 @@ document.addEventListener('DOMContentLoaded', function() {
 					map[playerLoc.y - 2][playerLoc.x] = 6; // changes new location color
 					playerLoc.y -= 2;
 					drawMap();
+				} else if (map[playerLoc.y - 1][playerLoc.x] === 9) { //bomb
+					p1m1Moves();
+					map[playerLoc.y - 1][playerLoc.x] = 6; // changes new location color
+					playerLoc.y -= 1;
+					bomb();
+					drawMap();
 				}
 			} else { //map2
 				if (map2[playerLoc.y - 1][playerLoc.x] === 0) {
@@ -464,6 +445,12 @@ document.addEventListener('DOMContentLoaded', function() {
 					p1m2Moves();
 					map2[playerLoc.y - 2][playerLoc.x] = 6; // changes new location color
 					playerLoc.y -= 2;
+					drawMap2();
+				} else if (map2[playerLoc.y - 1][playerLoc.x] === 9) { //bomb
+					p1m2Moves();
+					map2[playerLoc.y - 1][playerLoc.x] = 6; // changes new location color
+					playerLoc.y -= 1;
+					bombm2();
 					drawMap2();
 				}
 			}
@@ -485,6 +472,12 @@ document.addEventListener('DOMContentLoaded', function() {
 					map[playerLoc.y + 2][playerLoc.x] = 6; // changes new location color
 					playerLoc.y += 2;
 					drawMap();
+				} else if (map[playerLoc.y + 1][playerLoc.x] === 9) { //bomb
+					p1m1Moves();
+					map[playerLoc.y + 1][playerLoc.x] = 6; // changes new location color
+					playerLoc.y += 1;
+					bomb();
+					drawMap();
 				}
 			} else { //map2
 				if (map2[playerLoc.y + 1][playerLoc.x] === 0) {
@@ -502,6 +495,12 @@ document.addEventListener('DOMContentLoaded', function() {
 					p1m2Moves();
 					map2[playerLoc.y + 2][playerLoc.x] = 6; // changes new location color
 					playerLoc.y += 2;
+					drawMap2();
+				} else if (map[playerLoc.y + 1][playerLoc.x] === 9) { //bomb
+					p1m2Moves();
+					map[playerLoc.y + 1][playerLoc.x] = 6; // changes new location color
+					playerLoc.y += 1;
+					bombm2();
 					drawMap2();
 				}
 			}
@@ -523,6 +522,12 @@ document.addEventListener('DOMContentLoaded', function() {
 					map[playerLoc2.y][playerLoc2.x + 2] = 7; // changes new location color
 					playerLoc2.x += 2;
 					drawMap();
+				} else if (map[playerLoc2.y][playerLoc2.x + 1] === 9) { //bomb
+					p2m1Moves();
+					map[playerLoc2.y][playerLoc2.x + 1] = 6; // changes new location color
+					playerLoc2.x += 1;
+					bomb2();
+					drawMap();
 				}
 			} else { //map2
 				if (map2[playerLoc2.y][playerLoc2.x + 1] === 0) { //normal move
@@ -540,6 +545,12 @@ document.addEventListener('DOMContentLoaded', function() {
 					p2m2Moves();
 					map2[playerLoc2.y][playerLoc2.x + 2] = 7; // changes new location color
 					playerLoc2.x += 2;
+					drawMap2();
+				} else if (map2[playerLoc2.y][playerLoc2.x + 1] === 9) { //bomb
+					p2m2Moves();
+					map2[playerLoc2.y][playerLoc2.x + 1] = 6; // changes new location color
+					playerLoc2.x += 1;
+					bomb2m2();
 					drawMap2();
 				}
 			}
@@ -561,6 +572,12 @@ document.addEventListener('DOMContentLoaded', function() {
 					map[playerLoc2.y][playerLoc2.x - 2] = 7; // changes new location color
 					playerLoc2.x -= 2;
 					drawMap();
+				} else if (map[playerLoc2.y][playerLoc2.x - 1] === 9) { //bomb
+					p2m1Moves();
+					map[playerLoc2.y][playerLoc2.x - 1] = 6; // changes new location color
+					playerLoc2.x -= 1;
+					bomb2();
+					drawMap();
 				}
 			} else { //map2
 				if (map2[playerLoc2.y][playerLoc2.x - 1] === 0) {
@@ -578,6 +595,12 @@ document.addEventListener('DOMContentLoaded', function() {
 					p2m2Moves();
 					map2[playerLoc2.y][playerLoc2.x - 2] = 7; // changes new location color
 					playerLoc2.x -= 2;
+					drawMap2();
+				} else if (map2[playerLoc2.y][playerLoc2.x - 1] === 9) { //bomb
+					p2m2Moves();
+					map2[playerLoc2.y][playerLoc2.x - 1] = 6; // changes new location color
+					playerLoc2.x -= 1;
+					bomb2m2();
 					drawMap2();
 				}
 			}
@@ -599,6 +622,12 @@ document.addEventListener('DOMContentLoaded', function() {
 					map[playerLoc2.y - 2][playerLoc2.x] = 7; // changes new location color
 					playerLoc2.y -= 2;
 					drawMap();
+				} else if (map[playerLoc2.y - 1][playerLoc2.x] === 9) { //bomb
+					p2m1Moves();
+					map[playerLoc2.y - 1][playerLoc2.x] = 6; // changes new location color
+					playerLoc2.y -= 1;
+					bomb2();
+					drawMap();
 				}
 			} else { //map2
 				if (map2[playerLoc2.y - 1][playerLoc2.x] === 0) {
@@ -616,6 +645,12 @@ document.addEventListener('DOMContentLoaded', function() {
 					p2m2Moves();
 					map2[playerLoc2.y - 2][playerLoc2.x] = 7; // changes new location color
 					playerLoc2.y -= 2;
+					drawMap2();
+				} else if (map2[playerLoc2.y - 1][playerLoc2.x] === 9) { //bomb
+					p2m2Moves();
+					map2[playerLoc2.y - 1][playerLoc2.x] = 6; // changes new location color
+					playerLoc2.y -= 1;
+					bomb2m2();
 					drawMap2();
 				}
 			}
@@ -637,6 +672,12 @@ document.addEventListener('DOMContentLoaded', function() {
 					map[playerLoc2.y + 2][playerLoc2.x] = 7; // changes new location color
 					playerLoc2.y += 2;
 					drawMap();
+				} else if (map[playerLoc2.y + 1][playerLoc2.x] === 9) { //bomb
+					p2m1Moves();
+					map[playerLoc2.y + 1][playerLoc2.x] = 6; // changes new location color
+					playerLoc2.y += 1;
+					bomb2();
+					drawMap();
 				}
 			} else { //map2
 				if (map2[playerLoc2.y + 1][playerLoc2.x] === 0) {
@@ -654,6 +695,12 @@ document.addEventListener('DOMContentLoaded', function() {
 					p2m2Moves();
 					map2[playerLoc2.y + 2][playerLoc2.x] = 7; // changes new location color
 					playerLoc2.y += 2;
+					drawMap2();
+				} else if (map2[playerLoc2.y + 1][playerLoc2.x] === 9) { //bomb
+					p2m2Moves();
+					map2[playerLoc2.y + 1][playerLoc2.x] = 6; // changes new location color
+					playerLoc2.y += 1;
+					bomb2m2();
 					drawMap2();
 				}
 			}
@@ -716,11 +763,13 @@ document.addEventListener('DOMContentLoaded', function() {
 		$("#myModal").css("display", "block");
 		$("#modalheader").html("Congrats  Player  1,  You  Win!");
 		$("#yourscore").html("Player 1  won  with  a  score  of:    " + score);
+		$("#button").focus();
 	}
 	var modalRun2 = function () {
 		$("#myModal").css("display", "block");
 		$("#modalheader").html("Congrats  Player  2,  You  Win!");
 		$("#yourscore").html("Player 2  won  with  a  score  of:    " + score2);
+		$("#button").focus();
 	}
 	var closeModal = function () {
 		$("#myModal").css("display", "none"); //closes the modal
@@ -735,9 +784,15 @@ document.addEventListener('DOMContentLoaded', function() {
 		playerWin = true;
 		$("span").remove();
 		$("br").remove();
+		$("#hideInstruct").focus();
 		drawMap2();
 	}
 
+	$("#hideInstruct").click(function(){
+    $("#bottom").toggle();
+	});
+
 	window.addEventListener("keydown", pressKey, true);
 	document.getElementById("button").addEventListener("click", closeModal);
+	// document.getElementById("hideInstruct").addEventListener("click", hideInstructions);
 })

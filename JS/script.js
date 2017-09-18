@@ -789,7 +789,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	}
 
 	$("#hideInstruct").click(function(){
-    $("#bottom").toggle();
+	    $(".hide").toggle();
+	    $(".readme").toggle();
 	});
 
 	window.addEventListener("keydown", pressKey, true);

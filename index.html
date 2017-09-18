@@ -15,7 +15,7 @@
 	 	<button id="hideInstruct" type="button" autofocus>Hide/Show Instructions</button>
 	 	<div id="map"></div>
 	 	<span id="init"></span>
-	 	<div id="bottom">
+	 	<div id="bottom" class="hide">
 	 		<table id="key">
 	 		<tr>
 			    <th class="h" class="left">Player 1</th>
@@ -40,8 +40,22 @@
 			  </tr>
 			</table>
 	 		<br>
-	 		<p id="instruct">Move your respective player to the black square. If you jump a player then the jumped player gets stuck in it's position for 5 seconds</p>
+	 		<p id="instruct">Move your respective player to the black square. If you jump a player then the jumped player gets stuck in it's position for 5 seconds</p> <br>
 	 		</div>
+	 		<div id="readme" class="hide">
+	 			<h2>TECHNOLOGIES USED</h2>
+				<p>Took advantage of JavaScript and jQuery for all of the logic for the game. Those were used to manipulate the CSS and HTML files.</p> <br> <br>
+				<h2>APPROACH</h2>
+				<p>The approach was simple. Build a map using a JavaScript array and allow two players to move around that array. First, I built the HTML file. After that I created the map logic and the ability to move around the map. After setting up the logic for forcing the players to say on the path, or to hit a win condition I was able to add some more “fun” features, like jumping players (and forcing them to stop moving for five seconds) and the bombs.</p><br> <br>
+				<h2>INSTALLATION INSTRUCTIONS</h2>
+				<p>To clone the repository follow this link: https://help.github.com/articles/cloning-a-repository/</p> <br>
+
+				<p>For customer service, ask for Jackson at GA at (206) 258-7033.</p> <br>
+
+
+				<h2>UNSOLVED PROBLEMS & FUTURE UPDATES</h2>
+				<p>There may be a way to refactor some of the code. I would also like to give the players a laser gun.</p>
+			</div>
 <!-- MODAL BELOW -->
 		<div id="myModal" class="modal fade" role="dialog" display="hidden">
 			<div id="modal-content">

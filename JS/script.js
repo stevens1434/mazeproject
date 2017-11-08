@@ -103,8 +103,8 @@ document.addEventListener('DOMContentLoaded', function() {
 					];
 
 	var playerWin = false;					// var start = [12][12] var end = [2][47] 
-	var playerLoc = {y: 2, x: 46};			//14 //11 //p1 start     //12 //11 //p2 start    //22 //26 //bomb
-	var playerLoc2 = {y: 22, x: 28};		//2 //46  //near end
+	var playerLoc = {y: 14, x: 11};			//14 //11 //p1 start     //12 //11 //p2 start    //22 //26 //bomb
+	var playerLoc2 = {y: 12, x: 11};		//2 //46  //near end
 	var playerStart = map[playerLoc.y][playerLoc.x]; //used to reset board after modal
 	var playerStart2 = map[playerLoc2.y][playerLoc2.x]; //used to reset board after modal
 	var score = 0;

@@ -145,7 +145,7 @@ body {
 /*    text-align: center;*/
     background: green;
     color: white;
-    display: inline-block;
+    display: none;
     position: relative;
     top: 350px;
     text-align: center;

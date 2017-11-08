@@ -102,7 +102,11 @@ document.addEventListener('DOMContentLoaded', function() {
 						[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
 					];
 
+<<<<<<< HEAD
 	var playerWin = false;					// var start = [12][12] var end = [2][47]
+=======
+	var playerWin = false;					// var start = [12][12] var end = [2][47] 
+>>>>>>> 55151e1bd63ec46eaedf74e505a5024ff31b67ae
 	var playerLoc = {y: 14, x: 11};			//14 //11 //p1 start     //12 //11 //p2 start    //22 //26 //bomb
 	var playerLoc2 = {y: 12, x: 11};		//2 //46  //near end
 	var playerStart = map[playerLoc.y][playerLoc.x]; //used to reset board after modal

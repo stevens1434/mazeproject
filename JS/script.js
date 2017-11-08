@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
 						[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
 					];
 
-	var playerWin = false;					// var start = [12][12] var end = [2][47] 
+	var playerWin = false;					// var start = [12][12] var end = [2][47]
 	var playerLoc = {y: 14, x: 11};			//14 //11 //p1 start     //12 //11 //p2 start    //22 //26 //bomb
 	var playerLoc2 = {y: 12, x: 11};		//2 //46  //near end
 	var playerStart = map[playerLoc.y][playerLoc.x]; //used to reset board after modal
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	var modalbox = $("#myModal"); //get the modal
 	var closeModal = $("#button"); //span that closes the modal
 	var playerPause = false;
-	var playerPause2 = false; 
+	var playerPause2 = false;
 	var bombSound = new Audio("sounds/bomb.mp3");
 
 	var stopPlayer = function () {
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		}
 
 	var drawMap = function () {
-		map.forEach(function(arr, index) { 
+		map.forEach(function(arr, index) {
 		    arr.forEach(function(path, i) {
 		      var span = document.createElement("span");
 		      if (path === 1) {
@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		        span.textContent = "..B..";
 		        span.style.background = "orange";
 		        span.style.color = "orange";
-		        span.setAttribute("class", "span");  
+		        span.setAttribute("class", "span");
 		      } else if (path === 5) {
 		      	span.textContent = "..B..";
 		      	span.style.backgroundColor = "red";
@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		      	span.style.backgroundColor = "grey";
 		      	span.style.color = "grey";
 		      	span.setAttribute("class", "span");
-		      } 
+		      }
 		      document.getElementById("map").appendChild(span);
 		    });
 		    document.getElementById("map").appendChild(document.createElement("br"))
@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	}
 	drawMap();
 	var drawMap2 = function () {
-		map2.forEach(function(arr, index) { 
+		map2.forEach(function(arr, index) {
 		    arr.forEach(function(path, i) {
 		      var span = document.createElement("span");
 		      if (path === 1) {
@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		      	span.style.backgroundColor = "grey";
 		      	span.style.color = "grey";
 		      	span.setAttribute("class", "span");
-		      } 
+		      }
 		      document.getElementById("map").appendChild(span);
 		    });
 		    document.getElementById("map").appendChild(document.createElement("br"))

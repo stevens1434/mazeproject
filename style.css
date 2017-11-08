@@ -1,7 +1,7 @@
-@font-face { 
-    font-family: arcadeClassic; 
-    src: url("font/arcadeClassic.ttf"); 
-} 
+@font-face {
+    font-family: arcadeClassic;
+    src: url("font/arcadeClassic.ttf");
+}
 
 h1 {
     font-size: 150px;
@@ -142,10 +142,10 @@ body {
     font-weight: normal;
 }
 #bottom {
-/*    text-align: center;*/
     background: green;
     color: white;
-    display: inline-block;
+    margin: auto;
+    display: none;
     position: relative;
     top: 350px;
     text-align: center;
@@ -185,7 +185,7 @@ table, th, td {
     /*border-collapse: collapse;*/
 }
 #instruct {
-    display: inline-block;
+    display: none;
     position: relative;
     top: -50px;
     font-size: 40px;
@@ -231,8 +231,11 @@ table, th, td {
     border: 4px solid green;
     border-radius: 40%;
 }
+.hide {
+  display: none;
+}
 #readme {
-    display: inline-block;
+    display: none;
     position: relative;
     top: 400px;
     color: green;
